@@ -1,0 +1,175 @@
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: black;
+    margin: 0px auto;
+}
+
+.tg td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 1.3vw;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg th {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 1.3vw;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg .tg-a99a {
+    background-color: #ffc702;
+    font-weight: bold;
+    position: -webkit-sticky;
+    position: sticky;
+    text-align: center;
+    top: -1px;
+    vertical-align: middle;
+    will-change: transform
+}
+
+.tg .tg-etzd {
+    background-color: #32cb00;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle
+}
+
+.tg .tg-i6ci {
+    background-color: #ffcb2f;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle
+}
+
+.tg .tg-nrix {
+    text-align: center;
+    vertical-align: middle;
+
+
+}
+
+@media screen and (max-width: 767px) {
+    .tg {
+        width: auto !important;
+    }
+
+    .tg col {
+        width: auto !important;
+    }
+
+    .tg-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: auto 0px;
+    }
+}
+
+textarea {
+    text-align: center;
+    width: 100%;
+    font-size: 1.3vw;
+    border: 0;
+    overflow: hidden;
+    resize: none;
+}
+
+.tg-axmw {
+    font-size: 1.3vw;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    color: #000000;
+}
+
+.tg-5n2h {
+    background-color: #303498;
+    color: #000000;
+    font-size: 1.9vw;
+    font-weight: bold;
+    position: -webkit-sticky;
+    position: sticky;
+    text-align: center;
+    top: -1px;
+    vertical-align: middle;
+    will-change: transform
+}
+
+@media screen and (max-width: 767px) {
+    .tg {
+        width: auto !important;
+    }
+
+    .tg col {
+        width: auto !important;
+    }
+
+    .tg-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: auto 0px;
+    }
+}
+
+.redTitle {
+    color: red;
+}
+
+textarea {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#myScedual {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.myPrintA4 {
+    background-color: white;
+    padding: 20px;
+}
+
+/* .myPrintA4[size="A4"] {
+    width: 21cm;
+    height: 29.7cm;
+}
+
+.myPrintA4[size="A4"][layout="portrait"] {
+    width: 29.7cm;
+    height: 21cm;
+
+} */
+
+/* @media print {
+
+    body,
+    page {
+        margin: 0;
+        box-shadow: 0;
+    }
+} */
+.blackText {
+    color: black;
+}
+
+.border {
+    border: #000000;
+    border: 1px solid black;
+}
+
+.timeStyle {
+    background-color: orange !important;
+    font-weight: bold;
+    text-align: center;
+    border: 1px;
+}

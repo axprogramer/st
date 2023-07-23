@@ -1,0 +1,142 @@
+<div class="container-fluid pt-4 px-4 Div1">
+    <div class="row bg-secondary rounded align-items-center justify-content-center mx-0">
+        <div>
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Score in <span id="inMonth"></span> Grade: <span id="inGrade"></span></h6>
+                <table class="table">
+                    <tr>
+                        <td>
+                            <div class="form-floating mb-3">
+                                <select class="form-select" id="enrolGrade" aria-label="Floating label select example">
+                                    <option selected>Grade</option>
+                                    <option value="K2">មត្តេយ្យកម្រិតទាប</option>
+                                    <option value="K3">មត្តេយ្យកម្រិតខ្ពស់</option>
+                                    <option value="1A">1A</option>
+                                    <option value="1B">1B</option>
+                                    <option value="2A">2A</option>
+                                    <option value="2B">2B</option>
+                                    <option value="3A">3A</option>
+                                    <option value="3B">3B</option>
+                                    <option value="4A">4A</option>
+                                    <option value="4B">4B</option>
+                                    <option value="5A">5A</option>
+                                    <option value="5B">5B</option>
+                                    <option value="6A">6A</option>
+                                    <option value="6B">6B</option>
+                                    <option value="7A">7A</option>
+                                    <option value="7B">7B</option>
+                                    <option value="8A">8A</option>
+                                    <option value="8B">8B</option>
+                                    <option value="9A">9A</option>
+                                    <option value="9B">9B</option>
+                                    <option value="10A">10A</option>
+                                    <option value="10B">10B</option>
+                                    <option value="11A">11A</option>
+                                    <option value="11B">11B</option>
+                                    <option value="12A">12A</option>
+                                    <option value="12B">12B</option>
+
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-floating mb-3">
+                                <select class="form-select" id="academicYear"
+                                    aria-label="Floating label select example">
+                                    <option selected>Academic Year</option>
+                                    <option value="2023-2024">2023-2024</option>
+                                    <option value="2024-2025">2024-2025</option>
+                                    <option value="2025-2026">2025-2026</option>
+                                    <option value="2026-2027">2026-2027</option>
+                                    <option value="2027-2028">2027-2028</option>
+                                    <option value="2028-2029">2028-2029</option>
+                                    <option value="2029-2030">2029-2030</option>
+                                    <option value="2030-2031">2030-2031</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-floating mb-3">
+                                <select class="form-select" id="myMonth" aria-label="Floating label select example">
+                                    <option selected>Month</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                    <option value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="1st Semester">1st Semester</option>
+                                    <option value="March">March</option>
+                                    <option value="April-May">April-May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="2nd Semester">2nd Semester</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div>
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="form-floating">
+                                    <button type="button" class="btn btn-success rounded-pill m-2" id="myGo"
+                                        onclick="setData()">Go</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="Div6">
+</div>
+
+<div class="card text-center border-card">
+    <div class="bg-image hover-overlay ripple letCard">
+        <table class="tgTable kh">
+            <thead>
+                <tr>
+                    <th>
+                        <img class="picStd" src="${url}" </th>
+                    <th class="kh middle newFont">
+                        <div class="getCenter">
+                            <img src="./img/salamomlogo.png" class="logSchool">
+                        </div>
+                        <p class="schoolBrand">SALAMOM SCHOOL
+                        <p>
+                            Name: ${name}
+                            <br>
+                            Sex: ${sex}
+                            <br>
+                            Khmer Name: ${myKh}
+                            <br>
+                            Subject: English
+                            <br>
+                            Level: Let's Go 4
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="middle black2">GRADE: ${grade}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="black">Academic Year ${dbyearAct}</div>
+    </div>
+</div>
+
+<!-- New Drive -->
+const firebaseConfig = {
+apiKey: "AIzaSyAJ61CR4hcHajBf8T02wl-REVx8SnRxklE",
+authDomain: "useradmin-cd653.firebaseapp.com",
+databaseURL: "https://useradmin-cd653-default-rtdb.firebaseio.com",
+projectId: "useradmin-cd653",
+storageBucket: "useradmin-cd653.appspot.com",
+messagingSenderId: "51017691764",
+appId: "1:51017691764:web:9f322ae1ee6c00c5ce5721"
+};

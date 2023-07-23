@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title id="myTitle"></title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href=".../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div style="display: none;">
+        <p id="dataBase"><span id="mydataBase"></span></p>
+        <p id="year"></p>
+    </div>
+
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-secondary navbar-dark">
+                <a href="g5a.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="bi bi-archive-fill me-2"></i></i>SMSys</h3>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <img class="rounded-circle" src="" id="myImg2" alt="" style="width: 40px; height: 40px;">
+                        <div
+                            class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0"><span id="myUser"></span></h6>
+                        <span><span id="myPosition"></span></span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <div class="dropdown">
+                        <a href="g5a.html" class="nav-link  active" type="button">
+                            <i class="bi bi-plus-square-dotted me-2"></i>New Student
+                            <span id="gradeName"></span>
+                        </a>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i
+                                class="bi bi-arrow-down-circle-fill me-2"></i>Input Score <span
+                                id="gradeName3"></span></a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <div class="nav-item ">
+                                <a href="./inputScore/01g5a-Nov.html" class="nav-link dropdown-toggle">November</a>
+                                <a href="./inputScore/02g5a-Dec.html" class="nav-link dropdown-toggle">December</a>
+                                <a href="./inputScore/03g5a-Jan.html" class="nav-link dropdown-toggle">January</a>
+                                <a href="#" class="nav-link dropdown-toggle">February</a>
+                                <a href="#" class="nav-link dropdown-toggle">1st Semester</a>
+                                <a href="#" class="nav-link dropdown-toggle">1st Semester
+                                    Result</a>
+                                <a href="#" class="nav-link dropdown-toggle">March</a>
+                                <a href="#" class="nav-link dropdown-toggle">April-May</a>
+                                <a href="#" class="nav-link dropdown-toggle">June</a>
+                                <a href="#" class="nav-link dropdown-toggle">July</a>
+                                <a href="#" class="nav-link dropdown-toggle">2nd Semester</a>
+                                <a href="#" class="nav-link dropdown-toggle">2nd Semester
+                                    Result</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Annual Year</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">
+                            <i class="bi bi-printer-fill me-2"></i>Preview <span id="gradeName2"></span></a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <div class="nav-item ">
+                                <a href="./inputScore/g5a-Nov.html" class="nav-link dropdown-toggle">November</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">December</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">January</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">February</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">1st Semester</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">1st Semester
+                                    Result</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">March</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">April-May</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">June</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">July</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">2nd Semester</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">2nd Semester
+                                    Result</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Annual Year</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <nav class="navbar bg-secondary navbar-dark">
+                <div class="navbar-nav w-100">
+                    <div class="dropdown">
+                        <a class="nav-link  active" type="button">
+                            <i class="bi bi-plus-square-dotted me-2"></i>New Student
+                            <span id="gradeName6"></span>
+                        </a>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i
+                                class="bi bi-arrow-down-circle-fill me-2"></i>Input Score <span
+                                id="gradeName4"></span></a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <div class="nav-item ">
+                                <a href="./inputScore/g5a-Nov.html" class="nav-link dropdown-toggle">November</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">December</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">January</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">February</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">1st Semester</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">1st Semester
+                                    Result</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">March</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">April-May</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">June</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">July</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">2nd Semester</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">2nd Semester
+                                    Result</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Annual Year</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">
+                            <i class="bi bi-printer-fill me-2"></i>Preview <span id="gradeName5"></span></a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <div class="nav-item ">
+                                <a href="./inputScore/g5a-Nov.html" class="nav-link dropdown-toggle">November</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">December</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">January</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">February</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">1st Semester</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">1st Semester
+                                    Result</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">March</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">April-May</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">June</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">July</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">2nd Semester</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">2nd Semester
+                                    Result</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Annual Year</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="" id="myImg" alt=""
+                                style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex"><span id="myUser2"></span></span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+
+            <!-- Blank Start -->
+
+
+            <div class="container-fluid pt-4 px-4 Div1">
+                <div class="row bg-secondary rounded align-items-center justify-content-center mx-0">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Score in January</h6>
+                            <table​>
+                                <tr>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="myID"
+                                                            placeholder="ID">
+                                                        <label for="myID">ID</label>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="myName"
+                                                            placeholder="Full Name">
+                                                        <label for="myName">Full Name</label>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="form-floating mb-3">
+                                                        <select class="form-select" id="mySex"
+                                                            aria-label="Floating label select example">
+                                                            <option value="M">M</option>
+                                                            <option value="F">F</option>
+
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <div class="form-floating mb-3">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-floating mb-3">
+                                                            <input oninput="adder1()" type="text" class="form-control"
+                                                                id="mySJan" placeholder="Speaking">
+                                                            <label for="mySJan">Speaking</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" class="form-control" id="myWJan"
+                                                                placeholder="Writing">
+                                                            <label for="myWJan">Writing</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" class="form-control" id="myLJan"
+                                                                placeholder="Listening">
+                                                            <label for="myLJan">Listening</label>
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-floating mb-3">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" class="form-control" id="myRJan"
+                                                                placeholder="Reading">
+                                                            <label for="myRJan">Reading</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" class="form-control" id="myAJan"
+                                                                placeholder="Average">
+                                                            <label for="myAJan">Average</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-floating mb-3">
+                                                            <input oninput="divid1()" type="text" class="form-control"
+                                                                id="myScoreJan" placeholder="Score">
+                                                            <label for="myScoreJan">Score</label>
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                </table>
+
+                                <div>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <div class="form-floating">
+                                                    <button type="button" class="btn btn-success rounded-pill m-2"
+                                                        id="mySubmit" onclick="AddStd(event)">Send</button>
+                                                </div>
+
+                                            </td>
+                                            <td>
+                                                <div class="form-floating">
+                                                    <button type="button" class="btn btn-success rounded-pill m-2"
+                                                        id="myUpdate" onclick="UpStd(event)">Update</button>
+                                                </div>
+
+                                            </td>
+                                            <td>
+                                                <div class="form-floating">
+                                                    <button type="button" class="btn btn-success rounded-pill m-2"
+                                                        id="myDelete" onclick="DelStd(event)">Delete</button>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="Div2">
+            </div>
+            <div class="container-fluid pt-4 px-4">
+                <div class="row bg-secondary rounded align-items-center justify-content-center mx-0">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4" style="overflow-x: auto;">
+                            <h6 class="mb-4">Grade <span id="gradeName2"></span> in January</h6>
+                            <table class="myTable table table-bordered hide-scroll" id="myTable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Khmer Name</th>
+                                        <th scope="col">Sex</th>
+                                        <th scope="col">Speaking</th>
+                                        <th scope="col">Writing</th>
+                                        <th scope="col">Listening</th>
+                                        <th scope="col">Reading</th>
+                                        <th scope="col">Average</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="showDataJan">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Blank End -->
+
+
+            <!-- Footer Start -->
+            <div class="container-fluid pt-4 px-4 ">
+                <div class="bg-secondary rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            &copy; <a><span id="companyName"></span></a>, All Right Reserved.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/chart/chart.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/tempusdominus/js/moment.min.js"></script>
+    <script src="../lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="../lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/caculate.js"></script>
+    <!-- <script src="./js/firebaseShow.js"></script> -->
+    <script src="../js/user.js"></script>
+    <script src="../js/connectionInput.js"></script>
+    <script src="./g5ainput/03g5aJan.js"></script>
+    <!-- <script type="module" src="./js/firebaseInput.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,1078 @@
+/********** Template CSS **********/
+@font-face {
+    font-family: khmerCN;
+    src: url(../fonts/Fasthand-Regular.ttf);
+}
+
+@font-face {
+    font-family: takteng;
+    src: url(../fonts/Tacteing.ttf);
+}
+
+:root {
+    --primary: #ff0000;
+    --secondary: #191C24;
+    --light: rgb(94, 249, 249);
+    --dark: #000000;
+    --white: #ffffff;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    transition: .5s;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 50px;
+}
+
+
+/*** Layout ***/
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+    height: 100vh;
+    overflow-y: auto;
+    background: var(--secondary);
+    transition: 0.5s;
+    z-index: 999;
+}
+
+.content {
+    margin-left: 240px;
+    min-height: 100vh;
+    background: var(--dark);
+    transition: 0.5s;
+}
+
+@media (min-width: 992px) {
+    .sidebar {
+        margin-left: 0;
+    }
+
+    .sidebar.open {
+        margin-left: -250px;
+    }
+
+    .content {
+        width: calc(100% - 50px);
+    }
+
+    .content.open {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        margin-left: -250px;
+    }
+
+    .sidebar.open {
+        margin-left: 0;
+    }
+
+    .content {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+
+/*** Navbar ***/
+.sidebar .navbar .navbar-nav .nav-link {
+    padding: 7px 20px;
+    color: var(--light);
+    font-weight: 500;
+    border-left: 3px solid var(--secondary);
+    border-radius: 0 30px 30px 0;
+    outline: none;
+    font-size: 12px;
+}
+
+.sidebar .navbar .navbar-nav .nav-link:hover,
+.sidebar .navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+    background: var(--dark);
+    border-color: var(--primary);
+}
+
+.sidebar .navbar .navbar-nav .nav-link i {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark);
+    border-radius: 40px;
+    font-size: 12px;
+}
+
+.sidebar .navbar .navbar-nav .nav-link:hover i,
+.sidebar .navbar .navbar-nav .nav-link.active i {
+    background: var(--secondary);
+}
+
+.sidebar .navbar .dropdown-toggle::after {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    transition: .5s;
+}
+
+.sidebar .navbar .dropdown-toggle[aria-expanded=true]::after {
+    transform: rotate(-180deg);
+}
+
+.sidebar .navbar .dropdown-item {
+    padding-left: 25px;
+    border-radius: 0 30px 30px 0;
+    color: var(--light);
+}
+
+.sidebar .navbar .dropdown-item:hover,
+.sidebar .navbar .dropdown-item.active {
+    background: var(--dark);
+}
+
+.content .navbar .navbar-nav .nav-link {
+    margin-left: 25px;
+    padding: 12px 0;
+    color: var(--light);
+    outline: none;
+}
+
+.content .navbar .navbar-nav .nav-link:hover,
+.content .navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+.content .navbar .sidebar-toggler,
+.content .navbar .navbar-nav .nav-link i {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark);
+    border-radius: 40px;
+}
+
+.content .navbar .dropdown-item {
+    color: var(--light);
+
+}
+
+.content .navbar .dropdown-item:hover,
+.content .navbar .dropdown-item.active {
+    background: var(--dark);
+}
+
+.content .navbar .dropdown-toggle::after {
+    margin-left: 6px;
+    vertical-align: middle;
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    transition: .5s;
+
+}
+
+.content .navbar .dropdown-toggle[aria-expanded=true]::after {
+    transform: rotate(-180deg);
+}
+
+@media (max-width: 575.98px) {
+    .content .navbar .navbar-nav .nav-link {
+        margin-left: 15px;
+    }
+}
+
+
+/*** Date Picker ***/
+.bootstrap-datetimepicker-widget.bottom {
+    top: auto !important;
+}
+
+.bootstrap-datetimepicker-widget .table * {
+    border-bottom-width: 0px;
+}
+
+.bootstrap-datetimepicker-widget .table th {
+    font-weight: 500;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover {
+    background: var(--primary);
+}
+
+.bootstrap-datetimepicker-widget table td.today::before {
+    border-bottom-color: var(--primary);
+}
+
+
+/*** Testimonial ***/
+/* .progress .progress-bar {
+    width: 0px;
+    transition: 2s;
+} */
+
+
+/*** Testimonial ***/
+/* .testimonial-carousel .owl-dots {
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    border: 5px solid var(--primary);
+    border-radius: 15px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+    background: var(--dark);
+    border-color: var(--primary);
+} */
+
+.img1 {
+    width: 15%;
+    position: absolute;
+    top: 75%;
+    left: 70%;
+}
+
+.myTable {
+    background-color: #ffffff;
+    font-size: 1.6vw;
+    text-align: center;
+}
+
+.myTable6 {
+    font-size: 12px;
+    text-align: center;
+}
+
+.myTable4 {
+    font-size: 1.6vw;
+    text-align: center;
+}
+
+.myTable3 {
+    text-align: center;
+    font-size: 1.6vw;
+}
+
+.middle {
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.myTable3 td:nth-child(5) {
+    width: 10em;
+}
+
+.myTable3 td:nth-child(6) {
+    width: 10em;
+}
+
+.myTable3 td:nth-child(7) {
+    width: 10em;
+}
+
+.myTable2 {
+    font-size: 12px;
+    font-family: khmerCN;
+    text-align: center;
+    background-color: aliceblue;
+    color: #000000;
+}
+
+.whiteBack {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.title {
+    position: relative;
+    border-collapse: collapse;
+    width: 100%;
+    padding: 15px;
+    font-size: 2.6vw;
+}
+
+.khmerTakteng {
+    font-size: 2.6vw;
+    font-family: takteng;
+
+}
+
+#tbody3 td:nth-child(9) {
+    color: red;
+}
+
+#tbody4 {
+    font-size: 1.6vw;
+}
+
+#tbody4 td:nth-child(7) {
+    color: red;
+}
+
+#tbody4 td:nth-child(8) {
+    color: red;
+}
+
+#tbody4 td:nth-child(2) {
+    text-align: left;
+    padding-left: 1em;
+}
+
+#tbody5 td:nth-child(8) {
+    color: red;
+}
+
+#tbody5 td:nth-child(9) {
+    color: red;
+}
+
+#tbody5 td:nth-child(2) {
+    text-align: left;
+    padding-left: 1em;
+}
+
+#tbody5 {
+    font-size: 1.6vw;
+}
+
+#tbodySave2 {
+    font-size: 1.6vw;
+}
+
+#tbody3 td:nth-child(2) {
+    text-align: left;
+    padding-left: 1em;
+}
+
+#tbodyView td:nth-child(9) {
+    color: red;
+}
+
+#tbodyView1 td:nth-child(7) {
+    color: red;
+}
+
+#tbodyView1 td:nth-child(8) {
+    color: red;
+}
+
+#tbodyView2 td:nth-child(8) {
+    color: red;
+}
+
+#tbodyView2 td:nth-child(9) {
+    color: red;
+}
+
+#tbodyView td:nth-child(2) {
+    text-align: left;
+    padding-left: 1em;
+}
+
+#tbodyView1 td:nth-child(2) {
+    text-align: left;
+    padding-left: 1em;
+}
+
+#tbodyView2 td:nth-child(2) {
+    text-align: left;
+    padding-left: 1em;
+}
+
+.Div1 {
+    position: fixed;
+}
+
+.Div2 {
+    background-color: transparent;
+    padding: 10px;
+    height: 31em;
+}
+
+.Div5 {
+    background-color: transparent;
+    padding: 10px;
+    height: 45em;
+}
+
+.Div6 {
+    background-color: transparent;
+    padding: 10px;
+    height: 17em;
+}
+
+.Div3 {
+    background-color: transparent;
+    padding: 10px;
+    height: 10em;
+}
+
+.Div4 {
+    background-color: transparent;
+    padding: 10px;
+    height: 24em;
+}
+
+
+
+.Div10 {
+    background-color: transparent;
+    padding: 10px;
+    height: 47em;
+}
+
+.Div11 {
+    background-color: transparent;
+    padding: 10px;
+    height: 18em;
+}
+
+#myNovemberSaveT {
+    background-color: white;
+    padding: 1em;
+}
+
+#myfirstSemeRSaveT2 {
+    background-color: white;
+    padding: 1em;
+}
+
+#tbodyView {
+    color: #000000;
+    font-size: 12px;
+}
+
+#tbodyView1 {
+    color: #000000;
+    font-size: 12px;
+}
+
+#tbodyView2 {
+    color: #000000;
+    font-size: 12px;
+}
+
+#myTableVivew {
+    color: #000000;
+}
+
+#myTableVivew1 {
+    color: #000000;
+}
+
+#myTableVivew2 {
+    color: #000000;
+}
+
+.button-6 {
+    background-color: transparent;
+    border: 0;
+    color: rgb(0, 0, 0);
+}
+
+.button-7 {
+    background-color: transparent;
+    border: 0;
+    color: rgb(0, 0, 0);
+    font-family: khmerCN;
+}
+
+.fit-me {
+    width: 75vw;
+}
+
+#inMonth {
+    color: rgb(250, 198, 134);
+}
+
+#ssTotal {
+    color: rgb(250, 198, 134);
+}
+
+#fsTotal {
+    color: rgb(250, 198, 134);
+}
+
+#PsTotal {
+    color: rgb(250, 198, 134);
+}
+
+#fasTotal {
+    color: rgb(250, 198, 134);
+}
+
+#showGradedata {
+    color: rgb(250, 198, 134);
+}
+
+#inGrade {
+    color: rgb(251, 30, 30);
+}
+
+.newtable {
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    overflow-x: auto;
+    font-size: 1.8vw;
+}
+
+.newtable1 {
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    overflow-x: auto;
+    font-size: 1.8vw;
+
+}
+
+.newtable3 {
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    overflow-x: auto;
+    font-size: 1.8vw;
+}
+
+.newtable4 {
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    overflow-x: auto;
+    padding: 15px;
+    margin-top: 5px;
+    margin-left: 10px;
+    color: rgb(247, 27, 27);
+    font-size: 1.8vw;
+}
+
+.newtable td:nth-child(2) {
+    text-align: center;
+    width: 25em;
+
+}
+
+.newtable td:nth-child(1) {
+    text-align: left;
+    width: 18em;
+
+}
+
+.newtable3 td:nth-child(1) {
+    text-align: center;
+
+}
+
+.newtable3 td:nth-child(2) {
+    text-align: center;
+
+}
+
+.newtable1 td:nth-child(2) {
+    text-align: right;
+
+}
+
+.newtable td:nth-child(3) {
+    text-align: center;
+
+}
+
+#fullname {
+    width: 60em;
+}
+
+.form-control {
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+}
+
+.form-select {
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+}
+
+.btn {
+    font-size: 12px;
+}
+
+.navbar-nav {
+    font-size: 12px;
+}
+
+
+.gen {
+    font-size: 12px;
+}
+
+.gen-center {
+    font-size: 12px;
+    text-align: center;
+}
+
+label {
+    font-size: 12px;
+    color: rgb(203, 0, 0);
+}
+
+
+#showAlert {
+    align-items: center;
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+}
+
+#showInput5a {
+    text-align: center;
+}
+
+.kh {
+    font-family: khmerCN;
+}
+
+.white-bac {
+    background-color: aliceblue;
+}
+
+.color-bac {
+    color: #000000;
+    font-weight: bold;
+}
+
+.nexttt {
+    position: relative;
+}
+
+/* Class for Enroll Students */
+.heighBtnN2 {
+    position: absolute;
+    /* margin-right: 0.5vh; */
+    color: #ffffff;
+    right: 0;
+    height: 37rem;
+    /* From https://css.glass */
+    background: rgba(108, 114, 147, 0.159);
+    /* border-radius: 16px; */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.168);
+}
+
+.heighBtnB2 {
+    position: absolute;
+    left: 0;
+    height: 37rem;
+    color: #ffffff;
+    /* From https://css.glass */
+    background: rgba(108, 114, 147, 0.159);
+    /* border-radius: 16px; */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.168);
+}
+
+/* Class for input score */
+.heighBtnN {
+    position: fixed;
+    margin-right: 2vh;
+    color: #ffffff;
+    right: 0;
+    height: 29rem;
+    /* From https://css.glass */
+    background: rgba(108, 114, 147, 0.159);
+    /* border-radius: 16px; */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.168);
+}
+
+.heighBtnB {
+    position: absolute;
+    left: 0;
+    height: 29rem;
+    color: #ffffff;
+    /* From https://css.glass */
+    background: rgba(108, 114, 147, 0.159);
+    /* border-radius: 16px; */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.168);
+}
+
+.bordered {
+    border: #000000;
+}
+
+.middle {
+    vertical-align: middle;
+    text-align: center;
+    table-layout: fixed;
+}
+
+/* Css for activities table */
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0px auto;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.tg td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: khmerCN;
+    font-size: 12px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+    color: #000000;
+}
+
+.tg th {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: khmerCN;
+    font-size: 12px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg .tg-9epp {
+    color: #fe0000;
+    font-family: khmerCN !important;
+    font-weight: bold;
+    position: -webkit-sticky;
+    position: sticky;
+    text-align: center;
+    top: -1px;
+    vertical-align: middle;
+    will-change: transform
+}
+
+.tg .tg-42x8 {
+    font-family: khmerCN !important;
+    text-align: center;
+    vertical-align: middle
+}
+
+.tg .tg-bg2u {
+    font-family: khmerCN !important;
+    font-weight: bold;
+    position: -webkit-sticky;
+    position: sticky;
+    text-align: center;
+    top: -1px;
+    vertical-align: middle;
+    will-change: transform
+}
+
+.tg .tg-sx1p {
+    font-weight: bold;
+    position: -webkit-sticky;
+    position: sticky;
+    text-align: center;
+    top: -1px;
+    vertical-align: middle;
+    will-change: transform
+}
+
+.tg .tg-1xeo {
+    font-family: khmerCN !important;
+    font-weight: bold;
+    position: -webkit-sticky;
+    position: sticky;
+    text-align: center;
+    top: -1px;
+    vertical-align: top;
+    will-change: transform
+}
+
+.tg .tg-6t95 {
+    font-weight: bold;
+    position: -webkit-sticky;
+    position: sticky;
+    text-align: center;
+    top: -1px;
+    vertical-align: top;
+    will-change: transform
+}
+
+.tg .tg-flgj {
+    color: #fe0000;
+    font-family: khmerCN !important;
+    font-weight: bold;
+    position: -webkit-sticky;
+    position: sticky;
+    text-align: center;
+    top: -1px;
+    vertical-align: top;
+    will-change: transform
+}
+
+.tg .tg-izq4 {
+    color: #fe0000;
+    font-weight: bold;
+    position: -webkit-sticky;
+    position: sticky;
+    text-align: center;
+    top: -1px;
+    vertical-align: top;
+    will-change: transform
+}
+
+.tg .tg-0lax {
+    text-align: left;
+    vertical-align: top
+}
+
+@media screen and (max-width: 767px) {
+    .tg {
+        width: auto !important;
+    }
+
+    .tg col {
+        width: auto !important;
+    }
+
+    .tg-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: auto 0px;
+    }
+}
+
+.allCenter {
+    overflow-x: auto;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#mySportAct {
+    text-align: center;
+    vertical-align: middle;
+    text-align: center;
+    table-layout: fixed;
+}
+
+.mycheckbox {
+    padding: 5px;
+}
+
+.myCard {
+    height: 20%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    border: 1px solid black;
+    border-radius: 5px;
+
+}
+
+.picStd {
+    margin-top: 10px;
+    height: 15vh;
+
+}
+
+.border-card {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.card-title {
+    color: #000000;
+}
+
+.black {
+    color: #000000;
+    background-color: rgb(243, 243, 203);
+    font-size: 1.3vw;
+}
+
+.black2 {
+    color: #000000;
+    font-size: 1.6vw;
+    font-weight: bold;
+}
+
+.tgTable {
+    width: 100%;
+    font-size: 1.6vw;
+}
+
+.newFont {
+    text-align: left;
+    color: #000000;
+
+}
+
+.schoolBrand {
+    color: darkblue;
+    text-align: center;
+}
+
+.logSchool {
+    width: 6vh;
+    height: 6vh;
+}
+
+.getCenter {
+    padding: 10px;
+    text-align: center;
+}
+
+.letCard {
+    padding: 25px;
+    border: 1px solid black;
+    background-color: lightyellow;
+}
+
+.backGG {
+    background-color: #ffffff;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.grid-name {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.grid-item {
+    padding: 8px;
+}
+
+.mySticName {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: left;
+    vertical-align: middle;
+    color: #000000;
+    font-size: 28px;
+}
+.mytable {
+    color: black;
+    text-align: center;
+    position: relative;
+    border: 1px solid black;
+}
+.mytable1 {
+    color: black;
+    text-align: center;
+    position: relative;
+    border: 1px solid black;
+}
+
+.myThead {
+    background: white;
+    position: sticky;
+    top: 0;
+}
+.myFreze td {
+    text-align: center;
+    background: white;
+    position: sticky;
+    left: 0;
+    border: 0;
+    font-weight: bold;
+}

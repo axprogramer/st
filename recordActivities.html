@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title id="myTitle"></title>
+    <meta content="width=device-width, initial-scale=0.6" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="./img/Teaching_Report.png" rel="icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="./lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="./lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-secondary navbar-dark">
+                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="bi bi-archive-fill me-2"></i></i>SMSys</h3>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <img class="rounded-circle" src="" id="myImg2" alt="" style="width: 40px; height: 40px;">
+                        <div
+                            class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0"><span id="myUser"></span></h6>
+                        <span><span id="myPosition"></span></span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <div class="dropdown">
+                        <a href="./index.html" class="nav-link" type="button">
+                            <i class="bi bi-plus-square-dotted me-2"></i>New Student
+                            <span id="gradeName"></span>
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="./inputScore/inputScore.html" class="nav-link" type="button">
+                            <i class="bi bi-file-earmark-bar-graph-fill me-2"></i>Score Record
+                            <span id="gradeName"></span>
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="./printPreview/preview.html" class="nav-link" type="button">
+                            <i class="bi bi-file-earmark-spreadsheet me-2"></i>Preview
+                            <span id="gradeName"></span>
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="./classEnroll.html" class="nav-link  " type="button">
+                            <i class="bi bi-arrow-down-up me-2"></i>Upgrade Class
+                            <span id="gradeName"></span>
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="./recordActivities.html" class="nav-link active" type="button">
+                            <i class="bi bi-person-lines-fill me-2"></i>Actitvities
+                            <span id="gradeName"></span>
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="./previewact.html" class="nav-link" type="button">
+                            <i class="bi bi-person-lines-fill me-2"></i>Preview Act
+                            <span id="gradeName"></span>
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="./recordSport.html" class="nav-link" type="button">
+                            <i class="bi bi-collection-fill me-2"></i>Record Sport
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="./recordCourseoutline.html" class="nav-link" type="button">
+                            <i class="bi bi-stack me-2"></i>Course Outline
+                        </a>
+                    </div>
+
+                    <div class="dropdown">
+                        <a href="./importData.html" class="nav-link" type="button">
+                            <i class="bi bi-box-arrow-in-down me-2"></i>Import Data
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="./stdCards.html" class="nav-link" type="button">
+                            <i class="bi bi-card-image me-2"></i>Student's Card
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="./random.html" class="nav-link" type="button">
+                            <i class="bi bi-arrow-repeat me-2"></i>Generator
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="./stdReport.html" class="nav-link" type="button">
+                            <i class="bi bi-briefcase me-2"></i>Student's Report
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="./nameStick.html" class="nav-link" type="button">
+                            <i class="bi bi-ui-checks-grid me-2"></i>Stickers
+                        </a>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+                <a href="./index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><img src="./img/Teaching_Report.png" alt="" style="width: 40px;"></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2"
+                                src="https://jobboom.asia/media/imagemodule/8c07e28fab10abc458e373f3d20c75f9.png"
+                                id="myImg" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex"><span id="myUser2"></span></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+
+            <!-- Blank Start -->
+
+            <!-- <div class="container-fluid pt-4 px-4 Div1">
+                <div class="row bg-secondary rounded align-items-center justify-content-center mx-0">
+                    <div class="fit-me​">
+                    </div>
+                </div>
+            </div> -->
+            <div class="container-fluid pt-2 px-4 Div1">
+                <div class="row bg-secondary rounded align-items-center justify-content-center ">
+                    <div class="bg-secondary rounded h-100 p-4" style="overflow-x: auto;">
+                        <div class="bg-secondary rounded ">
+                            <h6 class="text-center">Record for Actitvities</h6>
+
+                            <table class="table-borderless table">
+                                <tr>
+                                    <td>
+                                        <div class="form-floating">
+                                            <select class="form-select" id="myMonthAct"
+                                                aria-label="Floating label select example">
+                                                <option selected>Month</option>
+                                                <option value="October">October</option>
+                                                <option value="November">November</option>
+                                                <option value="December">December</option>
+                                                <option value="January">January</option>
+                                                <option value="February">February</option>
+                                                <option value="March">March</option>
+                                                <option value="April-May">April-May</option>
+                                                <option value="June">June</option>
+                                                <option value="July">July</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" id="myGradeAct"
+                                                aria-label="Floating label select example">
+                                                <option selected>- Grade -</option>
+                                                <option value="1A">1A</option>
+                                                <option value="1B">1B</option>
+                                                <option value="2A">2A</option>
+                                                <option value="2B">2B</option>
+                                                <option value="3A">3A</option>
+                                                <option value="3B">3B</option>
+                                                <option value="4A">4A</option>
+                                                <option value="4B">4B</option>
+                                                <!-- <option value="5A">5A</option>
+                                                <option value="5B">5B</option> -->
+                                                <option value="6A">6A</option>
+                                                <option value="6B">6B</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" id="myYearAct"
+                                                aria-label="Floating label select example">
+                                                <option selected>- Year -</option>
+                                                <option value="2022-2023">2022-2023</option>
+                                                <option value="2023-2024">2023-2024</option>
+                                                <option value="2024-2025">2024-2025</option>
+                                                <option value="2025-2026">2025-2026</option>
+                                                <option value="2026-2027">2026-2027</option>
+                                                <option value="2027-2028">2027-2028</option>
+                                                <option value="2028-2029">2028-2029</option>
+                                                <option value="2029-2030">2029-2030</option>
+                                                <option value="2030-2031">2030-2031</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="myTimesAct" placeholder="Times">
+                                            <label for="myTimesAct">Times</label>
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+                            </table>
+                            <table class="allCenter mb-3">
+                                <tr>
+                                    <td>
+                                        <!-- <button type="button" class="btn btn-info rounded-pill" id="goAct">
+                                            <i class="bi bi-box-arrow-in-up me-2"></i>Go
+                                        </button> -->
+                                        <button type="button" class="btn btn-success rounded-pill"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="bi bi-box-arrow-in-up me-2"></i>Upgrade
+                                        </button>
+                                        <!-- <button type="button" class="btn btn-warning rounded-pill" id="sumUpScore">
+                                            <i class="bi bi-calendar-plus me-2"></i>Sum
+                                        </button> -->
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Div11">
+            </div>
+            <div class="container-fluid pt-4 px-4 ">
+                <div class="row bg-secondary rounded align-items-center justify-content-center ">
+                    <div class="bg-secondary rounded h-100 p-4 " style="overflow-x: auto;">
+                        <div class="bg-secondary rounded ">
+                            <div class="tg-wrap ">
+                                <table class="tg table table-hover whiteBack" id="myTbaleActivity"
+                                    style="color: black;">
+                                    <thead
+                                        style="background-color: rgb(66, 80, 113); color: aliceblue;font-weight: bold;">
+                                        <tr>
+                                            <th class="tg-5ihh" rowspan="3">#</th>
+                                            <th class="tg-5ihh" rowspan="3">Full Name</th>
+                                            <th class="tg-5ihh" rowspan="3">Sex</th>
+                                            <th class="tg-5ihh" colspan="5"><input type="date" name="myGetDate"
+                                                    style="text-align: center; color: rgb(0, 0, 0);font-weight: bold;"
+                                                    class="form-control" id="myDate"></th>
+                                            <th class="tg-5ihh" rowspan="3">Total</th>
+                                            <th class="tg-5ihh" rowspan="3">Check<br><input type="checkbox"
+                                                    name="chckAA" onClick="toggleGet(this)" checked></th>
+                                        </tr>
+                                        <tr>
+                                            <th class="tg-4wxp" colspan="3">Activities</th>
+                                            <th class="tg-6zdp" rowspan="2">Attitude<br><input type="checkbox"
+                                                    name="chckAA" id="myChkAttu" onClick="toggleAtt(this)"></th>
+                                            <th class="tg-6zdp" rowspan="2">Note</th>
+                                        </tr>
+                                        <tr>
+                                            <th class="tg-2efg">S<br><input type="checkbox" name="chckSS" id="myChkss"
+                                                    onClick="toggleS(this)"></th>
+                                            <th class="tg-2efg">W<br><input type="checkbox" name="chckWW" id="myChkww"
+                                                    onClick="toggleW(this)"></th>
+                                            <th class="tg-2efg">A<br><input type="checkbox" name="chckAA"
+                                                    onClick="toggleA(this)"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="myActivities" style="text-align: center;">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-sm">
+                    <div class="modal-content">
+                        <!-- <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div> -->
+                        <div class="alert alert-success" role="alert" id="showAlert">
+                            <i class="bi bi-check-circle-fill me-2"></i> <span id="info"></span> <span
+                                id="getname"></span>
+                        </div>
+
+                        <div class="modal-body text-center myWaa">
+                            <span id="alertMag" style="color: black;">⚠️ Are you sure that you want to update? ⚠️</span>
+                            <span id="alertMagWait" style="color: black;">Please wait!! ⚠️ <br> <img
+                                    src="./img/wait4Colors.gif" width="150px" alt=""></span>
+                        </div>
+                        <div class="modal-footer" id="showBtnn">
+                            <button type="button" id="btnNo" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                            <button type="button" id="btnRows" class="btn btn-success">Yes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Blank End -->
+
+            <!-- Footer Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start gen">
+                            &copy; <a><span id="companyName"></span></a>, All Right Reserved.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./lib/chart/chart.min.js"></script>
+    <script src="./lib/easing/easing.min.js"></script>
+    <script src="./lib/waypoints/waypoints.min.js"></script>
+    <script src="./lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="./lib/tempusdominus/js/moment.min.js"></script>
+    <script src="./lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="./lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> -->
+
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-auth-compat.js"></script>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/user.js"></script>
+
+    <script src="./js/caculate.js"></script>
+    <script src="./js/activities/myactivities.js"></script>
+</body>
+
+</html>

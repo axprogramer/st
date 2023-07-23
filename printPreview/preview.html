@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title id="myTitle"></title>
+    <meta content="width=device-width, initial-scale=0.6" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/Teaching_Report.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <!-- <link href=".../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> -->
+    <link href="../lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div style="display: none;">
+        <p id="dataBase"><span id="mydataBase"></span></p>
+        <p id="dataBase2"><span id="mydataBase2"></span></p>
+        <p id="dataBase3"><span id="mydataBase3"></span></p>
+        <p id="dataBase4"><span id="mydataBase4"></span></p>
+        <p id="year"></p>
+    </div>
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-secondary navbar-dark">
+                <a href="../index.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="bi bi-archive-fill me-2"></i></i>SMSys</h3>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <img class="rounded-circle" src="" id="myImg2" alt="" style="width: 40px; height: 40px;">
+                        <div
+                            class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0"><span id="myUser"></span></h6>
+                        <span><span id="myPosition"></span></span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <div class="dropdown">
+                        <a href="../index.html" class="nav-link" type="button">
+                            <i class="bi bi-plus-square-dotted me-2"></i>New Student
+                            <span id="gradeName"></span>
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="../inputScore/inputScore.html" class="nav-link" type="button">
+                            <i class="bi bi-file-earmark-bar-graph-fill me-2"></i>Score Record
+                            <span id="gradeName"></span>
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="./preview.html" class="nav-link active" type="button">
+                            <i class="bi bi-file-earmark-spreadsheet me-2"></i>Preview
+                            <span id="gradeName"></span>
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="../classEnroll.html" class="nav-link" type="button">
+                            <i class="bi bi-arrow-down-up me-2"></i>Upgrade Class
+                            <span id="gradeName"></span>
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="../recordActivities.html" class="nav-link" type="button">
+                            <i class="bi bi-person-lines-fill me-2"></i>Actitvities
+                            <span id="gradeName"></span>
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="../previewact.html" class="nav-link" type="button">
+                            <i class="bi bi-calendar-check-fill me-2"></i>Preview Act
+                            <span id="gradeName"></span>
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="../recordSport.html" class="nav-link" type="button">
+                            <i class="bi bi-collection-fill me-2"></i>Record Sport
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="../recordCourseoutline.html" class="nav-link" type="button">
+                            <i class="bi bi-stack me-2"></i>Course Outline
+                        </a>
+                    </div>
+
+                    <div class="dropdown">
+                        <a href="../importData.html" class="nav-link" type="button">
+                            <i class="bi bi-box-arrow-in-down me-2"></i>Import Data
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="../stdCards.html" class="nav-link" type="button">
+                            <i class="bi bi-card-image me-2"></i>Student's Card
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="../random.html" class="nav-link" type="button">
+                            <i class="bi bi-arrow-repeat me-2"></i>Generator
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="../stdReport.html" class="nav-link" type="button">
+                            <i class="bi bi-briefcase me-2"></i>Student's Report
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="../nameStick.html" class="nav-link" type="button">
+                            <i class="bi bi-ui-checks-grid me-2"></i>Stickers
+                        </a>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+                <a href="../index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><img src="../img/Teaching_Report.png" alt="" style="width: 40px;">
+                    </h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="" id="myImg" alt=""
+                                style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex"><span id="myUser2"></span></span>
+                        </a>
+                    </div>
+                </div>
+
+            </nav>
+            <!-- Navbar End -->
+
+
+            <!-- Blank Start -->
+
+            <div class="container-fluid pt-4 px-4 Div1">
+                <div class="row bg-secondary rounded align-items-center justify-content-center mx-0">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4 ">
+                            <h6 style="text-align: center;" class="gen">
+                                <i class="bi bi-clipboard-data me-2"></i>Preview in <span id="inMonth"></span> Grade:
+                                <span id="inGrade"></span>
+                            </h6>
+                            <div>
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <div class="form-floating mb-3">
+                                                <select class="form-select" id="enrolGrade"
+                                                    aria-label="Floating label select example">
+                                                    <option selected>Grade</option>
+                                                    <option value="K2">មត្តេយ្យកម្រិតទាប</option>
+                                                    <option value="K3">មត្តេយ្យកម្រិតខ្ពស់</option>
+                                                    <option value="1A">1A</option>
+                                                    <option value="1B">1B</option>
+                                                    <option value="2A">2A</option>
+                                                    <option value="2B">2B</option>
+                                                    <option value="3A">3A</option>
+                                                    <option value="3B">3B</option>
+                                                    <option value="4A">4A</option>
+                                                    <option value="4B">4B</option>
+                                                    <!-- <option value="5A">5A</option>
+                                                    <option value="5B">5B</option> -->
+                                                    <option value="6A">6A</option>
+                                                    <option value="6B">6B</option>
+                                                    <!-- <option value="7A">7A</option>
+                                                    <option value="7B">7B</option>
+                                                    <option value="8A">8A</option>
+                                                    <option value="8B">8B</option>
+                                                    <option value="9A">9A</option>
+                                                    <option value="9B">9B</option>
+                                                    <option value="10A">10A</option>
+                                                    <option value="10B">10B</option>
+                                                    <option value="11A">11A</option>
+                                                    <option value="11B">11B</option>
+                                                    <option value="12A">12A</option>
+                                                    <option value="12B">12B</option> -->
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-floating mb-3">
+                                                <select class="form-select" id="academicYear"
+                                                    aria-label="Floating label select example">
+                                                    <option selected>Academic Year</option>
+                                                    <option value="2022-2023">2022-2023</option>
+                                                    <option value="2023-2024">2023-2024</option>
+                                                    <option value="2024-2025">2024-2025</option>
+                                                    <option value="2025-2026">2025-2026</option>
+                                                    <option value="2026-2027">2026-2027</option>
+                                                    <option value="2027-2028">2027-2028</option>
+                                                    <option value="2028-2029">2028-2029</option>
+                                                    <option value="2029-2030">2029-2030</option>
+                                                    <option value="2030-2031">2030-2031</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-floating mb-3">
+                                                <select class="form-select" id="myMonth"
+                                                    aria-label="Floating label select example">
+                                                    <option selected>Month</option>
+                                                    <option value="November">November</option>
+                                                    <option value="December">December</option>
+                                                    <option value="January">January</option>
+                                                    <option value="February">February</option>
+                                                    <option value="1st Semester">1st Semester</option>
+                                                    <option value="1st Semester Result">1st Semester Result</option>
+                                                    <option value="March">March</option>
+                                                    <option value="April-May">April-May</option>
+                                                    <option value="June">June</option>
+                                                    <option value="July">July</option>
+                                                    <option value="2nd Semester">2nd Semester</option>
+                                                    <option value="2nd Semester Result">2nd Semester Result</option>
+                                                    <option value="Annual Year">Annual Year</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="inDate" placeholder="Date">
+                                                <label for="inDate">Date</label>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="table table-borderless" style="text-align: center;">
+                                    <tr>
+                                        <td>
+                                            <div class="form-floating">
+                                                <button type="button" class="btn btn-success rounded-pill m-2"
+                                                    id="mySubmit" onclick="setData()">
+                                                    <i class="bi bi-arrow-bar-right m-2"></i>Go</button>
+                                            </div>
+
+                                        </td>
+                                        <td>
+                                            <div class="form-floating">
+                                                <button type="button" class="btn btn-success rounded-pill m-2"
+                                                    id="mySubmit" onclick="myNov()"><i
+                                                        class="bi bi-printer-fill m-2"></i>Print</button>
+                                            </div>
+
+                                        </td>
+                                        <td>
+                                            <div class="form-floating">
+                                                <button type="button" class="btn btn-success rounded-pill m-2"
+                                                    id="myUpdate" onclick="saveNov()">
+                                                    <i class="bi bi-arrow-bar-down m-2"></i>Save</button>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="table table-borderless gen" style="text-align: center;">
+                                    <tr>
+                                        <td>
+                                            <a><i class="bi bi-person-circle m-2"></i>Total Students: <span
+                                                    id="ssTotal"></span></a>
+
+                                        </td>
+                                        <td>
+                                            <a><i class="bi bi-person me-2"></i>Female Students: <span
+                                                    id="fsTotal"></span></a>
+
+                                        </td>
+                                    </tr>
+                                    <td>
+                                        <a><i class="bi bi-person-check-fill me-2"></i>Passed Students: <span
+                                                id="PsTotal"></span></a>
+                                        <a style="display: none;">Total Pass st: <span id="showPasSt"></span></a>
+
+                                    </td>
+                                    <td>
+                                        <a><i class="bi bi-person-x-fill me-2"></i>Failed Students: <span
+                                                id="fasTotal"></span></a>
+                                        <a style="display: none;">Failed M st: <span id="fMst"></span></a>
+                                        <a style="display: none;">Failed F st: <span id="ffst"></span></a>
+
+                                    </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="Div4">
+            </div>
+            <div id="showMyTable">
+
+                <!-- General Preview -->
+                <div class="container-fluid pt-4 px-4" id="view1">
+                    <div class="row bg-secondary rounded align-items-center justify-content-center mx-2">
+                        <div style="overflow-x: auto;font-family:Times New Roman,serif" id="myNovemberSaveT">
+                            <table class="myTable table table-bordered gen table-hover" id="myTableVivew">
+                                <thead style="font-size: 12px;" class="table-warning bordered ">
+                                    <th>N0</th>
+                                    <th>Full Name</th>
+                                    <th>Sex</th>
+                                    <th>Speaking</th>
+                                    <th>Writing</th>
+                                    <th>Listening</th>
+                                    <th>Reading</th>
+                                    <th>Average</th>
+                                    <th>Rank</th>
+
+                                </thead>
+                                <tbody id="tbodyView" contenteditable>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="container-fluid pt-4 px-4" style="display: none;">
+                    <div class="row bg-secondary rounded align-items-center justify-content-center mx-2">
+                        <div class="modal-body">
+                            <h6 class="mb-4">Grade <span id="gradeName"></span> in November</h6>
+                            <div style="padding: 20px;" id="myNovPrint">
+                                <div>
+                                    <div class="WordSection1 title" contenteditable>
+                                        <table class="table-borderless newtable" style="font-weight: bold;">
+                                            <tr>
+                                                <td>
+                                                    <p></p>
+                                                </td>
+                                                <td>
+                                                    <p></p>
+                                                </td>
+                                                <td>
+                                                    <p>Kingdom of Cambodia</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>Department of Education of Sen Sok</p>
+                                                </td>
+                                                <td>
+                                                    <p></p>
+                                                </td>
+                                                <td>
+                                                    <p>Nation Religion King</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>SalaMOM School</p>
+                                                </td>
+                                                <td>
+                                                    <p>Monthly Test in <span id="month1"></span></p>
+                                                </td>
+                                                <td>
+                                                    <p class="khmerTakteng">3</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>Grade <span id="gradeName2"></span></p>
+                                                </td>
+                                                <td>
+                                                    <p>Academic Year <span id="year1"></span></p>
+                                                </td>
+                                                <td>
+                                                    <p></p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <!--Table of Data-->
+                                    <div style="overflow-x: auto;font-family:Times New Roman,serif"
+                                        id="myNovemberSaveT">
+                                        <table class="myTable4 table table-bordered">
+                                            <thead>
+                                                <th>N0</th>
+                                                <th>Full Name</th>
+                                                <th>Sex</th>
+                                                <th>Speaking</th>
+                                                <th>Writing</th>
+                                                <th>Listening</th>
+                                                <th>Reading</th>
+                                                <th>Average</th>
+                                                <th>Rank</th>
+
+                                            </thead>
+                                            <tbody id="tbody3" contenteditable>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    <div style="overflow-x: auto;font-family:Times New Roman,serif;display: none;"
+                                        id="myNovemberSaveT2">
+                                        <table class="myTable table table-bordered">
+                                            <thead>
+                                                <th>N0</th>
+                                                <th>Full Name</th>
+                                                <th>Sex</th>
+                                                <th>Speaking</th>
+                                                <th>Writing</th>
+                                                <th>Listening</th>
+                                                <th>Reading</th>
+                                                <th>Average</th>
+                                                <th>Rank</th>
+
+                                            </thead>
+                                            <tbody id="tbodySave" contenteditable>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    <div class="title" contenteditable>
+                                        <table class=" newtable1 table-borderless">
+                                            <tr>
+                                                <td>
+
+                                                </td>
+                                                <td>
+                                                    Number of Student: <span id="TotalSs"></span> Female: <span
+                                                        id="TotalSF"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+
+                                                </td>
+                                                <td>
+                                                    Number of grades higher than the average: <span
+                                                        id="TotalSs2"></span>
+                                                    Female: <span id="TotalSF2"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+
+                                                </td>
+                                                <td>
+                                                    Number of grades lower than the average: <span id="sFail"></span>
+                                                    Female: <span id="fFails"></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div>
+                                            <br>
+                                        </div>
+                                        <table class="newtable3 table-borderless">
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    Phnom Penh, Date: <span id="showDate"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Approved by
+                                                </td>
+                                                <td>
+                                                    Signature of class teacher
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Principal of SalaMOM
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <img src="../img/Mysignature.png" alt="" style="width: 8em;">
+
+                                                </td>
+                                            </tr>
+                                        </table>
+
+
+                                    </div>
+
+                                </div>
+
+
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 1st Semester -->
+                <div class="container-fluid pt-4 px-4" id="view2">
+                    <div class="row bg-secondary rounded align-items-center justify-content-center mx-2">
+                        <div style="overflow-x: auto;font-family:Times New Roman,serif" id="myNovemberSaveT">
+                            <table class="myTable table table-bordered table-hover" id="myTableVivew1">
+                                <thead style="font-size: 12px;" class="table-warning bordered">
+                                    <th class="middle">N0</th>
+                                    <th class="middle">FULL NAME</th>
+                                    <th class="middle">SEX</th>
+                                    <th class="middle">GRADE</th>
+                                    <th class="middle">SEMESTER EXAM</th>
+                                    <th class="middle">SEMESTER AVERAGE</th>
+                                    <th class="middle">RANK</th>
+                                    <th class="middle">MENTION</th>
+
+                                </thead>
+                                <tbody id="tbodyView1" contenteditable>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="container-fluid pt-4 px-4" style="display: none;">
+                    <div class="row bg-secondary rounded align-items-center justify-content-center mx-2">
+                        <div class="modal-body">
+                            <h6 class="mb-4">Grade <span id="gradeName"></span> in November</h6>
+                            <div style="padding: 20px;" id="myfirstSemePrint">
+                                <div>
+                                    <div class="WordSection1 title" contenteditable>
+                                        <table class="table-borderless newtable">
+                                            <tr>
+                                                <td>
+                                                    <p></p>
+                                                </td>
+                                                <td>
+                                                    <p></p>
+                                                </td>
+                                                <td>
+                                                    <p>Kingdom of Cambodia</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>Department of Education of Sen Sok</p>
+                                                </td>
+                                                <td>
+                                                    <p></p>
+                                                </td>
+                                                <td>
+                                                    <p>Nation Religion King</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>SalaMOM School</p>
+                                                </td>
+                                                <td>
+                                                    <p><span id="month2"></span></p>
+                                                </td>
+                                                <td>
+                                                    <p class="khmerTakteng">3</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>Grade <span id="gradeName4"></span></p>
+                                                </td>
+                                                <td>
+                                                    <p>Academic Year <span id="year2"></span></p>
+                                                </td>
+                                                <td>
+                                                    <p></p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <!--Table of Data-->
+                                    <div style="overflow-x: auto;font-family:Times New Roman,serif"
+                                        id="myNovemberSaveT">
+                                        <table class="myTable table table-bordered">
+                                            <thead>
+                                                <th class="middle">N0</th>
+                                                <th class="middle">FULL NAME</th>
+                                                <th class="middle">SEX</th>
+                                                <th class="middle">GRADE</th>
+                                                <th class="middle">SEMESTER EXAM</th>
+                                                <th class="middle">SEMESTER AVERAGE</th>
+                                                <th class="middle">RANK</th>
+                                                <th class="middle">MENTION</th>
+
+                                            </thead>
+                                            <tbody id="tbody4" contenteditable>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    <div style="overflow-x: auto;font-family:Times New Roman,serif;display: none;"
+                                        id="myfirstSemeSaveT2">
+                                        <table class="myTable table table-bordered">
+                                            <thead>
+                                                <th>N0</th>
+                                                <th>FULL NAME</th>
+                                                <th>SEX</th>
+                                                <th>GRADE</th>
+                                                <th>SEMESTER EXAM</th>
+                                                <th>SEMESTER AVERAGE</th>
+                                                <th>RANK</th>
+                                                <th>MENTION</th>
+
+                                            </thead>
+                                            <tbody id="tbodySave1" contenteditable>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    <div class="title" contenteditable>
+
+                                        <table class=" newtable1 table-borderless">
+                                            <tr>
+                                                <td>
+
+                                                </td>
+                                                <td>
+                                                    Number of Student: <span id="TotalSs1"></span> Female: <span
+                                                        id="TotalSF1"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+
+                                                </td>
+                                                <td>
+                                                    Number of grades higher than the average: <span
+                                                        id="TotalSs3"></span>
+                                                    Female: <span id="TotalSF3"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+
+                                                </td>
+                                                <td>
+                                                    Number of grades lower than the average: <span id="sFail1"></span>
+                                                    Female: <span id="fFails1"></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div>
+                                            <br>
+                                        </div>
+                                        <table class="newtable3 table-borderless">
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    Phnom Penh, Date: <span id="showDate1"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Approved by
+                                                </td>
+                                                <td>
+                                                    Signature of class teacher
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Principal of SalaMOM
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <img src="../img/Mysignature.png" alt="" style="width: 8em;">
+
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 1st Semester Result -->
+                <div class="container-fluid pt-4 px-4" id="view3">
+                    <div class="row bg-secondary rounded align-items-center justify-content-center mx-2">
+                        <div style="overflow-x: auto;font-family:Times New Roman,serif" id="myfirstSemeRSaveT2">
+                            <table class="myTable table table-bordered table-hover" id="myTableVivew2">
+                                <thead style="font-size: 12px;" class="table-warning bordered">
+                                    <th class="middle">N0</th>
+                                    <th class="middle">FULL NAME</th>
+                                    <th class="middle">SEX</th>
+                                    <th class="middle">GRADE</th>
+                                    <th class="middle" id="in1">SEMESTER EXAM AVERAGE</th>
+                                    <th class="middle" id="in2">MONTHLY AVERAGE IN SEMESTER</th>
+                                    <th class="middle" id="in3">SEMESTER AVERAGE</th>
+                                    <th class="middle">RANK</th>
+                                    <th class="middle">MENTION</th>
+
+                                </thead>
+                                <tbody id="tbodyView2" contenteditable>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="container-fluid pt-4 px-4" style="display: none;">
+                    <div class="row bg-secondary rounded align-items-center justify-content-center mx-2">
+                        <div class="modal-body">
+                            <h6 class="mb-4">Grade <span id="gradeName"></span> in November</h6>
+                            <div style="padding: 20px;" id="myfirstSemeRPrint">
+                                <div>
+                                    <div class="WordSection1 title" contenteditable>
+
+                                        <table class="table-borderless newtable">
+                                            <tr>
+                                                <td>
+                                                    <p></p>
+                                                </td>
+                                                <td>
+                                                    <p></p>
+                                                </td>
+                                                <td>
+                                                    <p>Kingdom of Cambodia</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>Department of Education of Sen Sok</p>
+                                                </td>
+                                                <td>
+                                                    <p></p>
+                                                </td>
+                                                <td>
+                                                    <p>Nation Religion King</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>SalaMOM School</p>
+                                                </td>
+                                                <td>
+                                                    <p><span id="month3"></span></p>
+                                                </td>
+                                                <td>
+                                                    <p class="khmerTakteng">3</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>Grade <span id="gradeName8"></span></p>
+                                                </td>
+                                                <td>
+                                                    <p>Academic Year <span id="year3"></span></p>
+                                                </td>
+                                                <td>
+                                                    <p></p>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+
+                                    </div>
+                                    <!--Table of Data-->
+                                    <div style="overflow-x: auto;font-family:Times New Roman,serif"
+                                        id="myNovemberSaveT">
+                                        <table class="myTable3 table table-bordered">
+                                            <thead class="middle">
+                                                <th class="middle">N0</th>
+                                                <th class="middle">FULL NAME</th>
+                                                <th class="middle">SEX</th>
+                                                <th class="middle">GRADE</th>
+                                                <th class="middle" id="in4">SEMESTER EXAM AVERAGE</th>
+                                                <th class="middle" id="in5">MONTHLY AVERAGE IN SEMESTER</th>
+                                                <th class="middle" id="in6">SEMESTER AVERAGE</th>
+                                                <th class="middle">RANK</th>
+                                                <th class="middle">MENTION</th>
+
+                                            </thead>
+                                            <tbody id="tbody5" contenteditable>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    <div style="overflow-x: auto;font-family:Times New Roman,serif;display: none;"
+                                        id="myfirstSemeSaveT2">
+                                        <table class="myTable table table-bordered">
+                                            <thead>
+                                                <th>N0</th>
+                                                <th>FULL NAME</th>
+                                                <th>SEX</th>
+                                                <th>GRADE</th>
+                                                <th id="in7">SEMESTER EXAM AVERAGE</th>
+                                                <th id="in8">MONTHLY AVERAGE IN SEMESTER</th>
+                                                <th id="in9">SEMESTER AVERAGE</th>
+                                                <th>RANK</th>
+                                                <th>MENTION</th>
+
+                                            </thead>
+                                            <tbody id="tbodySave2" contenteditable>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    <div class="title" contenteditable>
+                                        <table class=" newtable1 table-borderless">
+                                            <tr>
+                                                <td>
+
+                                                </td>
+                                                <td>
+                                                    Number of Student: <span id="TotalSs5"></span> Female: <span
+                                                        id="TotalSF6"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+
+                                                </td>
+                                                <td>
+                                                    Number of grades higher than the average: <span
+                                                        id="TotalSs6"></span>
+                                                    Female: <span id="TotalSF5"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+
+                                                </td>
+                                                <td>
+                                                    Number of grades lower than the average: <span id="sFail5"></span>
+                                                    Female: <span id="fFails5"></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div>
+                                            <br>
+                                        </div>
+                                        <table class="newtable3 table-borderless">
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    Phnom Penh, Date: <span id="showDate2"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Approved by
+                                                </td>
+                                                <td>
+                                                    Signature of class teacher
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Principal of SalaMOM
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <img src="../img/Mysignature.png" alt="" style="width: 8em;">
+
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- Blank End -->
+
+
+            <!-- Footer Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            &copy; <a><span id="companyName"></span></a>, All Right Reserved.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/chart/chart.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <!-- <script src="../lib/owlcarousel/owl.carousel.min.js"></script> -->
+    <script src="../lib/tempusdominus/js/moment.min.js"></script>
+    <script src="../lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="../lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <!-- Template Javascript -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-auth-compat.js"></script>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/caculate.js"></script>
+    <!-- <script src="./js/firebaseShow.js"></script> -->
+    <script src="./g5aprint/connectionpreview.js"></script>
+    <script src="../js/user.js"></script>
+    <script src="../js/connectionPrint.js"></script>
+    <script>
+        document.getElementById('enrolGrade').addEventListener('change', function () {
+            var preGrade = document.getElementById('enrolGrade').value;
+            localStorage.setItem('preGrade', preGrade);
+            window.location.reload();
+
+        })
+        document.getElementById('academicYear').addEventListener('change', function () {
+            var preYear = document.getElementById('academicYear').value;
+            localStorage.setItem('preYear', preYear);
+            window.location.reload();
+
+        })
+        document.getElementById('myMonth').addEventListener('change', function () {
+            var preMonth = document.getElementById('myMonth').value;
+            localStorage.setItem('preMonth', preMonth);
+            window.location.reload();
+
+        })
+        var db = localStorage.getItem("preGrade"); //Grade
+        var db2 = localStorage.getItem("preMonth"); //Month
+        var db3 = localStorage.getItem("preYear");  //Year
+        document.getElementById('enrolGrade').value = db;
+        document.getElementById('academicYear').value = db3;
+        document.getElementById('myMonth').value = db2;
+        document.getElementById('inGrade').innerText = db;
+    </script>
+    <!-- <script type="module" src="./js/firebaseInput.js"></script> -->
+</body>
+
+</html>
