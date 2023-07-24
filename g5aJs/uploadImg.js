@@ -1,18 +1,3 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-import { getStorage, ref as sRef, uploadBytesResumable,getDownloadURL }
- from "https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js"
-
-const firebaseConfig = {
-    apiKey: "AIzaSyAJ61CR4hcHajBf8T02wl-REVx8SnRxklE",
-    authDomain: "useradmin-cd653.firebaseapp.com",
-    databaseURL: "https://useradmin-cd653-default-rtdb.firebaseio.com",
-    projectId: "useradmin-cd653",
-    storageBucket: "useradmin-cd653.appspot.com",
-    messagingSenderId: "51017691764",
-    appId: "1:51017691764:web:9f322ae1ee6c00c5ce5721"
-};
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
 var files = [];
 var reader = new FileReader();
 var nameBox = document.getElementById('nameBox');
@@ -59,9 +44,10 @@ async function UploadProcess() {
     const metaData = {
         contenType: ImgToUpload.type
     }
-    const storage = getStorage();
-    const stroageRef = sRef(storage, 'StdImages/' + `${dbYear}/` + `${dbGrade}/` + ImgName);
-    const UploadTask = uploadBytesResumable(stroageRef, ImgToUpload, metaData);
+    const storage = firebase.storage().ref();
+    // const stroageRef = sRef(storage, 'StdImages/' + `${dbYear}/` + `${dbGrade}/` + ImgName);
+    // const UploadTask = uploadBytesResumable(stroageRef, ImgToUpload, metaData);
+    var UploadTask = storage.child('StdImages/' + `${dbYear}/` + `${dbGrade}/` + ImgName).put(ImgToUpload);
 
     UploadTask.on('state-changed', (snapshot) => {
         var progess = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -72,7 +58,7 @@ async function UploadProcess() {
         alert("error: image not uploaded!");
     },
     () => {
-        getDownloadURL(UploadTask.snapshot.ref).then((getDownloadURL) => {
+        UploadTask.snapshot.ref.getDownloadURL().then((getDownloadURL) => {
             showURL.value = getDownloadURL;
             proglab.innerHTML = `Upload completed!<img style="width: 75px;" src="./img/completedPer.gif">`;
             setTimeout(function(){
