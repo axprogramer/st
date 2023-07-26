@@ -1,10 +1,10 @@
 function user(){
-    var user = "SalaMOM";
-    var title = "SM Sys"
-    var position = "Teacher"
+    var user = "SalaMOM School";
+    var title = "SM Sys All"
+    var position = "Primary Class"
     var g5a = "5A";
     var g5b = "5B";
-    var name = "SalaMOM"
+    var name = "SalaMOM School"
     var year = "2022-2023"
     var db = "5cAllData"
     var img = "https://jobboom.asia/media/imagemodule/8c07e28fab10abc458e373f3d20c75f9.png"
