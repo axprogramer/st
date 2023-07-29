@@ -214,22 +214,22 @@ document.getElementById('goPrint').addEventListener('click', function () {
     return true;
 })
 
-document.getElementById('week1').addEventListener('click', function () {
-    document.getElementById('dis1').style.display = 'none';
-    document.getElementById('dis2').style.display = 'none';
-    document.getElementById('dis3').style.display = 'none';
+// document.getElementById('week1').addEventListener('click', function () {
+//     document.getElementById('dis1').style.display = 'none';
+//     document.getElementById('dis2').style.display = 'none';
+//     document.getElementById('dis3').style.display = 'none';
 
-})
-document.getElementById('week2').addEventListener('click', function () {
-    document.getElementById('dis4').style.display = 'none';
-    document.getElementById('dis5').style.display = 'none';
-    document.getElementById('dis6').style.display = 'none';
+// })
+// document.getElementById('week2').addEventListener('click', function () {
+//     document.getElementById('dis4').style.display = 'none';
+//     document.getElementById('dis5').style.display = 'none';
+//     document.getElementById('dis6').style.display = 'none';
 
-})
-document.getElementById('timeShow').addEventListener('click', function () {
-    document.getElementById('myshowTable').style.display = 'none';
+// })
+// document.getElementById('timeShow').addEventListener('click', function () {
+//     document.getElementById('myshowTable').style.display = 'none';
 
-})
+// })
 
 //push data to JOSON
 
