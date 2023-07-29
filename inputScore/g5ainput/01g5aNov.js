@@ -32,7 +32,7 @@ function selectAllData() {
           var name = CurrentRecord.val().name;
           var id = CurrentRecord.val().id;
           var sex = CurrentRecord.val().sex;
-          // var grade = CurrentRecord.val().grade;
+          var score = CurrentRecord.val().scoreNov;
           var speakingNov = CurrentRecord.val().speakingNov;
           var writingNov = CurrentRecord.val().writingNov;
           var listeningNov = CurrentRecord.val().listeningNov;
@@ -41,7 +41,7 @@ function selectAllData() {
           var rankNOv = CurrentRecord.val().rankNOv;
           var myKh = CurrentRecord.val().myKh;
           addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
-            readingNov, averageNov, rankNOv, myKh);
+            readingNov, averageNov, rankNOv, myKh, score);
           showAuto();
           b = 1;
           document.getElementById('showNNN').value = b;
@@ -85,7 +85,7 @@ var studentN0;
 
 var stdList = [];
 function addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
-  readingNov, averageNov, rankNOv, myKh) {
+  readingNov, averageNov, rankNOv, myKh, score) {
   var tbody = document.getElementById('showData');
   var trow = document.createElement('tr');
   var td0 = document.createElement('td');
@@ -96,20 +96,838 @@ function addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
   var td5 = document.createElement('td');
   var td6 = document.createElement('td');
   var td7 = document.createElement('td');
+  var td8 = document.createElement('td');
 
-
-
-
+  td3.contentEditable = true;
+  td3.id = `${id}score`;
+  let ssid = `${id}score`;
+  let spid = `${id}sp`;
+  let wrid = `${id}wr`;
+  let lisid = `${id}lis`;
+  let reid = `${id}re`;
+  td4.id = spid;
+  td5.id = wrid;
+  td6.id = lisid;
+  td7.id = reid;
   stdList.push([name, id, sex, speakingNov, writingNov, listeningNov,
-    readingNov, averageNov, rankNOv, myKh]);
+    readingNov, averageNov, rankNOv, myKh, score]);
   td0.innerHTML = ++studentN0;
   td1.innerHTML = id;
   td2.innerHTML = sex;
-  td3.innerHTML = speakingNov;
-  td4.innerHTML = writingNov;
-  td5.innerHTML = listeningNov;
-  td6.innerHTML = readingNov;
-  td7.innerHTML = averageNov;
+  td4.innerHTML = speakingNov;
+  td5.innerHTML = writingNov;
+  td6.innerHTML = listeningNov;
+  td7.innerHTML = readingNov;
+  td8.innerHTML = averageNov;
+  if (score == undefined) {
+    td3.innerHTML = 0;
+
+  } else {
+    td3.innerHTML = score;
+
+  }
+  const sleep = async (milliseconds) => {
+    await new Promise(resolve => {
+      return setTimeout(resolve, milliseconds);
+    });
+    let ss = document.getElementById(`${ssid}`);
+
+    ss.addEventListener('click', () => {
+      if (td3.innerHTML == 0) {
+        td3.innerHTML = '';
+      } else {
+
+      }
+    })
+    ss.addEventListener('input', () => {
+      var data = td3.innerHTML;
+      let di = td3.innerHTML / 4;
+      di = di.toFixed(2).replace(/[.,]00$/, "");
+      if (
+        di >= 0 
+        ) {
+        let pi = 0
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >= 0.25
+        ) {
+        let pi = 0.25
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >= 0.50
+        ) {
+        let pi = 0.50
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=0.75 
+        ) {
+        let pi = 0.75
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+
+
+      if (
+        di >= 1 
+        ) {
+        let pi = 1
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >= 1.25
+        ) {
+        let pi = 1.25
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >= 1.50
+        ) {
+        let pi = 1.50
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=1.75 
+        ) {
+        let pi = 1.75
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+
+      if (
+        di >= 2 
+        ) {
+        let pi = 2
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >= 2.25
+        ) {
+        let pi = 2.25
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >= 2.50
+        ) {
+        let pi = 2.50
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=2.75 
+        ) {
+        let pi = 2.75
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+
+
+      if (
+        di >= 3 
+        ) {
+        let pi = 3
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >= 3.25
+        ) {
+        let pi = 3.25
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >= 3.50
+        ) {
+        let pi = 3.50
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=3.75 
+        ) {
+        let pi = 3.75
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+
+
+
+      if (
+        di >= 4 
+        ) {
+        let pi = 4
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >= 4.25
+        ) {
+        let pi = 4.25
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >= 4.50
+        ) {
+        let pi = 4.50
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=4.75 
+        ) {
+        let pi = 4.75
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+
+
+
+
+      if (
+        di >= 5 
+        ) {
+        let pi = 5
+        td4.innerHTML = 5;
+        td5.innerHTML = 5;
+        td6.innerHTML = 5;
+        td7.innerHTML = 5;
+        td8.innerHTML = 5;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >= 5.25
+        ) {
+        let pi = 5.25
+        td4.innerHTML = 5.25;
+        td5.innerHTML = 5.25;
+        td6.innerHTML = 5.25;
+        td7.innerHTML = 5.25;
+        td8.innerHTML = 5.25;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >= 5.50
+        ) {
+        let pi = 5.50
+        td4.innerHTML = 5.50;
+        td5.innerHTML = 5.50;
+        td6.innerHTML = 5.50;
+        td7.innerHTML = 5.50;
+        td8.innerHTML = 5.50;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=5.75 
+        ) {
+        let pi = 5.75
+        td4.innerHTML = 5.75;
+        td5.innerHTML = 5.75;
+        td6.innerHTML = 5.75;
+        td7.innerHTML = 5.75;
+        td8.innerHTML = 5.75;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=6 
+        ) {
+        let pi = 6
+        td4.innerHTML = 6;
+        td5.innerHTML = 6;
+        td6.innerHTML = 6;
+        td7.innerHTML = 6;
+        td8.innerHTML = 6;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=6.25 
+        ) {
+        let pi = 6.25
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=6.75 
+        ) {
+        let pi = 6.75
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=7 
+        ) {
+        let pi = 7
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=7.25 
+        ) {
+        let pi = 7.25
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=7.50 
+        ) {
+        let pi = 7.50
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=7.75 
+        ) {
+        let pi = 7.75
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=8 
+        ) {
+        let pi = 8
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=8.25 
+        ) {
+        let pi = 8.25
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=8.50 
+        ) {
+        let pi = 8.50
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=8.75 
+        ) {
+        let pi = 8.75
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=9 
+        ) {
+        let pi = 9
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=9.25 
+        ) {
+        let pi = 9.25
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=9.50 
+        ) {
+        let pi = 9.50
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di >=9.75 
+        ) {
+        let pi = 9.75
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      if (
+        di == 10 
+        ) {
+        let pi = 10
+        td4.innerHTML = pi;
+        td5.innerHTML = pi;
+        td6.innerHTML = pi;
+        td7.innerHTML = pi;
+        td8.innerHTML = pi;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingNov: pi,
+            writingNov: pi,
+            listeningNov: pi,
+            readingNov: pi,
+            averageNov: pi,
+          },
+        )
+      }
+      firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+        {
+          scoreNov: data,
+        },
+      )
+    })
+
+
+  };
+  sleep(1000);
+  // document.getElementById(`${id}score`).addEventListener('click',()=>{
+
+  // })
 
 
   trow.appendChild(td0);
@@ -120,6 +938,7 @@ function addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
   trow.appendChild(td5);
   trow.appendChild(td6);
   trow.appendChild(td7);
+  trow.appendChild(td8);
 
   td1.innerHTML = `<button type="button" class="button-7" onclick="Fillbox(${studentN0})">${myKh}</button>`;
   tbody.appendChild(trow);
@@ -134,6 +953,7 @@ var MwritingNov = document.getElementById('myWnov');
 var MlisteningNov = document.getElementById('myLnov');
 var MreadingNov = document.getElementById('myRnov');
 var MaverageNov = document.getElementById('myAnov');
+var Mscore = document.getElementById('myScorenov');
 var span = document.getElementById('span1');
 
 var submit = document.getElementById("mySubmit");
@@ -149,6 +969,7 @@ function showAuto() {
   MlisteningNov.value = stdList[0][5];
   MreadingNov.value = stdList[0][6];
   MaverageNov.value = stdList[0][7];
+  Mscore.value = stdList[0][10];
   btnupdate.style.display = 'inline-block';
   dele.style.display = 'inline-block';
 
@@ -180,6 +1001,7 @@ function nextBtn() {
   MlisteningNov.value = stdList[oo][5];
   MreadingNov.value = stdList[oo][6];
   MaverageNov.value = stdList[oo][7];
+  Mscore.value = stdList[oo][10];
 
 }
 function goBack() {
@@ -198,6 +1020,7 @@ function goBack() {
   MlisteningNov.value = stdList[oo][5];
   MreadingNov.value = stdList[oo][6];
   MaverageNov.value = stdList[oo][7];
+  Mscore.value = stdList[oo][10];
 }
 function Fillbox(index) {
   b = index;
@@ -217,6 +1040,7 @@ function Fillbox(index) {
   MlisteningNov.value = stdList[index][5];
   MreadingNov.value = stdList[index][6];
   MaverageNov.value = stdList[index][7];
+  Mscore.value = stdList[index][10];
 
   submit.style.display = 'none';
   btnupdate.style.display = 'inline-block';
@@ -260,7 +1084,7 @@ function NewBox() {
   var MlisteningNov = document.getElementById('myLnov');
   var MreadingNov = document.getElementById('myRnov');
   var MaverageNov = document.getElementById('myAnov');
-
+  var Mscore = document.getElementById('myScorenov');
   Mname.value = "";
   Mid.value = "";
   Msex.value = "";
@@ -269,6 +1093,7 @@ function NewBox() {
   MlisteningNov.value = "";
   MreadingNov.value = "";
   MaverageNov.value = "";
+  Mscore.value = "";
 }
 
 function AddStd(e) {
@@ -303,6 +1128,7 @@ function UpStd(e) {
       listeningNov: MlisteningNov.value,
       readingNov: MreadingNov.value,
       averageNov: MaverageNov.value,
+      scoreNov: Mscore.value,
     },
   )
   document.getElementById("showAlert").style.display = "block";
