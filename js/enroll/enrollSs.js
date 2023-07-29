@@ -228,6 +228,14 @@ function cook2() {
 
       },
     )
+    firebase.database().ref(`${gradeAact}/` + `recordActivity/` + `${yearAact}/` + `Total/` + `${dbmonthAct}/` + idM).set(
+      {
+        name: enname,
+        sex: sex,
+        id: idM,
+        
+      },
+    )
 
   }
 

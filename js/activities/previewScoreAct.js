@@ -15,41 +15,38 @@ var dbgradeAct = localStorage.getItem('previewgradeAct'); // grade activity
 var dbyearAct = localStorage.getItem('previewyeareAct'); // year activity
 var dbdiviAct = localStorage.getItem('previewdiviAct'); // divide activity
 
-const getElementVal = (id) => {
-    return document.getElementById(id).value;
-};
 function selectAllData() {
     document.getElementById('myActivities').innerHTML = "";
     studentN0 = 0;
     firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/`).once('value',
         function (AllRecords) {
             AllRecords.forEach(
-                function (CurrentRecord) {
-                    var name = CurrentRecord.val().name;
-                    var id = CurrentRecord.val().id;
-                    var sex = CurrentRecord.val().sex;
-                    var book = CurrentRecord.val().book;
-                    var pt = CurrentRecord.val().pt;
-                    var s1 = CurrentRecord.val().total1;
-                    var s2 = CurrentRecord.val().total2;
-                    var s3 = CurrentRecord.val().total3;
-                    var s4 = CurrentRecord.val().total4;
-                    var s5 = CurrentRecord.val().total5;
-                    var s6 = CurrentRecord.val().total6;
-                    var s7 = CurrentRecord.val().total7;
-                    var s8 = CurrentRecord.val().total8;
-                    var s9 = CurrentRecord.val().total9;
-                    var s10 = CurrentRecord.val().total10;
-                    var s11 = CurrentRecord.val().total11;
-                    var s12 = CurrentRecord.val().total12;
-                    var s13 = CurrentRecord.val().total13;
-                    var s14 = CurrentRecord.val().total14;
-                    var s15 = CurrentRecord.val().total15;
-                    var s16 = CurrentRecord.val().total16;
-                    var s17 = CurrentRecord.val().total17;
-                    var s18 = CurrentRecord.val().total18;
-                    var s19 = CurrentRecord.val().total19;
-                    var s20 = CurrentRecord.val().total20;
+                function (actData) {
+                    var name = actData.val().name;
+                    var id = actData.val().id;
+                    var sex = actData.val().sex;
+                    var book = actData.val().book;
+                    var pt = actData.val().pt;
+                    var s1 = actData.val().total1;
+                    var s2 = actData.val().total2;
+                    var s3 = actData.val().total3;
+                    var s4 = actData.val().total4;
+                    var s5 = actData.val().total5;
+                    var s6 = actData.val().total6;
+                    var s7 = actData.val().total7;
+                    var s8 = actData.val().total8;
+                    var s9 = actData.val().total9;
+                    var s10 = actData.val().total10;
+                    var s11 = actData.val().total11;
+                    var s12 = actData.val().total12;
+                    var s13 = actData.val().total13;
+                    var s14 = actData.val().total14;
+                    var s15 = actData.val().total15;
+                    var s16 = actData.val().total16;
+                    var s17 = actData.val().total17;
+                    var s18 = actData.val().total18;
+                    var s19 = actData.val().total19;
+                    var s20 = actData.val().total20;
                     addItemsToTable(name, id, sex,
                         book, pt, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13,
                         s14, s15, s16, s17, s18, s19, s20);
@@ -98,9 +95,9 @@ function addItemsToTable(name, id, sex,
     var br1 = document.createElement('br');
     var spanBook = document.createElement('span');
     var spanPT = document.createElement('span');
+    var noSpname = id.replace(/\s+/g, '');
     tdS21.style.color = 'red';
     //Name no space
-    var noSpname = id.replace(/\s+/g, '');
     //Name class for each row
     tdbook.className = `${noSpname}book`;
     tdPT.className = `${noSpname}pt`;
