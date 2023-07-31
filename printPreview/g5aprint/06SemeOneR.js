@@ -242,6 +242,7 @@ function GetDataSave2(datas) {
     var last2m = parseFloat(alltotal2m).toFixed(2);
 
     students.push({
+      name,
       myKh,
       sex,
       grade,
@@ -292,6 +293,7 @@ function GetDataSave2(datas) {
 
     let tr = `
             <td>${No}</td>
+            <td>${student.name}</td>
             <td>${student.myKh}</td>
             <td>${student.sex}</td>
             <td>${student.grade}</td>

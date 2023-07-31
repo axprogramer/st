@@ -245,6 +245,7 @@ function GetDataSave2(datas) {
     // console.log(last2m);
 
     students.push({
+      name,
       sex,
       grade,
       my2Se,
@@ -293,6 +294,7 @@ function GetDataSave2(datas) {
 
     let tr = `
             <td>${No}</td>
+            <td>${student.name}</td>
             <td>${student.myKh}</td>
             <td>${student.sex}</td>
             <td>${student.grade}</td>

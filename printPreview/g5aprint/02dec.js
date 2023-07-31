@@ -182,6 +182,7 @@ function GetDataSave2(datas) {
 
 
     students.push({
+      name,
       myKh,
       sex,
       speakingDec,
@@ -209,6 +210,7 @@ function GetDataSave2(datas) {
     No++;
     let tr = `
             <td>${No}</td>
+            <td>${student.name}</td>
             <td>${student.myKh}</td>
             <td>${student.sex}</td>
             <td>${student.speakingDec}</td>

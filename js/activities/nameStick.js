@@ -13,6 +13,13 @@ firebase.initializeApp(firebaseConfig);
 const getElementVal = (id) => {
     return document.getElementById(id).value;
 };
+var dbgradename = localStorage.getItem('GradeNameStick'); // grade name stick
+var dbyearname = localStorage.getItem('YearNameStick'); // year name stick
+var dbnamepic = localStorage.getItem('namePic'); // name and pic
+document.getElementById('myGradeNameStick').value = dbgradename;
+document.getElementById('myYearNameStick').value = dbyearname;
+document.getElementById('namePic').value = dbnamepic;
+
 function selectAllData() {
     // document.getElementById('myScedual').innerHTML = "";
     firebase.database().ref(`${dbgradename}/` + `${dbyearname}/`).once('value',
@@ -47,7 +54,43 @@ function addItemsToTable(
 ) {
     var container = document.getElementById('myShowName');
     var containerPic = document.getElementById('myShowPic');
-
+    let gradeName = '';
+    if (dbgradename == '1A'){
+        gradeName = '១ «ក»';
+    }
+    else if(dbgradename == '1B'){
+        gradeName = '១ «ខ»';
+    }
+    if (dbgradename == '2A'){
+        gradeName = '២ «ក»';
+    }
+    else if(dbgradename == '2B'){
+        gradeName = '២ «ខ»';
+    }
+    if (dbgradename == '3A'){
+        gradeName = '៣ «ក»';
+    }
+    else if(dbgradename == '3B'){
+        gradeName = '៣ «ខ»';
+    }
+    if (dbgradename == '4A'){
+        gradeName = '៤ «ក»';
+    }
+    else if(dbgradename == '4B'){
+        gradeName = '៤ «ខ»';
+    }
+    if (dbgradename == '5A'){
+        gradeName = '៥ «ក»';
+    }
+    else if(dbgradename == '5B'){
+        gradeName = '៥ «ខ»';
+    }
+    if (dbgradename == '6A'){
+        gradeName = '៦ «ក»';
+    }
+    else if(dbgradename == '6B'){
+        gradeName = '៦ «ខ»';
+    }
     let pic = `
             <td class="grid-item">
                 <img src="${url}"
@@ -57,23 +100,39 @@ function addItemsToTable(
     `
     let tt = `
                                     <tr>
-                                        <td style="border: black solid 1px;padding: 5px;width: 25rem;">
+                                        <td style="border: black solid 1px;padding: 7px;width: 5rem;font-weight: bold;">Name </td>
+
+                                        <td style="border: black solid 1px;text-align: center;padding: 7px;width: 25rem;font-weight: bold;">
                                             ${name}
                                         </td>
-                                        <td style="border: black solid 1px; text-align: center;width: 40px;">
-                                            ${sex}
+                                        <td style="border: black solid 1px; text-align: center;width: 10rem;font-weight: bold;">
+                                         Grade   ${grade}
                                         </td>
     
                                     </tr>
 
 
     `
-    if (dbnamepic == 'Pictures'){
+    let khname = `
+        <tr>
+                <td style="border: black solid 1px;padding: 7px;width: 5rem;font-weight: bold;">ឈ្មោះ </td>
+                <td style="border: black solid 1px;padding: 7px;width: 20rem;font-weight: bold;">
+                                            ${myKh}
+                                        </td>
+                <td style="border: black solid 1px; text-align: center;width: 15rem;font-weight: bold;">
+                                           ថ្នាក់ទី  ${gradeName}
+                                        </td>
+
+        </tr>
+    `
+    if (dbnamepic == 'Pictures') {
         containerPic.innerHTML += pic;
 
-    }else{
+    } else if (dbnamepic == 'Name') {
         container.innerHTML += tt;
 
+    } else {
+        container.innerHTML += khname;
     }
 }
 
@@ -95,12 +154,6 @@ document.getElementById('namePic').addEventListener('change', function () {
 
 })
 
-var dbgradename = localStorage.getItem('GradeNameStick'); // grade name stick
-var dbyearname = localStorage.getItem('YearNameStick'); // year name stick
-var dbnamepic = localStorage.getItem('namePic'); // name and pic
-document.getElementById('myGradeNameStick').value = dbgradename;
-document.getElementById('myYearNameStick').value = dbyearname;
-document.getElementById('namePic').value = dbnamepic;
 
 
 //Save data to firebase

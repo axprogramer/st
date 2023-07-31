@@ -170,8 +170,56 @@
                                 style="width: 40px; height: 40px;">
                             <span class="d-none d-lg-inline-flex"><span id="myUser2"></span></span>
                         </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal">How to
+                                use Score Function 4</a>
+                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal1">How to
+                                use Score Function 3</a>
+                            <!-- <a href="#" class="dropdown-item">Settings</a>
+                                                                                                <a href="#" class="dropdown-item">Log Out</a> -->
+                        </div>
                     </div>
                 </div>
+            </nav>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: black;">How to use
+                                'Score Function 4'</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <video id="playVV" controls="" name="media" style="width: 100%;height: auto;">
+                                <source id="myPlayer"
+                                    src="https://firebasestorage.googleapis.com/v0/b/useradmin-cd653.appspot.com/o/videos%2FScore%20Record%204.mp4?alt=media&token=a6d138b6-8f8d-4687-b592-03f810d13b61"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: black;">How to use
+                                'Score Function 3'</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <video id="playVV" controls="" name="media" style="width: 100%;height: auto;">
+                                <source id="myPlayer"
+                                    src="https://firebasestorage.googleapis.com/v0/b/useradmin-cd653.appspot.com/o/videos%2FScore%20Function%203.mp4?alt=media&token=38ab243d-52fa-4280-b62b-4d5f515f1d0e"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </nav>
             <!-- Navbar End -->
 
@@ -348,8 +396,7 @@
                                     </td>
                                     <td>
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="myScorenov"
-                                                placeholder="Score">
+                                            <input type="text" class="form-control" id="myScorenov" placeholder="Score">
                                             <label for="myScorenov">Score</label>
                                         </div>
                                     </td>
@@ -401,38 +448,38 @@
                         <h6 class="mb-4 gen" style="text-align: center;"><span id="inMonth1"></span></h6>
                         <div style="overflow: auto;height: 20rem;">
                             <table class="myTable table table-bordered gen whiteBack table-hover" id="myTable">
+                                <thead class="table-success bordered myThead">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Khmer Name</th>
+                                        <th scope="col">Sex</th>
+                                        <th scope="col">Score</th>
+                                        <th scope="col">Speaking</th>
+                                        <th scope="col">Writing</th>
+                                        <th scope="col">Listening</th>
+                                        <th scope="col">Reading</th>
+                                        <th scope="col">Average</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="showData">
+                                </tbody>
+                            </table>
+                            <div class="myCenter">
+                                <table class="myTable6 table table-bordered whiteBack table-hover" id="myTable2">
                                     <thead class="table-success bordered myThead">
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Khmer Name</th>
                                             <th scope="col">Sex</th>
-                                            <th scope="col">Score</th>
-                                            <th scope="col">Speaking</th>
-                                            <th scope="col">Writing</th>
-                                            <th scope="col">Listening</th>
-                                            <th scope="col">Reading</th>
+                                            <th scope="col">1st Semester Score</th>
                                             <th scope="col">Average</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="showData">
+                                    <tbody id="showData1">
                                     </tbody>
                                 </table>
-                                <div class="myCenter">
-                                    <table class="myTable6 table table-bordered whiteBack table-hover" id="myTable2">
-                                        <thead class="table-success bordered myThead">
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Khmer Name</th>
-                                                <th scope="col">Sex</th>
-                                                <th scope="col">1st Semester Score</th>
-                                                <th scope="col">Average</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="showData1">
-                                        </tbody>
-                                    </table>
-    
-                                </div>
+
+                            </div>
 
                         </div>
                     </div>
