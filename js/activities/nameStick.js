@@ -116,10 +116,10 @@ function addItemsToTable(
     let khname = `
         <tr>
                 <td style="border: black solid 1px;padding: 7px;width: 5rem;font-weight: bold;">ឈ្មោះ </td>
-                <td style="border: black solid 1px;padding: 7px;width: 20rem;font-weight: bold;">
+                <td style="border: black solid 1px;padding: 7px;width: 20rem;text-align: center;font-weight: bold;">
                                             ${myKh}
                                         </td>
-                <td style="border: black solid 1px; text-align: center;width: 15rem;font-weight: bold;">
+                <td style="border: black solid 1px; text-align: center;width: 15rem;text-align: center;font-weight: bold;">
                                            ថ្នាក់ទី  ${gradeName}
                                         </td>
 
