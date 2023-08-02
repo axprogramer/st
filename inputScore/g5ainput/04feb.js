@@ -28,6 +28,7 @@ function selectAllData() {
           var name = CurrentRecord.val().name;
           var id = CurrentRecord.val().id;
           var sex = CurrentRecord.val().sex;
+          var score = CurrentRecord.val().scorefeb;
           var speakingfeb = CurrentRecord.val().speakingfeb;
           var writingfeb = CurrentRecord.val().writingfeb;
           var listeningfeb = CurrentRecord.val().listeningfeb;
@@ -35,7 +36,7 @@ function selectAllData() {
           var averagefeb = CurrentRecord.val().averagefeb;
           var myKh = CurrentRecord.val().myKh;
           addItemsToTable(name, id, sex, speakingfeb, writingfeb,
-            listeningfeb, readingfeb, averagefeb, myKh);
+            listeningfeb, readingfeb, averagefeb, myKh,score);
           showAuto();
           b = 1;
           document.getElementById('showNNN').value = b;
@@ -49,7 +50,7 @@ var studentN0;
 
 var stdList = [];
 function addItemsToTable(name, id, sex, speakingfeb, writingfeb,
-  listeningfeb, readingfeb, averagefeb, myKh) {
+  listeningfeb, readingfeb, averagefeb, myKh,score) {
   var tbody = document.getElementById('showData');
   var trow = document.createElement('tr');
   var td0 = document.createElement('td');
@@ -60,18 +61,102 @@ function addItemsToTable(name, id, sex, speakingfeb, writingfeb,
   var td5 = document.createElement('td');
   var td6 = document.createElement('td');
   var td7 = document.createElement('td');
+  var td8 = document.createElement('td');
+
+  td3.contentEditable = true;
+  td3.id = `${id}score`;
+  let ssid = `${id}score`;
+  let spid = `${id}sp`;
+  let wrid = `${id}wr`;
+  let lisid = `${id}lis`;
+  let reid = `${id}re`;
+  td4.id = spid;
+  td5.id = wrid;
+  td6.id = lisid;
+  td7.id = reid;
 
   stdList.push([name, id, sex, speakingfeb, writingfeb,
-    listeningfeb, readingfeb, averagefeb, myKh]);
+    listeningfeb, readingfeb, averagefeb, myKh,score]);
   td0.innerHTML = ++studentN0;
   td1.innerHTML = id;
   td2.innerHTML = sex;
-  td3.innerHTML = speakingfeb;
-  td4.innerHTML = writingfeb;
-  td5.innerHTML = listeningfeb;
-  td6.innerHTML = readingfeb;
-  td7.innerHTML = averagefeb;
 
+
+  if (speakingfeb == undefined) {
+    td4.innerHTML = 0;
+  } else {
+
+    td4.innerHTML = speakingfeb;
+  }
+  if (writingfeb == undefined) {
+    td5.innerHTML = 0;
+  } else {
+
+    td5.innerHTML = writingfeb;
+  }
+  if (listeningfeb == undefined) {
+    td6.innerHTML = 0;
+  } else {
+
+    td6.innerHTML = listeningfeb;
+  }
+  if (readingfeb == undefined) {
+    td7.innerHTML = 0;
+  } else {
+
+    td7.innerHTML = readingfeb;
+  }
+  if (averagefeb == undefined) {
+    td8.innerHTML = 0;
+  } else {
+
+    td8.innerHTML = averagefeb;
+  }
+
+  if (score == undefined) {
+    td3.innerHTML = 0;
+
+  } else {
+    td3.innerHTML = score;
+
+  }
+  const sleep = async (milliseconds) => {
+    await new Promise(resolve => {
+      return setTimeout(resolve, milliseconds);
+    });
+    let ss = document.getElementById(`${ssid}`);
+
+    ss.addEventListener('click', () => {
+      if (td3.innerHTML == 0) {
+        td3.innerHTML = '';
+      } else {
+
+      }
+    })
+    ss.addEventListener('input', () => {
+      let data = ss.innerHTML;
+      let di = td3.innerHTML / 4;
+      di = di.toFixed(2).replace(/[.,]00$/, "");
+      td4.innerHTML = di;
+      td5.innerHTML = di;
+      td6.innerHTML = di;
+      td7.innerHTML = di;
+      td8.innerHTML = di;
+      firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+        {
+          speakingfeb: di,
+          writingfeb: di,
+          listeningfeb: di,
+          readingfeb: di,
+          averagefeb: di,
+          scorefeb: data,
+        },
+      )
+    })
+
+
+  };
+  sleep(1000);
 
   trow.appendChild(td0);
   trow.appendChild(td1);
@@ -81,6 +166,7 @@ function addItemsToTable(name, id, sex, speakingfeb, writingfeb,
   trow.appendChild(td5);
   trow.appendChild(td6);
   trow.appendChild(td7);
+  trow.appendChild(td8);
 
   td1.innerHTML = `<button type="button" class="button-7" onclick="Fillbox(${studentN0})">${myKh}</button>`;
   tbody.appendChild(trow);

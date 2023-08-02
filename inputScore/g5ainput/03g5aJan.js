@@ -28,6 +28,7 @@ function selectAllData() {
           var name = CurrentRecord.val().name;
           var id = CurrentRecord.val().id;
           var sex = CurrentRecord.val().sex;
+          var score = CurrentRecord.val().scoreJan;
           var speakingJan = CurrentRecord.val().speakingJan;
           var writingJan = CurrentRecord.val().writingJan;
           var listeningJan = CurrentRecord.val().listeningJan;
@@ -35,7 +36,7 @@ function selectAllData() {
           var averageJan = CurrentRecord.val().averageJan;
           var myKh = CurrentRecord.val().myKh;
           addItemsToTable(name, id, sex, speakingJan, writingJan, listeningJan,
-            readingJan, averageJan, myKh);
+            readingJan, averageJan, myKh,score);
           showAuto();
           b = 1;
           document.getElementById('showNNN').value = b;
@@ -49,7 +50,7 @@ var studentN0;
 
 var stdList = [];
 function addItemsToTable(name, id, sex, speakingJan, writingJan, listeningJan,
-  readingJan, averageJan, myKh) {
+  readingJan, averageJan, myKh,score) {
   var tbody = document.getElementById('showData');
   var trow = document.createElement('tr');
   var td0 = document.createElement('td');
@@ -60,18 +61,101 @@ function addItemsToTable(name, id, sex, speakingJan, writingJan, listeningJan,
   var td5 = document.createElement('td');
   var td6 = document.createElement('td');
   var td7 = document.createElement('td');
+  var td8 = document.createElement('td');
+
+  td3.contentEditable = true;
+  td3.id = `${id}score`;
+  let ssid = `${id}score`;
+  let spid = `${id}sp`;
+  let wrid = `${id}wr`;
+  let lisid = `${id}lis`;
+  let reid = `${id}re`;
+  td4.id = spid;
+  td5.id = wrid;
+  td6.id = lisid;
+  td7.id = reid;
 
   stdList.push([name, id, sex, speakingJan, writingJan, listeningJan,
-    readingJan, averageJan, myKh]);
+    readingJan, averageJan, myKh,score]);
   td0.innerHTML = ++studentN0;
   td1.innerHTML = id;
   td2.innerHTML = sex;
-  td3.innerHTML = speakingJan;
-  td4.innerHTML = writingJan;
-  td5.innerHTML = listeningJan;
-  td6.innerHTML = readingJan;
-  td7.innerHTML = averageJan;
+  
+  if(speakingJan == undefined){
+    td4.innerHTML = 0;
+  }else{
+    
+    td4.innerHTML = speakingJan;
+  }
+  if(writingJan == undefined){
+    td5.innerHTML = 0;
+  }else{
+    
+    td5.innerHTML = writingJan;
+  }
+  if(listeningJan == undefined){
+    td6.innerHTML = 0;
+  }else{
+    
+    td6.innerHTML = listeningJan;
+  }
+  if(readingJan == undefined){
+    td7.innerHTML = 0;
+  }else{
+    
+    td7.innerHTML = readingJan;
+  }
+  if(averageJan == undefined){
+    td8.innerHTML = 0;
+  }else{
+    
+    td8.innerHTML = averageJan;
+  }
 
+  if (score == undefined) {
+    td3.innerHTML = 0;
+
+  } else {
+    td3.innerHTML = score;
+
+  }
+  const sleep = async (milliseconds) => {
+    await new Promise(resolve => {
+      return setTimeout(resolve, milliseconds);
+    });
+    let ss = document.getElementById(`${ssid}`);
+
+    ss.addEventListener('click', () => {
+      if (td3.innerHTML == 0) {
+        td3.innerHTML = '';
+      } else {
+
+      }
+    })
+    ss.addEventListener('input', () => {
+      let data = ss.innerHTML;
+      let di = td3.innerHTML / 4;
+      di = di.toFixed(2).replace(/[.,]00$/, "");
+      td4.innerHTML = di;
+      td5.innerHTML = di;
+      td6.innerHTML = di;
+      td7.innerHTML = di;
+      td8.innerHTML = di;
+      firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+        {
+          speakingJan: di,
+          writingJan: di,
+          listeningJan: di,
+          readingJan: di,
+          averageJan: di,
+          scoreJan: data,
+        },
+      )
+    })
+
+
+  };
+  sleep(1000);
 
   trow.appendChild(td0);
   trow.appendChild(td1);
@@ -81,6 +165,7 @@ function addItemsToTable(name, id, sex, speakingJan, writingJan, listeningJan,
   trow.appendChild(td5);
   trow.appendChild(td6);
   trow.appendChild(td7);
+  trow.appendChild(td8);
 
   td1.innerHTML = `<button type="button" class="button-7" onclick="Fillbox(${studentN0})">${myKh}</button>`;
   tbody.appendChild(trow);

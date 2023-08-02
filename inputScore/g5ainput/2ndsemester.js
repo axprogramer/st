@@ -28,6 +28,7 @@ function selectAllData() {
           var name = CurrentRecord.val().name;
           var id = CurrentRecord.val().id;
           var sex = CurrentRecord.val().sex;
+          var score = CurrentRecord.val().scorend;
           var my2Se = CurrentRecord.val().my2Se;
           var my2Sa = CurrentRecord.val().my2Sa;
           var myKh = CurrentRecord.val().myKh;
@@ -44,7 +45,7 @@ window.onload = selectAllData;
 var studentN0;
 
 var stdList = [];
-function addItemsToTable(name, id, sex, my2Se, my2Sa, myKh) {
+function addItemsToTable(name, id, sex, my2Se, my2Sa, myKh,score) {
   var tbody = document.getElementById('showData1');
   var trow = document.createElement('tr');
   var td0 = document.createElement('td');
@@ -56,12 +57,60 @@ function addItemsToTable(name, id, sex, my2Se, my2Sa, myKh) {
   var td6 = document.createElement('td');
   var td7 = document.createElement('td');
 
-  stdList.push([name, id, sex, my2Se, my2Sa, myKh]);
+  td3.contentEditable = true;
+  td3.id = `${id}score`;
+  let ssid = `${id}score`;
+  let spid = `${id}sp`;
+  td4.id = spid;
+
+  stdList.push([name, id, sex, my2Se, my2Sa, myKh,score]);
   td0.innerHTML = ++studentN0;
   td1.innerHTML = id;
   td2.innerHTML = sex;
   td3.innerHTML = my2Se;
   td4.innerHTML = my2Sa;
+  if (my2Se == undefined) {
+    td3.innerHTML = 0;
+  } else {
+
+    td3.innerHTML = my2Se;
+  }
+  if (my2Sa == undefined) {
+    td4.innerHTML = 0;
+  } else {
+
+    td4.innerHTML = my2Sa;
+  }
+  const sleep = async (milliseconds) => {
+    await new Promise(resolve => {
+      return setTimeout(resolve, milliseconds);
+    });
+    let ss = document.getElementById(`${ssid}`);
+
+    ss.addEventListener('click', () => {
+      if (td3.innerHTML == 0) {
+        td3.innerHTML = '';
+      } else {
+
+      }
+    })
+    ss.addEventListener('input', () => {
+      let data = ss.innerHTML;
+      let di = td3.innerHTML / 4;
+      di = di.toFixed(2).replace(/[.,]00$/, "");
+      td4.innerHTML = di;
+      firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+        {
+          my2Se: data,
+          my2Sa: di,
+        },
+      )
+    })
+
+
+  };
+  sleep(1000);
+
 
 
   trow.appendChild(td0);

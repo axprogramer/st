@@ -28,7 +28,7 @@ function selectAllData() {
           var name = CurrentRecord.val().name;
           var id = CurrentRecord.val().id;
           var sex = CurrentRecord.val().sex;
-          // var grade = CurrentRecord.val().grade;
+          var score = CurrentRecord.val().scoreDec;
           var speakingDec = CurrentRecord.val().speakingDec;
           var writingDec = CurrentRecord.val().writingDec;
           var listeningDec = CurrentRecord.val().listeningDec;
@@ -36,7 +36,7 @@ function selectAllData() {
           var averageDec = CurrentRecord.val().averageDec;
           var myKh = CurrentRecord.val().myKh;
           addItemsToTable(name, id, sex, speakingDec, writingDec, listeningDec,
-            readingDec, averageDec, myKh);
+            readingDec, averageDec, myKh, score);
           showAuto();
           b = 1;
           document.getElementById('showNNN').value = b;
@@ -51,7 +51,7 @@ var studentN0;
 
 var stdList = [];
 function addItemsToTable(name, id, sex, speakingDec, writingDec, listeningDec,
-  readingDec, averageDec, myKh) {
+  readingDec, averageDec, myKh, score) {
   var tbody = document.getElementById('showData');
   var trow = document.createElement('tr');
   var td0 = document.createElement('td');
@@ -62,21 +62,102 @@ function addItemsToTable(name, id, sex, speakingDec, writingDec, listeningDec,
   var td5 = document.createElement('td');
   var td6 = document.createElement('td');
   var td7 = document.createElement('td');
+  var td8 = document.createElement('td');
+  td3.contentEditable = true;
+  td3.id = `${id}score`;
+  let ssid = `${id}score`;
+  let spid = `${id}sp`;
+  let wrid = `${id}wr`;
+  let lisid = `${id}lis`;
+  let reid = `${id}re`;
+  td4.id = spid;
+  td5.id = wrid;
+  td6.id = lisid;
+  td7.id = reid;
 
 
 
 
   stdList.push([name, id, sex, speakingDec, writingDec, listeningDec,
-    readingDec, averageDec, myKh]);
+    readingDec, averageDec, myKh, score]);
   td0.innerHTML = ++studentN0;
   td1.innerHTML = id;
   td2.innerHTML = sex;
-  td3.innerHTML = speakingDec;
-  td4.innerHTML = writingDec;
-  td5.innerHTML = listeningDec;
-  td6.innerHTML = readingDec;
-  td7.innerHTML = averageDec;
+  if (speakingDec == undefined) {
+    td4.innerHTML = 0;
+  } else {
 
+    td4.innerHTML = speakingDec;
+  }
+  if (writingDec == undefined) {
+    td5.innerHTML = 0;
+  } else {
+
+    td5.innerHTML = writingDec;
+  }
+  if (listeningDec == undefined) {
+    td6.innerHTML = 0;
+  } else {
+
+    td6.innerHTML = listeningDec;
+  }
+  if (readingDec == undefined) {
+    td7.innerHTML = 0;
+  } else {
+
+    td7.innerHTML = readingDec;
+  }
+  if (averageDec == undefined) {
+    td8.innerHTML = 0;
+  } else {
+
+    td8.innerHTML = averageDec;
+  }
+
+  if (score == undefined) {
+    td3.innerHTML = 0;
+
+  } else {
+    td3.innerHTML = score;
+
+  }
+  const sleep = async (milliseconds) => {
+    await new Promise(resolve => {
+      return setTimeout(resolve, milliseconds);
+    });
+    let ss = document.getElementById(`${ssid}`);
+
+    ss.addEventListener('click', () => {
+      if (td3.innerHTML == 0) {
+        td3.innerHTML = '';
+      } else {
+
+      }
+    })
+    ss.addEventListener('input', () => {
+      let data = ss.innerHTML;
+      let di = td3.innerHTML / 4;
+      di = di.toFixed(2).replace(/[.,]00$/, "");
+      td4.innerHTML = di;
+      td5.innerHTML = di;
+      td6.innerHTML = di;
+      td7.innerHTML = di;
+      td8.innerHTML = di;
+      firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+        {
+          speakingDec: di,
+          writingDec: di,
+          listeningDec: di,
+          readingDec: di,
+          averageDec: di,
+          scoreDec: data,
+        },
+      )
+    })
+
+
+  };
+  sleep(1000);
 
   trow.appendChild(td0);
   trow.appendChild(td1);
@@ -86,6 +167,7 @@ function addItemsToTable(name, id, sex, speakingDec, writingDec, listeningDec,
   trow.appendChild(td5);
   trow.appendChild(td6);
   trow.appendChild(td7);
+  trow.appendChild(td8);
 
   td1.innerHTML = `<button type="button" class="button-7" onclick="Fillbox(${studentN0})">${myKh}</button>`;
   tbody.appendChild(trow);

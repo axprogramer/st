@@ -28,6 +28,7 @@ function selectAllData() {
           var name = CurrentRecord.val().name;
           var id = CurrentRecord.val().id;
           var sex = CurrentRecord.val().sex;
+          var score = CurrentRecord.val().scoremar;
           var speakingmar = CurrentRecord.val().speakingmar;
           var writingmar = CurrentRecord.val().writingmar;
           var listeningmar = CurrentRecord.val().listeningmar;
@@ -35,7 +36,7 @@ function selectAllData() {
           var averagemar = CurrentRecord.val().averagemar;
           var myKh = CurrentRecord.val().myKh;
           addItemsToTable(name, id, sex, speakingmar, writingmar, listeningmar,
-            readingmar, averagemar, myKh);
+            readingmar, averagemar, myKh,score);
           showAuto();
           b = 1;
           document.getElementById('showNNN').value = b;
@@ -49,7 +50,7 @@ var studentN0;
 
 var stdList = [];
 function addItemsToTable(name, id, sex, speakingmar, writingmar, listeningmar,
-  readingmar, averagemar, myKh) {
+  readingmar, averagemar, myKh,score) {
   var tbody = document.getElementById('showData');
   var trow = document.createElement('tr');
   var td0 = document.createElement('td');
@@ -60,18 +61,101 @@ function addItemsToTable(name, id, sex, speakingmar, writingmar, listeningmar,
   var td5 = document.createElement('td');
   var td6 = document.createElement('td');
   var td7 = document.createElement('td');
+  var td8 = document.createElement('td');
+
+  td3.contentEditable = true;
+  td3.id = `${id}score`;
+  let ssid = `${id}score`;
+  let spid = `${id}sp`;
+  let wrid = `${id}wr`;
+  let lisid = `${id}lis`;
+  let reid = `${id}re`;
+  td4.id = spid;
+  td5.id = wrid;
+  td6.id = lisid;
+  td7.id = reid;
 
   stdList.push([name, id, sex, speakingmar, writingmar, listeningmar,
-    readingmar, averagemar, myKh]);
+    readingmar, averagemar, myKh,score]);
   td0.innerHTML = ++studentN0;
   td1.innerHTML = id;
   td2.innerHTML = sex;
-  td3.innerHTML = speakingmar;
-  td4.innerHTML = writingmar;
-  td5.innerHTML = listeningmar;
-  td6.innerHTML = readingmar;
-  td7.innerHTML = averagemar;
 
+  if (speakingmar == undefined) {
+    td4.innerHTML = 0;
+  } else {
+
+    td4.innerHTML = speakingmar;
+  }
+  if (writingmar == undefined) {
+    td5.innerHTML = 0;
+  } else {
+
+    td5.innerHTML = writingmar;
+  }
+  if (listeningmar == undefined) {
+    td6.innerHTML = 0;
+  } else {
+
+    td6.innerHTML = listeningmar;
+  }
+  if (readingmar == undefined) {
+    td7.innerHTML = 0;
+  } else {
+
+    td7.innerHTML = readingmar;
+  }
+  if (averagemar == undefined) {
+    td8.innerHTML = 0;
+  } else {
+
+    td8.innerHTML = averagemar;
+  }
+
+  if (score == undefined) {
+    td3.innerHTML = 0;
+
+  } else {
+    td3.innerHTML = score;
+
+  }
+  const sleep = async (milliseconds) => {
+    await new Promise(resolve => {
+      return setTimeout(resolve, milliseconds);
+    });
+    let ss = document.getElementById(`${ssid}`);
+
+    ss.addEventListener('click', () => {
+      if (td3.innerHTML == 0) {
+        td3.innerHTML = '';
+      } else {
+
+      }
+    })
+    ss.addEventListener('input', () => {
+      let data = ss.innerHTML;
+      let di = td3.innerHTML / 4;
+      di = di.toFixed(2).replace(/[.,]00$/, "");
+      td4.innerHTML = di;
+      td5.innerHTML = di;
+      td6.innerHTML = di;
+      td7.innerHTML = di;
+      td8.innerHTML = di;
+      firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+        {
+          speakingmar: di,
+          writingmar: di,
+          listeningmar: di,
+          readingmar: di,
+          averagemar: di,
+          scoremar: data,
+        },
+      )
+    })
+
+
+  };
+  sleep(1000);
 
   trow.appendChild(td0);
   trow.appendChild(td1);
@@ -81,6 +165,7 @@ function addItemsToTable(name, id, sex, speakingmar, writingmar, listeningmar,
   trow.appendChild(td5);
   trow.appendChild(td6);
   trow.appendChild(td7);
+  trow.appendChild(td8);
 
   td1.innerHTML = `<button type="button" class="button-7" onclick="Fillbox(${studentN0})">${myKh}</button>`;
   tbody.appendChild(trow);
