@@ -32,7 +32,7 @@ function selectAllData() {
           var my2Se = CurrentRecord.val().my2Se;
           var my2Sa = CurrentRecord.val().my2Sa;
           var myKh = CurrentRecord.val().myKh;
-          addItemsToTable(name, id, sex, my2Se, my2Sa, myKh);
+          addItemsToTable(name, id, sex, my2Se, my2Sa, myKh,score);
           showAuto();
           b = 1;
           document.getElementById('showNNN').value = b;
@@ -344,4 +344,5 @@ table3.style.display = "none";
 // div.style.height = "30em";
 document.getElementById("myTable2").style.display = "block";
 document.getElementById("my1stsemetable").style.display = "block";
+document.getElementById("showSEME").innerHTML = '2nd Semester Score'
 

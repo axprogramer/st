@@ -221,6 +221,129 @@ function GetDataSave2(datas) {
 
   students.forEach((student) => {
     No++;
+    let ddd = parseFloat(student.my2Sa);
+    if (ddd >= 0.25) {
+      student.my2Sa = '0.25';
+    }
+    if (ddd >= 0.50) {
+      student.my2Sa = '0.50';
+    }
+    if (ddd >= 0.75) {
+      student.my2Sa = '0.75';
+    }
+    if (ddd >= 1) {
+      student.my2Sa = '1';
+    }
+    if (ddd >= 1.25) {
+      student.my2Sa = '1.25';
+    }
+    if (ddd >= 1.50) {
+      student.my2Sa = '1.50';
+    }
+    if (ddd >= 1.75) {
+      student.my2Sa = '1.75';
+    }
+    if (ddd >= 2) {
+      student.my2Sa = '2';
+    }
+    if (ddd >= 2.25) {
+      student.my2Sa = '2.25';
+    }
+    if (ddd >= 2.50) {
+      student.my2Sa = '2.50';
+    }
+    if (ddd >= 2.75) {
+      student.my2Sa = '2.75';
+    }
+    if (ddd >= 3) {
+      student.my2Sa = '3';
+    }
+    if (ddd >= 3.25) {
+      student.my2Sa = '3.25';
+    }
+    if (ddd >= 3.50) {
+      student.my2Sa = '3.50';
+    }
+    if (ddd >= 3.75) {
+      student.my2Sa = '3.75';
+    }
+    if (ddd >= 4) {
+      student.my2Sa = '4';
+    }
+    if (ddd >= 4.25) {
+      student.my2Sa = '4.25';
+    }
+    if (ddd >= 4.50) {
+      student.my2Sa = '4.50';
+    }
+    if (ddd >= 4.75) {
+      student.my2Sa = '4.75';
+    }
+    if (ddd >= 5) {
+      student.my2Sa = '5';
+    }
+    if (ddd >= 5.25) {
+      student.my2Sa = '5.25';
+    }
+    if (ddd >= 5.50) {
+      student.my2Sa = '5.50';
+    }
+    if (ddd >= 5.75) {
+      student.my2Sa = '5.75';
+    }
+    if (ddd >= 6) {
+      student.my2Sa = '6';
+    }
+    if (ddd >= 6.25) {
+      student.my2Sa = '6.25';
+    }
+    if (ddd >= 6.50) {
+      student.my2Sa = '6.50';
+    }
+    if (ddd >= 6.75) {
+      student.my2Sa = '6.75';
+    }
+    if (ddd >= 7) {
+      student.my2Sa = '7';
+    }
+    if (ddd >= 7.25) {
+      student.my2Sa = '7.25';
+    }
+    if (ddd >= 7.50) {
+      student.my2Sa = '7.50';
+    }
+    if (ddd >= 7.75) {
+      student.my2Sa = '7.75';
+    }
+    if (ddd >= 8) {
+      student.my2Sa = '8';
+    }
+    if (ddd >= 8.25) {
+      student.my2Sa = '8.25';
+    }
+    if (ddd >= 8.50) {
+      student.my2Sa = '8.50';
+    }
+    if (ddd >= 8.75) {
+      student.my2Sa = '8.75';
+    }
+    if (ddd >= 9) {
+      student.my2Sa = '9';
+    }
+    if (ddd >= 9.25) {
+      student.my2Sa = '9.25';
+    }
+    if (ddd >= 9.50) {
+      student.my2Sa = '9.50';
+    }
+    if (ddd >= 9.75) {
+      student.my2Sa = '9.75';
+    }
+    if (ddd >= 10) {
+      student.my2Sa = '10';
+    }
+    console.log(student.my2Sa);
+
     var mention = "";
     var my = parseFloat(student.my2Sa);
     if (my <= 4.9) {

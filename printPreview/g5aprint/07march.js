@@ -208,6 +208,127 @@ function GetDataSave2(datas) {
 
   students.forEach((student) => {
     No++;
+    let ddd = parseFloat(student.averagemar);
+    if (ddd >= 0.25) {
+      student.averagemar = '0.25';
+    }
+    if (ddd >= 0.50) {
+      student.averagemar = '0.50';
+    }
+    if (ddd >= 0.75) {
+      student.averagemar = '0.75';
+    }
+    if (ddd >= 1) {
+      student.averagemar = '1';
+    }
+    if (ddd >= 1.25) {
+      student.averagemar = '1.25';
+    }
+    if (ddd >= 1.50) {
+      student.averagemar = '1.50';
+    }
+    if (ddd >= 1.75) {
+      student.averagemar = '1.75';
+    }
+    if (ddd >= 2) {
+      student.averagemar = '2';
+    }
+    if (ddd >= 2.25) {
+      student.averagemar = '2.25';
+    }
+    if (ddd >= 2.50) {
+      student.averagemar = '2.50';
+    }
+    if (ddd >= 2.75) {
+      student.averagemar = '2.75';
+    }
+    if (ddd >= 3) {
+      student.averagemar = '3';
+    }
+    if (ddd >= 3.25) {
+      student.averagemar = '3.25';
+    }
+    if (ddd >= 3.50) {
+      student.averagemar = '3.50';
+    }
+    if (ddd >= 3.75) {
+      student.averagemar = '3.75';
+    }
+    if (ddd >= 4) {
+      student.averagemar = '4';
+    }
+    if (ddd >= 4.25) {
+      student.averagemar = '4.25';
+    }
+    if (ddd >= 4.50) {
+      student.averagemar = '4.50';
+    }
+    if (ddd >= 4.75) {
+      student.averagemar = '4.75';
+    }
+    if (ddd >= 5) {
+      student.averagemar = '5';
+    }
+    if (ddd >= 5.25) {
+      student.averagemar = '5.25';
+    }
+    if (ddd >= 5.50) {
+      student.averagemar = '5.50';
+    }
+    if (ddd >= 5.75) {
+      student.averagemar = '5.75';
+    }
+    if (ddd >= 6) {
+      student.averagemar = '6';
+    }
+    if (ddd >= 6.25) {
+      student.averagemar = '6.25';
+    }
+    if (ddd >= 6.50) {
+      student.averagemar = '6.50';
+    }
+    if (ddd >= 6.75) {
+      student.averagemar = '6.75';
+    }
+    if (ddd >= 7) {
+      student.averagemar = '7';
+    }
+    if (ddd >= 7.25) {
+      student.averagemar = '7.25';
+    }
+    if (ddd >= 7.50) {
+      student.averagemar = '7.50';
+    }
+    if (ddd >= 7.75) {
+      student.averagemar = '7.75';
+    }
+    if (ddd >= 8) {
+      student.averagemar = '8';
+    }
+    if (ddd >= 8.25) {
+      student.averagemar = '8.25';
+    }
+    if (ddd >= 8.50) {
+      student.averagemar = '8.50';
+    }
+    if (ddd >= 8.75) {
+      student.averagemar = '8.75';
+    }
+    if (ddd >= 9) {
+      student.averagemar = '9';
+    }
+    if (ddd >= 9.25) {
+      student.averagemar = '9.25';
+    }
+    if (ddd >= 9.50) {
+      student.averagemar = '9.50';
+    }
+    if (ddd >= 9.75) {
+      student.averagemar = '9.75';
+    }
+    if (ddd >= 10) {
+      student.averagemar = '10';
+    }
     let tr = `
             <td>${No}</td>
             <td>${student.name}</td>

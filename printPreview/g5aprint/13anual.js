@@ -49,25 +49,24 @@ function GetData2(datas) {
     //4 months total
     var total4m = parseFloat(my1Sa) + parseFloat(my2Sa);
     var allTotal = parseFloat(total4m) / 2;
-    var showTotal = parseFloat(allTotal).toFixed(2);
-
+    allTotal = allTotal.toFixed(2).replace(/[.,]00$/, "");
 
     students.push({
       name,
       sex,
       grade,
       my1Sa,
-      showTotal,
+      allTotal,
       my2Sa,
     });
   });
 
-  students.sort(function (a, b) { return b.showTotal - a.showTotal });
+  students.sort(function (a, b) { return b.allTotal - a.allTotal });
 
   for (let i = 0; i < students.length; i++) {
-    let avg = students[i].showTotal;
+    let avg = students[i].allTotal;
     let studentsWithRank = students.filter(
-      (student) => student.showTotal === avg
+      (student) => student.allTotal === avg
     );
     for (let student of studentsWithRank) {
       student.Rank = i + 1;
@@ -78,7 +77,7 @@ function GetData2(datas) {
   students.forEach((student) => {
     No++;
     var mention = "";
-    var my = parseFloat(student.showTotal);
+    var my = parseFloat(student.allTotal);
     if (my <= 4.9) {
       mention = "Fail"
     } else if (my <= 5) {
@@ -98,9 +97,9 @@ function GetData2(datas) {
             <td>${student.name}</td>
             <td>${student.sex}</td>
             <td>${student.grade}</td>
+            <td>${student.my1Sa}</td>
             <td>${student.my2Sa}</td>
-            <td>${student.showTotal}</td>
-            <td>${student.showTotal}</td>
+            <td>${student.allTotal}</td>
             <td>${student.Rank}</td>
             <td>${mention}</td>
     `;
@@ -117,31 +116,31 @@ function GetDataView(datas) {
     var sex = data.val().sex;
     var grade = data.val().grade;
     var my1Sa = data.val().my1Sa;
-
+    
     var my2Sa = data.val().my2Sa;
+    var myKh = data.val().myKh;
     //4 months total
     var total4m = parseFloat(my1Sa) + parseFloat(my2Sa);
     var allTotal = parseFloat(total4m) / 2;
-    var showTotal = parseFloat(allTotal).toFixed(2);
-    var myKh = data.val().myKh;
+    allTotal = allTotal.toFixed(2).replace(/[.,]00$/, "");
 
     students.push({
       name,
       sex,
       grade,
       my1Sa,
-      showTotal,
+      allTotal,
       my2Sa,
       myKh,
     });
   });
 
-  students.sort(function (a, b) { return b.showTotal - a.showTotal });
+  students.sort(function (a, b) { return b.allTotal - a.allTotal });
 
   for (let i = 0; i < students.length; i++) {
-    let avg = students[i].showTotal;
+    let avg = students[i].allTotal;
     let studentsWithRank = students.filter(
-      (student) => student.showTotal === avg
+      (student) => student.allTotal === avg
     );
     for (let student of studentsWithRank) {
       student.Rank = i + 1;
@@ -151,7 +150,7 @@ function GetDataView(datas) {
   students.forEach((student) => {
     No++;
     var mention = "";
-    var my = parseFloat(student.showTotal);
+    var my = parseFloat(student.allTotal);
     if (my <= 4.9) {
       mention = "Fail"
     } else if (my <= 5) {
@@ -171,9 +170,9 @@ function GetDataView(datas) {
             <td>${student.name}</td>
             <td>${student.sex}</td>
             <td>${student.grade}</td>
+            <td>${student.my1Sa}</td>
             <td>${student.my2Sa}</td>
-            <td>${student.showTotal}</td>
-            <td>${student.showTotal}</td>
+            <td>${student.allTotal}</td>
             <td>${student.Rank}</td>
             <td>${mention}</td>
             <td style="display: none;">${mention}${student.sex}</td> 
@@ -196,23 +195,23 @@ function GetDataSave2(datas) {
     //4 months total
     var total4m = parseFloat(my1Sa) + parseFloat(my2Sa);
     var allTotal = parseFloat(total4m) / 2;
-    var showTotal = parseFloat(allTotal).toFixed(2);
+    allTotal = allTotal.toFixed(2).replace(/[.,]00$/, "");
 
     students.push({
       sex,
       grade,
       my1Sa,
-      showTotal,
+      allTotal,
       my2Sa,
     });
   });
 
-  // students.sort(function(a,b){return b.showTotal - a.showTotal });
+  // students.sort(function(a,b){return b.allTotal - a.allTotal });
 
   for (let i = 0; i < students.length; i++) {
-    let avg = students[i].showTotal;
+    let avg = students[i].allTotal;
     let studentsWithRank = students.filter(
-      (student) => student.showTotal === avg
+      (student) => student.allTotal === avg
     );
     for (let student of studentsWithRank) {
       student.Rank = i + 1;
@@ -223,7 +222,7 @@ function GetDataSave2(datas) {
   students.forEach((student) => {
     No++;
     var mention = "";
-    var my = parseFloat(student.showTotal);
+    var my = parseFloat(student.allTotal);
     if (my <= 4.9) {
       mention = "Fail"
     } else if (my <= 5) {
@@ -243,9 +242,9 @@ function GetDataSave2(datas) {
             <td>${student.myKh}</td>
             <td>${student.sex}</td>
             <td>${student.grade}</td>
+            <td>${student.my1Sa}</td>
             <td>${student.my2Sa}</td>
-            <td>${student.showTotal}</td>
-            <td>${student.showTotal}</td>
+            <td>${student.allTotal}</td>
             <td>${student.Rank}</td>
             <td>${mention}</td>
     `;

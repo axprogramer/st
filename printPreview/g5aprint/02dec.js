@@ -208,6 +208,128 @@ function GetDataSave2(datas) {
 
   students.forEach((student) => {
     No++;
+    let ddd = parseFloat(student.averageDec);
+    if (ddd >= 0.25) {
+      student.averageDec = '0.25';
+    }
+    if (ddd >= 0.50) {
+      student.averageDec = '0.50';
+    }
+    if (ddd >= 0.75) {
+      student.averageDec = '0.75';
+    }
+    if (ddd >= 1) {
+      student.averageDec = '1';
+    }
+    if (ddd >= 1.25) {
+      student.averageDec = '1.25';
+    }
+    if (ddd >= 1.50) {
+      student.averageDec = '1.50';
+    }
+    if (ddd >= 1.75) {
+      student.averageDec = '1.75';
+    }
+    if (ddd >= 2) {
+      student.averageDec = '2';
+    }
+    if (ddd >= 2.25) {
+      student.averageDec = '2.25';
+    }
+    if (ddd >= 2.50) {
+      student.averageDec = '2.50';
+    }
+    if (ddd >= 2.75) {
+      student.averageDec = '2.75';
+    }
+    if (ddd >= 3) {
+      student.averageDec = '3';
+    }
+    if (ddd >= 3.25) {
+      student.averageDec = '3.25';
+    }
+    if (ddd >= 3.50) {
+      student.averageDec = '3.50';
+    }
+    if (ddd >= 3.75) {
+      student.averageDec = '3.75';
+    }
+    if (ddd >= 4) {
+      student.averageDec = '4';
+    }
+    if (ddd >= 4.25) {
+      student.averageDec = '4.25';
+    }
+    if (ddd >= 4.50) {
+      student.averageDec = '4.50';
+    }
+    if (ddd >= 4.75) {
+      student.averageDec = '4.75';
+    }
+    if (ddd >= 5) {
+      student.averageDec = '5';
+    }
+    if (ddd >= 5.25) {
+      student.averageDec = '5.25';
+    }
+    if (ddd >= 5.50) {
+      student.averageDec = '5.50';
+    }
+    if (ddd >= 5.75) {
+      student.averageDec = '5.75';
+    }
+    if (ddd >= 6) {
+      student.averageDec = '6';
+    }
+    if (ddd >= 6.25) {
+      student.averageDec = '6.25';
+    }
+    if (ddd >= 6.50) {
+      student.averageDec = '6.50';
+    }
+    if (ddd >= 6.75) {
+      student.averageDec = '6.75';
+    }
+    if (ddd >= 7) {
+      student.averageDec = '7';
+    }
+    if (ddd >= 7.25) {
+      student.averageDec = '7.25';
+    }
+    if (ddd >= 7.50) {
+      student.averageDec = '7.50';
+    }
+    if (ddd >= 7.75) {
+      student.averageDec = '7.75';
+    }
+    if (ddd >= 8) {
+      student.averageDec = '8';
+    }
+    if (ddd >= 8.25) {
+      student.averageDec = '8.25';
+    }
+    if (ddd >= 8.50) {
+      student.averageDec = '8.50';
+    }
+    if (ddd >= 8.75) {
+      student.averageDec = '8.75';
+    }
+    if (ddd >= 9) {
+      student.averageDec = '9';
+    }
+    if (ddd >= 9.25) {
+      student.averageDec = '9.25';
+    }
+    if (ddd >= 9.50) {
+      student.averageDec = '9.50';
+    }
+    if (ddd >= 9.75) {
+      student.averageDec = '9.75';
+    }
+    if (ddd >= 10) {
+      student.averageDec = '10';
+    }
+    
     let tr = `
             <td>${No}</td>
             <td>${student.name}</td>

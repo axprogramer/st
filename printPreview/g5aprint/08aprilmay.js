@@ -208,6 +208,128 @@ function GetDataSave2(datas) {
 
   students.forEach((student) => {
     No++;
+    let ddd = parseFloat(student.averagema);
+    if (ddd >= 0.25) {
+      student.averagema = '0.25';
+    }
+    if (ddd >= 0.50) {
+      student.averagema = '0.50';
+    }
+    if (ddd >= 0.75) {
+      student.averagema = '0.75';
+    }
+    if (ddd >= 1) {
+      student.averagema = '1';
+    }
+    if (ddd >= 1.25) {
+      student.averagema = '1.25';
+    }
+    if (ddd >= 1.50) {
+      student.averagema = '1.50';
+    }
+    if (ddd >= 1.75) {
+      student.averagema = '1.75';
+    }
+    if (ddd >= 2) {
+      student.averagema = '2';
+    }
+    if (ddd >= 2.25) {
+      student.averagema = '2.25';
+    }
+    if (ddd >= 2.50) {
+      student.averagema = '2.50';
+    }
+    if (ddd >= 2.75) {
+      student.averagema = '2.75';
+    }
+    if (ddd >= 3) {
+      student.averagema = '3';
+    }
+    if (ddd >= 3.25) {
+      student.averagema = '3.25';
+    }
+    if (ddd >= 3.50) {
+      student.averagema = '3.50';
+    }
+    if (ddd >= 3.75) {
+      student.averagema = '3.75';
+    }
+    if (ddd >= 4) {
+      student.averagema = '4';
+    }
+    if (ddd >= 4.25) {
+      student.averagema = '4.25';
+    }
+    if (ddd >= 4.50) {
+      student.averagema = '4.50';
+    }
+    if (ddd >= 4.75) {
+      student.averagema = '4.75';
+    }
+    if (ddd >= 5) {
+      student.averagema = '5';
+    }
+    if (ddd >= 5.25) {
+      student.averagema = '5.25';
+    }
+    if (ddd >= 5.50) {
+      student.averagema = '5.50';
+    }
+    if (ddd >= 5.75) {
+      student.averagema = '5.75';
+    }
+    if (ddd >= 6) {
+      student.averagema = '6';
+    }
+    if (ddd >= 6.25) {
+      student.averagema = '6.25';
+    }
+    if (ddd >= 6.50) {
+      student.averagema = '6.50';
+    }
+    if (ddd >= 6.75) {
+      student.averagema = '6.75';
+    }
+    if (ddd >= 7) {
+      student.averagema = '7';
+    }
+    if (ddd >= 7.25) {
+      student.averagema = '7.25';
+    }
+    if (ddd >= 7.50) {
+      student.averagema = '7.50';
+    }
+    if (ddd >= 7.75) {
+      student.averagema = '7.75';
+    }
+    if (ddd >= 8) {
+      student.averagema = '8';
+    }
+    if (ddd >= 8.25) {
+      student.averagema = '8.25';
+    }
+    if (ddd >= 8.50) {
+      student.averagema = '8.50';
+    }
+    if (ddd >= 8.75) {
+      student.averagema = '8.75';
+    }
+    if (ddd >= 9) {
+      student.averagema = '9';
+    }
+    if (ddd >= 9.25) {
+      student.averagema = '9.25';
+    }
+    if (ddd >= 9.50) {
+      student.averagema = '9.50';
+    }
+    if (ddd >= 9.75) {
+      student.averagema = '9.75';
+    }
+    if (ddd >= 10) {
+      student.averagema = '10';
+    }
+
     let tr = `
             <td>${No}</td>
             <td>${student.name}</td>
@@ -278,7 +400,6 @@ $(document).ready(function () {
     pass.innerHTML = sum;
     tfail.innerHTML = sumFs;
     showw.innerHTML = m2;
-    console.log(sum);
 
     var noOfOccurance = 0;
 

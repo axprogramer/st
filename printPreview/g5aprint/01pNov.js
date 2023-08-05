@@ -208,6 +208,127 @@ function GetDataSave2(datas) {
 
   students.forEach((student) => {
     No++;
+    let ddd = parseFloat(student.averageNov);
+    if(ddd >= 0.25){
+      student.averageNov = '0.25';
+    }
+    if(ddd >= 0.50){
+      student.averageNov = '0.50';
+    }
+    if(ddd >= 0.75){
+      student.averageNov = '0.75';
+    }
+    if(ddd >= 1){
+      student.averageNov = '1';
+    }
+    if(ddd >= 1.25){
+      student.averageNov = '1.25';
+    }
+    if(ddd >= 1.50){
+      student.averageNov = '1.50';
+    }
+    if(ddd >= 1.75){
+      student.averageNov = '1.75';
+    }
+    if(ddd >= 2){
+      student.averageNov = '2';
+    }
+    if(ddd >= 2.25){
+      student.averageNov = '2.25';
+    }
+    if(ddd >= 2.50){
+      student.averageNov = '2.50';
+    }
+    if(ddd >= 2.75){
+      student.averageNov = '2.75';
+    }
+    if(ddd >= 3){
+      student.averageNov = '3';
+    }
+    if(ddd >= 3.25){
+      student.averageNov = '3.25';
+    }
+    if(ddd >= 3.50){
+      student.averageNov = '3.50';
+    }
+    if(ddd >= 3.75){
+      student.averageNov = '3.75';
+    }
+    if(ddd >= 4){
+      student.averageNov = '4';
+    }
+    if(ddd >= 4.25){
+      student.averageNov = '4.25';
+    }
+    if(ddd >= 4.50){
+      student.averageNov = '4.50';
+    }
+    if(ddd >= 4.75){
+      student.averageNov = '4.75';
+    }
+    if(ddd >= 5){
+      student.averageNov = '5';
+    }
+    if(ddd >= 5.25){
+      student.averageNov = '5.25';
+    }
+    if(ddd >= 5.50){
+      student.averageNov = '5.50';
+    }
+    if(ddd >= 5.75){
+      student.averageNov = '5.75';
+    }
+    if(ddd >= 6){
+      student.averageNov = '6';
+    }
+    if(ddd >= 6.25){
+      student.averageNov = '6.25';
+    }
+    if(ddd >= 6.50){
+      student.averageNov = '6.50';
+    }
+    if(ddd >= 6.75){
+      student.averageNov = '6.75';
+    }
+    if(ddd >= 7){
+      student.averageNov = '7';
+    }
+    if(ddd >= 7.25){
+      student.averageNov = '7.25';
+    }
+    if(ddd >= 7.50){
+      student.averageNov = '7.50';
+    }
+    if(ddd >= 7.75){
+      student.averageNov = '7.75';
+    }
+    if(ddd >= 8){
+      student.averageNov = '8';
+    }
+    if(ddd >= 8.25){
+      student.averageNov = '8.25';
+    }
+    if(ddd >= 8.50){
+      student.averageNov = '8.50';
+    }
+    if(ddd >= 8.75){
+      student.averageNov = '8.75';
+    }
+    if(ddd >= 9){
+      student.averageNov = '9';
+    }
+    if(ddd >= 9.25){
+      student.averageNov = '9.25';
+    }
+    if(ddd >= 9.50){
+      student.averageNov = '9.50';
+    }
+    if(ddd >= 9.75){
+      student.averageNov = '9.75';
+    }
+    if(ddd >= 10){
+      student.averageNov = '10';
+    }
     let tr = `
             <td>${No}</td>
             <td>${student.name}</td>
@@ -277,7 +398,6 @@ $(document).ready(function () {
     pass.innerHTML = sum;
     tfail.innerHTML = sumFs;
     showw.innerHTML = m2;
-    console.log(sum);
 
     var noOfOccurance = 0;
 

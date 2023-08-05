@@ -133,26 +133,58 @@ function addItemsToTable(name, id, sex, speakingma, writingma, listeningma,
 
       }
     })
-    ss.addEventListener('input', () => {
-      let data = ss.innerHTML;
-      let di = td3.innerHTML / 4;
-      di = di.toFixed(2).replace(/[.,]00$/, "");
-      td4.innerHTML = di;
-      td5.innerHTML = di;
-      td6.innerHTML = di;
-      td7.innerHTML = di;
-      td8.innerHTML = di;
-      firebase.database().ref(`${db}/` + `${db3}/` + id).update(
-        {
-          speakingma: di,
-          writingma: di,
-          listeningma: di,
-          readingma: di,
-          averagema: di,
-          scorema: data,
-        },
-      )
-    })
+    var ll = "simple";
+    var lll = "unsimple";
+    var check = document.getElementById("myCheck");
+    if (db4 == ll) {
+
+      check.checked = true;
+      ss.addEventListener('input', () => {
+        let data = ss.innerHTML;
+        let di = td3.innerHTML / 4;
+        di = di.toFixed(2).replace(/[.,]00$/, "");
+        td4.innerHTML = di;
+        td5.innerHTML = di;
+        td6.innerHTML = di;
+        td7.innerHTML = di;
+        td8.innerHTML = di;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingma: di,
+            writingma: di,
+            listeningma: di,
+            readingma: di,
+            averagema: di,
+            scorema: data,
+          },
+        )
+      })
+    } else if (db4 == lll) {
+      check.checked = false;
+      ss.addEventListener('input', () => {
+        let data = ss.innerHTML;
+        let di = td3.innerHTML / 3;
+        di = di.toFixed(2).replace(/[.,]00$/, "");
+        td5.innerHTML = di;
+        td6.innerHTML = di;
+        td7.innerHTML = di;
+        let speak = td4.innerHTML;
+        let toto = parseFloat(data) + parseFloat(speak);
+        let sub = parseFloat(toto) / 4;
+        sub = sub.toFixed(2).replace(/[.,]00$/, "");
+        td8.innerHTML = sub;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            writingma: di,
+            listeningma: di,
+            readingma: di,
+            averagema: sub,
+            scorema: data,
+          },
+        )
+      })
+    }
+
 
 
   };

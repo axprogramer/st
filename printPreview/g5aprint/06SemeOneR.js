@@ -275,6 +275,127 @@ function GetDataSave2(datas) {
 
   students.forEach((student) => {
     No++;
+    let ddd = parseFloat(student.last2m);
+    if (ddd >= 0.25) {
+      student.last2m = '0.25';
+    }
+    if (ddd >= 0.50) {
+      student.last2m = '0.50';
+    }
+    if (ddd >= 0.75) {
+      student.last2m = '0.75';
+    }
+    if (ddd >= 1) {
+      student.last2m = '1';
+    }
+    if (ddd >= 1.25) {
+      student.last2m = '1.25';
+    }
+    if (ddd >= 1.50) {
+      student.last2m = '1.50';
+    }
+    if (ddd >= 1.75) {
+      student.last2m = '1.75';
+    }
+    if (ddd >= 2) {
+      student.last2m = '2';
+    }
+    if (ddd >= 2.25) {
+      student.last2m = '2.25';
+    }
+    if (ddd >= 2.50) {
+      student.last2m = '2.50';
+    }
+    if (ddd >= 2.75) {
+      student.last2m = '2.75';
+    }
+    if (ddd >= 3) {
+      student.last2m = '3';
+    }
+    if (ddd >= 3.25) {
+      student.last2m = '3.25';
+    }
+    if (ddd >= 3.50) {
+      student.last2m = '3.50';
+    }
+    if (ddd >= 3.75) {
+      student.last2m = '3.75';
+    }
+    if (ddd >= 4) {
+      student.last2m = '4';
+    }
+    if (ddd >= 4.25) {
+      student.last2m = '4.25';
+    }
+    if (ddd >= 4.50) {
+      student.last2m = '4.50';
+    }
+    if (ddd >= 4.75) {
+      student.last2m = '4.75';
+    }
+    if (ddd >= 5) {
+      student.last2m = '5';
+    }
+    if (ddd >= 5.25) {
+      student.last2m = '5.25';
+    }
+    if (ddd >= 5.50) {
+      student.last2m = '5.50';
+    }
+    if (ddd >= 5.75) {
+      student.last2m = '5.75';
+    }
+    if (ddd >= 6) {
+      student.last2m = '6';
+    }
+    if (ddd >= 6.25) {
+      student.last2m = '6.25';
+    }
+    if (ddd >= 6.50) {
+      student.last2m = '6.50';
+    }
+    if (ddd >= 6.75) {
+      student.last2m = '6.75';
+    }
+    if (ddd >= 7) {
+      student.last2m = '7';
+    }
+    if (ddd >= 7.25) {
+      student.last2m = '7.25';
+    }
+    if (ddd >= 7.50) {
+      student.last2m = '7.50';
+    }
+    if (ddd >= 7.75) {
+      student.last2m = '7.75';
+    }
+    if (ddd >= 8) {
+      student.last2m = '8';
+    }
+    if (ddd >= 8.25) {
+      student.last2m = '8.25';
+    }
+    if (ddd >= 8.50) {
+      student.last2m = '8.50';
+    }
+    if (ddd >= 8.75) {
+      student.last2m = '8.75';
+    }
+    if (ddd >= 9) {
+      student.last2m = '9';
+    }
+    if (ddd >= 9.25) {
+      student.last2m = '9.25';
+    }
+    if (ddd >= 9.50) {
+      student.last2m = '9.50';
+    }
+    if (ddd >= 9.75) {
+      student.last2m = '9.75';
+    }
+    if (ddd >= 10) {
+      student.last2m = '10';
+    }
     var mention = "";
     var my = parseFloat(student.last2m);
     if (my <= 4.9) {

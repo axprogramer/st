@@ -207,6 +207,129 @@ function GetDataSave2(datas) {
 
   students.forEach((student) => {
     No++;
+    let ddd = parseFloat(student.averagejun);
+    if (ddd >= 0.25) {
+      student.averagejun = '0.25';
+    }
+    if (ddd >= 0.50) {
+      student.averagejun = '0.50';
+    }
+    if (ddd >= 0.75) {
+      student.averagejun = '0.75';
+    }
+    if (ddd >= 1) {
+      student.averagejun = '1';
+    }
+    if (ddd >= 1.25) {
+      student.averagejun = '1.25';
+    }
+    if (ddd >= 1.50) {
+      student.averagejun = '1.50';
+    }
+    if (ddd >= 1.75) {
+      student.averagejun = '1.75';
+    }
+    if (ddd >= 2) {
+      student.averagejun = '2';
+    }
+    if (ddd >= 2.25) {
+      student.averagejun = '2.25';
+    }
+    if (ddd >= 2.50) {
+      student.averagejun = '2.50';
+    }
+    if (ddd >= 2.75) {
+      student.averagejun = '2.75';
+    }
+    if (ddd >= 3) {
+      student.averagejun = '3';
+    }
+    if (ddd >= 3.25) {
+      student.averagejun = '3.25';
+    }
+    if (ddd >= 3.50) {
+      student.averagejun = '3.50';
+    }
+    if (ddd >= 3.75) {
+      student.averagejun = '3.75';
+    }
+    if (ddd >= 4) {
+      student.averagejun = '4';
+    }
+    if (ddd >= 4.25) {
+      student.averagejun = '4.25';
+    }
+    if (ddd >= 4.50) {
+      student.averagejun = '4.50';
+    }
+    if (ddd >= 4.75) {
+      student.averagejun = '4.75';
+    }
+    if (ddd >= 5) {
+      student.averagejun = '5';
+    }
+    if (ddd >= 5.25) {
+      student.averagejun = '5.25';
+    }
+    if (ddd >= 5.50) {
+      student.averagejun = '5.50';
+    }
+    if (ddd >= 5.75) {
+      student.averagejun = '5.75';
+    }
+    if (ddd >= 6) {
+      student.averagejun = '6';
+    }
+    if (ddd >= 6.25) {
+      student.averagejun = '6.25';
+    }
+    if (ddd >= 6.50) {
+      student.averagejun = '6.50';
+    }
+    if (ddd >= 6.75) {
+      student.averagejun = '6.75';
+    }
+    if (ddd >= 7) {
+      student.averagejun = '7';
+    }
+    if (ddd >= 7.25) {
+      student.averagejun = '7.25';
+    }
+    if (ddd >= 7.50) {
+      student.averagejun = '7.50';
+    }
+    if (ddd >= 7.75) {
+      student.averagejun = '7.75';
+    }
+    if (ddd >= 8) {
+      student.averagejun = '8';
+    }
+    if (ddd >= 8.25) {
+      student.averagejun = '8.25';
+    }
+    if (ddd >= 8.50) {
+      student.averagejun = '8.50';
+    }
+    if (ddd >= 8.75) {
+      student.averagejun = '8.75';
+    }
+    if (ddd >= 9) {
+      student.averagejun = '9';
+    }
+    if (ddd >= 9.25) {
+      student.averagejun = '9.25';
+    }
+    if (ddd >= 9.50) {
+      student.averagejun = '9.50';
+    }
+    if (ddd >= 9.75) {
+      student.averagejun = '9.75';
+    }
+    if (ddd >= 10) {
+      student.averagejun = '10';
+    }
+    console.log(student.averagejun);
+
     let tr = `
             <td>${No}</td>
             <td>${student.name}</td>
