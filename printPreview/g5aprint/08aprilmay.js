@@ -400,6 +400,7 @@ $(document).ready(function () {
     pass.innerHTML = sum;
     tfail.innerHTML = sumFs;
     showw.innerHTML = m2;
+    document.getElementById('TotalSs2').innerHTML = sum;
 
     var noOfOccurance = 0;
 
@@ -413,9 +414,11 @@ $(document).ready(function () {
     var show3 = document.getElementById("TotalSF2");
     var show4 = document.getElementById("fsTotal");
     var f1 = document.getElementById("sFail");
-    show3.innerHTML = noOfOccurance;
+    // show3.innerHTML = noOfOccurance;
     show4.innerHTML = noOfOccurance;
     f1.innerHTML = sumFs;
+    let girlFail = parseFloat(noOfOccurance) - parseFloat(sumFs);
+    show3.innerHTML = girlFail;
 
   }
   // Male
