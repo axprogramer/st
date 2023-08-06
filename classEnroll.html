@@ -171,13 +171,34 @@
                             <span class="d-none d-lg-inline-flex"><span id="myUser2"></span></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">My Profile</a>
-                            <a href="#" class="dropdown-item">Settings</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModalS">How to
+                                use Sport and Actitvities</a>
+                            <!-- <a href="#" class="dropdown-item">Settings</a>
+                                                                                                    <a href="#" class="dropdown-item">Log Out</a> -->
                         </div>
                     </div>
                 </div>
             </nav>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalS" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: black;">How to use
+                                'Record Sport & Activities'</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <video id="playVV" controls="" name="media" style="width: 100%;height: auto;">
+                                <source id="myPlayer"
+                                    src="https://firebasestorage.googleapis.com/v0/b/useradmin-cd653.appspot.com/o/videos%2FRecord%20Sport.mp4?alt=media&token=477ef758-4ae7-4dab-a034-340a56b24610"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Navbar End -->
 
 
