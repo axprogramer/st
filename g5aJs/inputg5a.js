@@ -81,7 +81,6 @@ function selectAllData() {
           b = 1;
           document.getElementById('showNNN').value = b;
           cccSS();
-
         }
       );
     });
@@ -118,6 +117,12 @@ function addItemsToTable(name, id, sex, grade, year, myKh,url) {
   trow.appendChild(td5);
   td1.innerHTML = `<button type="button" class="button-6" onclick="Fillbox(${studentN0})">${myKh}</button>`;
   tbody.appendChild(trow);
+  let showRL = document.getElementById('myURL');
+
+  let kk = `
+  <p>${url}</p>
+  `
+  showRL.innerHTML += kk;
 }
 
 
