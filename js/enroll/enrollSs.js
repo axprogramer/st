@@ -326,6 +326,27 @@ function sportAct() {
 
   selectAllData();
 }
+function homeworkAct() {
+  // e.preventDefault();
+  for (i = 0; i < aData4.length; i++) {
+    var enname = aData4[i].myenname;
+    var khname = aData4[i].mykhname;
+    var idM = aData4[i].id;
+    var sex = aData4[i].mySex;
+    firebase.database().ref(`${gradeAact}/` + `recordHomework/` + `${yearAact}/` + `${dbmonthAct}/` + idM).set(
+      {
+        name: enname,
+        id: idM,
+        sex: sex,
+        khname: khname,
+      },
+    )
+
+  }
+
+
+  selectAllData();
+}
 //Checkbox all check function
 function toggle(source) {
   checkboxes = document.getElementsByName('mCheck');
@@ -458,6 +479,50 @@ $(document).ready(function () {
           document.getElementById("alertMagWait3").style.display = "block";
           document.getElementById("alertMag3").style.display = "none";
           document.getElementById("showBtnn2").style.display = "none";
+          setTimeout(function () {
+            window.location.reload();
+
+          }, 2000)
+
+        };
+        sleep(1000);
+
+      }
+    });
+
+
+  });
+
+});
+//Upload for Homework
+var aData4 = [];
+$(document).ready(function () {
+
+  $("#getHomework").on('click', function () {
+
+    $("#myTable tbody tr").each(function () {
+      var currentRow = $(this);
+      var col1 = currentRow.find("td:eq(3)").html();
+      var col2 = currentRow.find("td:eq(2)").html();
+      var col3 = currentRow.find("td:eq(3)").html();
+      var col4 = currentRow.find("td:eq(4)").html();
+      var col5 = currentRow.find("td:eq(5)").html();
+      var obj = {};
+      obj.id = col1;
+      obj.myenname = col2;
+      obj.mykhname = col3;
+      obj.mySex = col4;
+      obj.mygrade = db2;
+      if (currentRow.find(".chk").is(":checked")) {
+        aData4.push(obj);
+        const sleep = async (milliseconds) => {
+          await new Promise(resolve => {
+            return setTimeout(resolve, milliseconds);
+          });
+          homeworkAct();
+          document.getElementById("alertMagWait4").style.display = "block";
+          document.getElementById("alertMag4").style.display = "none";
+          document.getElementById("showBtnn3").style.display = "none";
           setTimeout(function () {
             window.location.reload();
 

@@ -557,6 +557,16 @@
                                             </td>
                                             <td>
                                                 <div class="form-floating">
+                                                    <button style="color: rgb(12, 0, 104);font-weight: bold;"
+                                                        type="button" class="btn btn-warning rounded-pill"
+                                                        data-bs-toggle="modal" data-bs-target="#getHomework">
+                                                        <i class="bi bi-arrow-left-right me-2"></i>Homework
+                                                    </button>
+                                                </div>
+
+                                            </td>
+                                            <td>
+                                                <div class="form-floating">
                                                     <button type="button" class="btn btn-success rounded-pill m-2"
                                                         id="myUpdate" onclick="UpStdgade(event)">Upgrade</button>
                                                 </div>
@@ -684,6 +694,30 @@
                                     alt=""></span>
                         </div>
                         <div class="modal-footer" id="showBtnn2">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                            <button type="button" id="btnSport" class="btn btn-success">Yes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="getHomework" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <!-- <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div> -->
+                        <!-- <div class="alert alert-success" role="alert" id="showAlert2">
+                            <i class="bi bi-check-circle-fill me-2"></i> <span id="info"></span> <span
+                                id="getname"></span>
+                        </div>
+ -->
+                        <div class="modal-body text-center myWaa">
+                            <span id="alertMag4">⚠️ Are you sure? ⚠️</span>
+                            <span id="alertMagWait4">Please wait!! ⚠️ <br> <img src="./img/clock.gif" width="50px"
+                                    alt=""></span>
+                        </div>
+                        <div class="modal-footer" id="showBtnn3">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
                             <button type="button" id="btnSport" class="btn btn-success">Yes</button>
                         </div>
