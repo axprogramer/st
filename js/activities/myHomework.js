@@ -304,6 +304,73 @@ function addItemsToTable(
         + parseFloat(h24) + parseFloat(h25);
     let getSum = sumall / `${dbdiviAct}`;
     td27.innerHTML = getSum;
+
+    document.getElementById('uploadScore').addEventListener('click',function(){
+        let data = getSum;
+        if(dbmonthAct == 'October'){
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+                {
+                    hNov: data,
+                },
+            )
+        }
+        if(dbmonthAct == 'November'){
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+                {
+                    hDec: data,
+                },
+            )
+        }
+        if(dbmonthAct == 'December'){
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+                {
+                    hJan: data,
+                },
+            )
+        }
+        if(dbmonthAct == 'January'){
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+                {
+                    hFeb: data,
+                },
+            )
+        }
+        if(dbmonthAct == 'February'){
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+                {
+                    hMar: data,
+                },
+            )
+        }
+        if(dbmonthAct == 'March'){
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+                {
+                    hApr: data,
+                },
+            )
+        }
+        if(dbmonthAct == 'April-May'){
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+                {
+                    hJun: data,
+                },
+            )
+        }
+        if(dbmonthAct == 'June'){
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+                {
+                    hJul: data,
+                },
+            )
+        }
+        if(dbmonthAct == 'July'){
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+                {
+                    hAug: data,
+                },
+            )
+        }
+    })
     //Set ID for ech td
     var noSpp = id.replace(/\s+/g, ''); //no name space
     td2.id = `${noSpp}h1`;
