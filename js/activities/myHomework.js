@@ -182,6 +182,8 @@ function addItemsToTable(
     var td25 = document.createElement('td');
     var td26 = document.createElement('td');
     var td27 = document.createElement('td');
+    var td28 = document.createElement('td');
+    var chk1 = document.createElement('input');
     td27.style.color = 'red';
     td2.contentEditable = true;
     td3.contentEditable = true;
@@ -209,6 +211,84 @@ function addItemsToTable(
     td25.contentEditable = true;
     td26.contentEditable = true;
 
+    if(h1 == undefined){
+        h1 = 0;
+    }
+    if(h2 == undefined){
+        h2 = 0;
+    }
+    if(h3 == undefined){
+        h3 = 0;
+    }
+    if(h4 == undefined){
+        h4 = 0;
+    }
+    if(h5 == undefined){
+        h5 = 0;
+    }
+    if(h6 == undefined){
+        h6 = 0;
+    }
+    if(h7 == undefined){
+        h7 = 0;
+    }
+    if(h8 == undefined){
+        h8 = 0;
+    }
+    if(h9 == undefined){
+        h9 = 0;
+    }
+    if(h10 == undefined){
+        h10 = 0;
+    }
+    if(h11 == undefined){
+        h11 = 0;
+    }
+    if(h12 == undefined){
+        h12 = 0;
+    }
+    if(h13 == undefined){
+        h13 = 0;
+    }
+    if(h14 == undefined){
+        h14 = 0;
+    }
+    if(h15 == undefined){
+        h15 = 0;
+    }
+    if(h16 == undefined){
+        h16 = 0;
+    }
+    if(h17 == undefined){
+        h17 = 0;
+    }
+    if(h18 == undefined){
+        h18 = 0;
+    }
+    if(h19 == undefined){
+        h19 = 0;
+    }
+    if(h20 == undefined){
+        h20 = 0;
+    }
+    if(h21 == undefined){
+        h21 = 0;
+    }
+    if(h22 == undefined){
+        h22 = 0;
+    }
+    if(h23 == undefined){
+        h23 = 0;
+    }
+    if(h24 == undefined){
+        h24 = 0;
+    }
+    if(h25 == undefined){
+        h25 = 0;
+    }
+    chk1.type = 'checkbox';
+    chk1.id = 'chkdata';
+    chk1.checked = true;
     let sumall = parseFloat(h1) +
         parseFloat(h2) + parseFloat(h3)
         + parseFloat(h4) + parseFloat(h5)
@@ -223,6 +303,7 @@ function addItemsToTable(
         + parseFloat(h22) + parseFloat(h23)
         + parseFloat(h24) + parseFloat(h25);
     let getSum = sumall / `${dbdiviAct}`;
+    td27.innerHTML = getSum;
     //Set ID for ech td
     var noSpp = id.replace(/\s+/g, ''); //no name space
     td2.id = `${noSpp}h1`;
@@ -250,6 +331,7 @@ function addItemsToTable(
     td24.id = `${noSpp}h23`;
     td25.id = `${noSpp}h24`;
     td26.id = `${noSpp}h25`;
+    td27.id = `${noSpp}h26`;
     stdList.push([
         name, id, sex, khname,
         h1,
@@ -436,7 +518,6 @@ function addItemsToTable(
     // } else {
     //     td27.innerHTML = getSum;
     // }
-    td27.innerHTML = getSum;
 
     const sleep = async (milliseconds) => {
         await new Promise(resolve => {
@@ -874,11 +955,76 @@ function addItemsToTable(
     };
     sleep(1000);
 
+    // $(document).ready(function () {
+
+    //     $("#sumUpScore").on('click', function () {
+    //         $("#myHomeworkRecord tbody tr").each(function () {
+    //             var currentRow = $(this);
+    //             var col1 = currentRow.find("td:eq(2)").html();
+    //             var col2 = currentRow.find("td:eq(3)").html();
+    //             var col3 = currentRow.find("td:eq(4)").html();
+    //             var col4 = currentRow.find("td:eq(5)").html();
+    //             var col5 = currentRow.find("td:eq(6)").html();
+    //             var col6 = currentRow.find("td:eq(7)").html();
+    //             var col7 = currentRow.find("td:eq(8)").html();
+    //             var col8 = currentRow.find("td:eq(9)").html();
+    //             var col9 = currentRow.find("td:eq(10)").html();
+    //             var col10 = currentRow.find("td:eq(11)").html();
+    //             var col11 = currentRow.find("td:eq(12)").html();
+    //             var col12 = currentRow.find("td:eq(13)").html();
+    //             var col13 = currentRow.find("td:eq(14)").html();
+    //             var col14 = currentRow.find("td:eq(15)").html();
+    //             var col15 = currentRow.find("td:eq(16)").html();
+    //             var col16 = currentRow.find("td:eq(17)").html();
+    //             var col17 = currentRow.find("td:eq(18)").html();
+    //             var col18 = currentRow.find("td:eq(19)").html();
+    //             var col19 = currentRow.find("td:eq(20)").html();
+    //             var col20 = currentRow.find("td:eq(21)").html();
+    //             var col21 = currentRow.find("td:eq(22)").html();
+    //             var col22 = currentRow.find("td:eq(23)").html();
+    //             var col23 = currentRow.find("td:eq(24)").html();
+    //             var col24 = currentRow.find("td:eq(25)").html();
+    //             var col25 = currentRow.find("td:eq(26)").html();
+
+    //             let sumall = parseFloat(col1)
+    //                 + parseFloat(col2) + parseFloat(col12)
+    //                 + parseFloat(col3) + parseFloat(col13)
+    //                 + parseFloat(col4) + parseFloat(col14)
+    //                 + parseFloat(col5) + parseFloat(col15)
+    //                 + parseFloat(col6) + parseFloat(col16)
+    //                 + parseFloat(col7) + parseFloat(col17)
+    //                 + parseFloat(col8) + parseFloat(col18)
+    //                 + parseFloat(col9) + parseFloat(col19)
+    //                 + parseFloat(col10) + parseFloat(col20)
+    //                 + parseFloat(col11) + parseFloat(col21)
+    //                 + parseFloat(col22) + parseFloat(col23)
+    //                 + parseFloat(col24) + parseFloat(col25)
+
+    //             let getSum = sumall / `${dbdiviAct}`;
+    //             let allTotal = getSum.toString();
+    //             // td27.innerHTML = allTotal;
+    //             console.log(allTotal);
+
+    //             document.getElementById(`${noSpp}h26`).innerHTML = allTotal;
+    //             // var obj = {};
+    //             // obj.h1 = col1;
+    //             // obj.h2 = col2;
+    //             // obj.mykhname = col3;
+    //             // obj.mySex = col4;
+    //             // console.log(obj.id);
+    //             // if (currentRow.find(".chkdata").is(":checked")) {
+    //             //     aData3.push(obj);
+    //             // }
+    //         });
+
+
+    //     });
+
+    // });
 
 
 
-
-
+    td28.appendChild(chk1);
     trow.appendChild(td0);
     trow.appendChild(td1);
     trow.appendChild(td2);
@@ -907,7 +1053,37 @@ function addItemsToTable(
     trow.appendChild(td25);
     trow.appendChild(td26);
     trow.appendChild(td27);
+    trow.appendChild(td28);
 
     tbody.appendChild(trow);
 
 }
+
+// var aData3 = [];
+// $(document).ready(function () {
+
+//     $("#sumUpScore").on('click', function () {
+//         console.log('go');
+//         $("#myHomeworkRecord tbody tr").each(function () {
+//             var currentRow = $(this);
+//             var col1 = currentRow.find("td:eq(0)").html();
+//             var col2 = currentRow.find("td:eq(1)").html();
+//             var col3 = currentRow.find("td:eq(2)").html();
+//             var col4 = currentRow.find("td:eq(3)").html();
+//             var col5 = currentRow.find("td:eq(4)").html();
+//             var obj = {};
+//             obj.id = col2;
+//             obj.myenname = col2;
+//             obj.mykhname = col3;
+//             obj.mySex = col4;
+//             console.log(obj.id);
+//             if (currentRow.find(".chkdata").is(":checked")) {
+//                 aData3.push(obj);
+//             }
+//         });
+
+
+//     });
+
+// });
+
