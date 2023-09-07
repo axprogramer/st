@@ -303,6 +303,7 @@ function addItemsToTable(
         + parseFloat(h22) + parseFloat(h23)
         + parseFloat(h24) + parseFloat(h25);
     let getSum = sumall / `${dbdiviAct}`;
+    getSum.toFixed(2);
     td27.innerHTML = getSum;
 
     document.getElementById('uploadScore').addEventListener('click',function(){
