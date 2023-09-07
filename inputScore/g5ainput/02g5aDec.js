@@ -35,8 +35,9 @@ function selectAllData() {
           var readingDec = CurrentRecord.val().readingDec;
           var averageDec = CurrentRecord.val().averageDec;
           var myKh = CurrentRecord.val().myKh;
+          var hDec = CurrentRecord.val().hDec;
           addItemsToTable(name, id, sex, speakingDec, writingDec, listeningDec,
-            readingDec, averageDec, myKh, score);
+            readingDec, averageDec, myKh, score, hDec);
           showAuto();
           b = 1;
           document.getElementById('showNNN').value = b;
@@ -51,7 +52,7 @@ var studentN0;
 
 var stdList = [];
 function addItemsToTable(name, id, sex, speakingDec, writingDec, listeningDec,
-  readingDec, averageDec, myKh, score) {
+  readingDec, averageDec, myKh, score,hDec) {
   var tbody = document.getElementById('showData');
   var trow = document.createElement('tr');
   var td0 = document.createElement('td');
@@ -63,6 +64,7 @@ function addItemsToTable(name, id, sex, speakingDec, writingDec, listeningDec,
   var td6 = document.createElement('td');
   var td7 = document.createElement('td');
   var td8 = document.createElement('td');
+  var td9 = document.createElement('td');
   td3.contentEditable = true;
   td3.id = `${id}score`;
   let ssid = `${id}score`;
@@ -83,6 +85,9 @@ function addItemsToTable(name, id, sex, speakingDec, writingDec, listeningDec,
   td0.innerHTML = ++studentN0;
   td1.innerHTML = id;
   td2.innerHTML = sex;
+  if(hDec == undefined){
+    hDec = 0;
+  }
   if (speakingDec == undefined) {
     td4.innerHTML = 0;
   } else {
@@ -107,11 +112,17 @@ function addItemsToTable(name, id, sex, speakingDec, writingDec, listeningDec,
 
     td7.innerHTML = readingDec;
   }
-  if (averageDec == undefined) {
+  if (hDec == undefined) {
     td8.innerHTML = 0;
   } else {
 
-    td8.innerHTML = averageDec;
+    td8.innerHTML = hDec;
+  }
+  if (averageDec == undefined) {
+    td9.innerHTML = 0;
+  } else {
+
+    td9.innerHTML = averageDec;
   }
 
   if (score == undefined) {
@@ -148,14 +159,18 @@ function addItemsToTable(name, id, sex, speakingDec, writingDec, listeningDec,
         td5.innerHTML = di;
         td6.innerHTML = di;
         td7.innerHTML = di;
-        td8.innerHTML = di;
+        let to1 = parseFloat(data) + parseFloat(hDec);
+        let sum = to1 / 5;
+        sum = sum.toFixed(2).replace(/[.,]00$/, "");
+        td9.innerHTML = sum;
+
         firebase.database().ref(`${db}/` + `${db3}/` + id).update(
           {
             speakingDec: di,
             writingDec: di,
             listeningDec: di,
             readingDec: di,
-            averageDec: di,
+            averageDec: sum,
             scoreDec: data,
           },
         )
@@ -170,10 +185,10 @@ function addItemsToTable(name, id, sex, speakingDec, writingDec, listeningDec,
         td6.innerHTML = di;
         td7.innerHTML = di;
         let speak = td4.innerHTML;
-        let toto = parseFloat(data) + parseFloat(speak);
-        let sub = parseFloat(toto) / 4;
+        let toto = parseFloat(data) + parseFloat(speak) + parseFloat(hDec);
+        let sub = parseFloat(toto) / 5;
         sub = sub.toFixed(2).replace(/[.,]00$/, "");
-        td8.innerHTML = sub;
+        td9.innerHTML = sub;
         firebase.database().ref(`${db}/` + `${db3}/` + id).update(
           {
             writingDec: di,
@@ -199,6 +214,7 @@ function addItemsToTable(name, id, sex, speakingDec, writingDec, listeningDec,
   trow.appendChild(td6);
   trow.appendChild(td7);
   trow.appendChild(td8);
+  trow.appendChild(td9);
 
   td1.innerHTML = `<button type="button" class="button-7" onclick="Fillbox(${studentN0})">${myKh}</button>`;
   tbody.appendChild(trow);

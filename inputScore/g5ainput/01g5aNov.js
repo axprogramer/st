@@ -40,8 +40,9 @@ function selectAllData() {
           var averageNov = CurrentRecord.val().averageNov;
           var rankNOv = CurrentRecord.val().rankNOv;
           var myKh = CurrentRecord.val().myKh;
+          var hNov = CurrentRecord.val().hNov;
           addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
-            readingNov, averageNov, rankNOv, myKh, score);
+            readingNov, averageNov, rankNOv, myKh, score,hNov);
           showAuto();
           b = 1;
           document.getElementById('showNNN').value = b;
@@ -85,7 +86,7 @@ var studentN0;
 
 var stdList = [];
 function addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
-  readingNov, averageNov, rankNOv, myKh, score) {
+  readingNov, averageNov, rankNOv, myKh, score, hNov) {
   var tbody = document.getElementById('showData');
   var trow = document.createElement('tr');
   var td0 = document.createElement('td');
@@ -97,6 +98,7 @@ function addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
   var td6 = document.createElement('td');
   var td7 = document.createElement('td');
   var td8 = document.createElement('td');
+  var td9 = document.createElement('td');
 
   td3.contentEditable = true;
   td3.id = `${id}score`;
@@ -110,10 +112,13 @@ function addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
   td6.id = lisid;
   td7.id = reid;
   stdList.push([name, id, sex, speakingNov, writingNov, listeningNov,
-    readingNov, averageNov, rankNOv, myKh, score]);
+    readingNov, averageNov, rankNOv, myKh, score,hNov]);
   td0.innerHTML = ++studentN0;
   td1.innerHTML = id;
   td2.innerHTML = sex;
+  if(hNov == undefined){
+    hNov = 0;
+  }
   if (speakingNov == undefined) {
     td4.innerHTML = 0;
   } else {
@@ -138,11 +143,17 @@ function addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
 
     td7.innerHTML = readingNov;
   }
-  if (averageNov == undefined) {
+  if (hNov == undefined) {
     td8.innerHTML = 0;
   } else {
 
-    td8.innerHTML = averageNov;
+    td8.innerHTML = hNov;
+  }
+  if (averageNov == undefined) {
+    td9.innerHTML = 0;
+  } else {
+
+    td9.innerHTML = averageNov;
   }
 
 
@@ -180,14 +191,17 @@ function addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
         td5.innerHTML = di;
         td6.innerHTML = di;
         td7.innerHTML = di;
-        td8.innerHTML = di;
+        let to1 = parseFloat(data) + parseFloat(hNov);
+        let sum = to1 / 5;
+        sum = sum.toFixed(2).replace(/[.,]00$/, "");
+        td9.innerHTML = sum;
         firebase.database().ref(`${db}/` + `${db3}/` + id).update(
           {
             speakingNov: di,
             writingNov: di,
             listeningNov: di,
             readingNov: di,
-            averageNov: di,
+            averageNov: sum,
             scoreNov: data,
           },
         )
@@ -202,10 +216,10 @@ function addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
         td6.innerHTML = di;
         td7.innerHTML = di;
         let speak = td4.innerHTML;
-        let toto = parseFloat(data) + parseFloat(speak);
-        let sub = parseFloat(toto) / 4;
+        let toto = parseFloat(data) + parseFloat(speak) + parseFloat(hNov);
+        let sub = parseFloat(toto) / 5;
         sub = sub.toFixed(2).replace(/[.,]00$/, "");
-        td8.innerHTML = sub;
+        td9.innerHTML = sub;
         firebase.database().ref(`${db}/` + `${db3}/` + id).update(
           {
             writingNov: di,
@@ -233,6 +247,7 @@ function addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
   trow.appendChild(td6);
   trow.appendChild(td7);
   trow.appendChild(td8);
+  trow.appendChild(td9);
 
   td1.innerHTML = `<button type="button" class="button-7" onclick="Fillbox(${studentN0})">${myKh}</button>`;
   tbody.appendChild(trow);
