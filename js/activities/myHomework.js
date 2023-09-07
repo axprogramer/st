@@ -1121,37 +1121,8 @@ function addItemsToTable(
     trow.appendChild(td25);
     trow.appendChild(td26);
     trow.appendChild(td27);
-    trow.appendChild(td28);
+    // trow.appendChild(td28);
 
     tbody.appendChild(trow);
 
 }
-
-// var aData3 = [];
-// $(document).ready(function () {
-
-//     $("#sumUpScore").on('click', function () {
-//         console.log('go');
-//         $("#myHomeworkRecord tbody tr").each(function () {
-//             var currentRow = $(this);
-//             var col1 = currentRow.find("td:eq(0)").html();
-//             var col2 = currentRow.find("td:eq(1)").html();
-//             var col3 = currentRow.find("td:eq(2)").html();
-//             var col4 = currentRow.find("td:eq(3)").html();
-//             var col5 = currentRow.find("td:eq(4)").html();
-//             var obj = {};
-//             obj.id = col2;
-//             obj.myenname = col2;
-//             obj.mykhname = col3;
-//             obj.mySex = col4;
-//             console.log(obj.id);
-//             if (currentRow.find(".chkdata").is(":checked")) {
-//                 aData3.push(obj);
-//             }
-//         });
-
-
-//     });
-
-// });
-
