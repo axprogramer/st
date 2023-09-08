@@ -78,11 +78,14 @@ function addItemsToTable(name, id, sex, speakingJan, writingJan, listeningJan,
   td7.id = reid;
 
   stdList.push([name, id, sex, speakingJan, writingJan, listeningJan,
-    readingJan, averageJan, myKh,score]);
+    readingJan, averageJan, myKh,score,hJan]);
   td0.innerHTML = ++studentN0;
   td1.innerHTML = id;
   td2.innerHTML = sex;
-  
+  if (hJan == undefined) {
+    hJan = 0;
+  }
+
   if(speakingJan == undefined){
     td4.innerHTML = 0;
   }else{
@@ -107,11 +110,17 @@ function addItemsToTable(name, id, sex, speakingJan, writingJan, listeningJan,
     
     td7.innerHTML = readingJan;
   }
-  if(averageJan == undefined){
+  if(hJan == undefined){
     td8.innerHTML = 0;
   }else{
     
-    td8.innerHTML = averageJan;
+    td8.innerHTML = hJan;
+  }
+  if(averageJan == undefined){
+    td9.innerHTML = 0;
+  }else{
+    
+    td9.innerHTML = averageJan;
   }
 
   if (score == undefined) {
@@ -148,14 +157,18 @@ function addItemsToTable(name, id, sex, speakingJan, writingJan, listeningJan,
         td5.innerHTML = di;
         td6.innerHTML = di;
         td7.innerHTML = di;
-        td8.innerHTML = di;
+        let to1 = parseFloat(data) + parseFloat(hJan);
+        let sum = to1 / 5;
+        sum = sum.toFixed(2).replace(/[.,]00$/, "");
+        td9.innerHTML = sum;
+
         firebase.database().ref(`${db}/` + `${db3}/` + id).update(
           {
             speakingJan: di,
             writingJan: di,
             listeningJan: di,
             readingJan: di,
-            averageJan: di,
+            averageJan: sum,
             scoreJan: data,
           },
         )
@@ -170,10 +183,10 @@ function addItemsToTable(name, id, sex, speakingJan, writingJan, listeningJan,
         td6.innerHTML = di;
         td7.innerHTML = di;
         let speak = td4.innerHTML;
-        let toto = parseFloat(data) + parseFloat(speak);
-        let sub = parseFloat(toto) / 4;
+        let toto = parseFloat(data) + parseFloat(speak) + parseFloat(hJan);
+        let sub = parseFloat(toto) / 5;
         sub = sub.toFixed(2).replace(/[.,]00$/, "");
-        td8.innerHTML = sub;
+        td9.innerHTML = sub;
         firebase.database().ref(`${db}/` + `${db3}/` + id).update(
           {
             writingJan: di,
@@ -199,6 +212,7 @@ function addItemsToTable(name, id, sex, speakingJan, writingJan, listeningJan,
   trow.appendChild(td6);
   trow.appendChild(td7);
   trow.appendChild(td8);
+  trow.appendChild(td9);
 
   td1.innerHTML = `<button type="button" class="button-7" onclick="Fillbox(${studentN0})">${myKh}</button>`;
   tbody.appendChild(trow);

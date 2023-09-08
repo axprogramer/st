@@ -35,8 +35,9 @@ function selectAllData() {
           var readingmar = CurrentRecord.val().readingmar;
           var averagemar = CurrentRecord.val().averagemar;
           var myKh = CurrentRecord.val().myKh;
+          var hMar = CurrentRecord.val().hMar;
           addItemsToTable(name, id, sex, speakingmar, writingmar, listeningmar,
-            readingmar, averagemar, myKh,score);
+            readingmar, averagemar, myKh,score,hMar);
           showAuto();
           b = 1;
           document.getElementById('showNNN').value = b;
@@ -50,7 +51,7 @@ var studentN0;
 
 var stdList = [];
 function addItemsToTable(name, id, sex, speakingmar, writingmar, listeningmar,
-  readingmar, averagemar, myKh,score) {
+  readingmar, averagemar, myKh,score,hMar) {
   var tbody = document.getElementById('showData');
   var trow = document.createElement('tr');
   var td0 = document.createElement('td');
@@ -62,6 +63,7 @@ function addItemsToTable(name, id, sex, speakingmar, writingmar, listeningmar,
   var td6 = document.createElement('td');
   var td7 = document.createElement('td');
   var td8 = document.createElement('td');
+  var td9 = document.createElement('td');
 
   td3.contentEditable = true;
   td3.id = `${id}score`;
@@ -80,6 +82,9 @@ function addItemsToTable(name, id, sex, speakingmar, writingmar, listeningmar,
   td0.innerHTML = ++studentN0;
   td1.innerHTML = id;
   td2.innerHTML = sex;
+  if (hMar == undefined) {
+    hMar = 0;
+  }
 
   if (speakingmar == undefined) {
     td4.innerHTML = 0;
@@ -105,11 +110,17 @@ function addItemsToTable(name, id, sex, speakingmar, writingmar, listeningmar,
 
     td7.innerHTML = readingmar;
   }
-  if (averagemar == undefined) {
+  if (hMar == undefined) {
     td8.innerHTML = 0;
   } else {
 
-    td8.innerHTML = averagemar;
+    td8.innerHTML = hMar;
+  }
+  if (averagemar == undefined) {
+    td9.innerHTML = 0;
+  } else {
+
+    td9.innerHTML = averagemar;
   }
 
   if (score == undefined) {
@@ -146,14 +157,17 @@ function addItemsToTable(name, id, sex, speakingmar, writingmar, listeningmar,
         td5.innerHTML = di;
         td6.innerHTML = di;
         td7.innerHTML = di;
-        td8.innerHTML = di;
+        let to1 = parseFloat(data) + parseFloat(hMar);
+        let sum = to1 / 5;
+        sum = sum.toFixed(2).replace(/[.,]00$/, "");
+        td9.innerHTML = sum;
         firebase.database().ref(`${db}/` + `${db3}/` + id).update(
           {
             speakingmar: di,
             writingmar: di,
             listeningmar: di,
             readingmar: di,
-            averagemar: di,
+            averagemar: sum,
             scoremar: data,
           },
         )
@@ -168,10 +182,10 @@ function addItemsToTable(name, id, sex, speakingmar, writingmar, listeningmar,
         td6.innerHTML = di;
         td7.innerHTML = di;
         let speak = td4.innerHTML;
-        let toto = parseFloat(data) + parseFloat(speak);
-        let sub = parseFloat(toto) / 4;
+        let toto = parseFloat(data) + parseFloat(speak) + parseFloat(hMar);
+        let sub = parseFloat(toto) / 5;
         sub = sub.toFixed(2).replace(/[.,]00$/, "");
-        td8.innerHTML = sub;
+        td9.innerHTML = sub;
         firebase.database().ref(`${db}/` + `${db3}/` + id).update(
           {
             writingmar: di,
@@ -198,6 +212,7 @@ function addItemsToTable(name, id, sex, speakingmar, writingmar, listeningmar,
   trow.appendChild(td6);
   trow.appendChild(td7);
   trow.appendChild(td8);
+  trow.appendChild(td9);
 
   td1.innerHTML = `<button type="button" class="button-7" onclick="Fillbox(${studentN0})">${myKh}</button>`;
   tbody.appendChild(trow);
