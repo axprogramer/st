@@ -35,8 +35,9 @@ function selectAllData() {
           var readingJan = CurrentRecord.val().readingJan;
           var averageJan = CurrentRecord.val().averageJan;
           var myKh = CurrentRecord.val().myKh;
+          var hJan = CurrentRecord.val().hJan;
           addItemsToTable(name, id, sex, speakingJan, writingJan, listeningJan,
-            readingJan, averageJan, myKh,score);
+            readingJan, averageJan, myKh,score,hJan);
           showAuto();
           b = 1;
           document.getElementById('showNNN').value = b;
@@ -50,7 +51,7 @@ var studentN0;
 
 var stdList = [];
 function addItemsToTable(name, id, sex, speakingJan, writingJan, listeningJan,
-  readingJan, averageJan, myKh,score) {
+  readingJan, averageJan, myKh,score,hJan) {
   var tbody = document.getElementById('showData');
   var trow = document.createElement('tr');
   var td0 = document.createElement('td');
@@ -62,6 +63,7 @@ function addItemsToTable(name, id, sex, speakingJan, writingJan, listeningJan,
   var td6 = document.createElement('td');
   var td7 = document.createElement('td');
   var td8 = document.createElement('td');
+  var td9 = document.createElement('td');
 
   td3.contentEditable = true;
   td3.id = `${id}score`;
