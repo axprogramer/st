@@ -48,7 +48,26 @@ function GetData2(datas) {
     var readingfeb = data.val().readingfeb;
     var averagefeb = data.val().averagefeb;
     var myKh = data.val().myKh;
+    var hFeb = data.val().hFeb;
 
+    if (writingfeb == undefined) {
+      writingfeb = 0;
+    }
+    if (listeningfeb == undefined) {
+      listeningfeb = 0;
+    }
+    if (readingfeb == undefined) {
+      readingfeb = 0;
+    }
+    if (averagefeb == undefined) {
+      averagefeb = 0;
+    }
+    if (speakingfeb == undefined) {
+      speakingfeb = 0;
+    }
+    if (hFeb == undefined) {
+      hFeb = 0;
+    }
 
     students.push({
       name,
@@ -59,6 +78,7 @@ function GetData2(datas) {
       readingfeb,
       averagefeb,
       myKh,
+      hFeb,
     });
   });
 
@@ -85,6 +105,7 @@ function GetData2(datas) {
             <td>${student.writingfeb}</td>
             <td>${student.listeningfeb}</td>
             <td>${student.readingfeb}</td>
+            <td>${student.hFeb}</td>
             <td>${student.averagefeb}</td>
             <td>${student.Rank}</td>
     `;
@@ -105,7 +126,25 @@ function GetDataView(datas) {
     var readingfeb = data.val().readingfeb;
     var averagefeb = data.val().averagefeb;
     var myKh = data.val().myKh;
-
+    var hFeb = data.val().hFeb;
+    if (writingfeb == undefined) {
+      writingfeb = 0;
+    }
+    if (listeningfeb == undefined) {
+      listeningfeb = 0;
+    }
+    if (readingfeb == undefined) {
+      readingfeb = 0;
+    }
+    if (averagefeb == undefined) {
+      averagefeb = 0;
+    }
+    if (speakingfeb == undefined) {
+      speakingfeb = 0;
+    }
+    if (hFeb == undefined) {
+      hFeb = 0;
+    }
 
     students.push({
       name,
@@ -116,6 +155,7 @@ function GetDataView(datas) {
       readingfeb,
       averagefeb,
       myKh,
+      hFeb,
     });
   });
 
@@ -158,6 +198,7 @@ function GetDataView(datas) {
             <td>${student.writingfeb}</td>
             <td>${student.listeningfeb}</td>
             <td>${student.readingfeb}</td>
+            <td>${student.hFeb}</td>
             <td>${student.averagefeb}</td>
             <td>${student.Rank}</td>
             <td style="display: none;">${mention}${student.sex}</td> 
@@ -179,7 +220,26 @@ function GetDataSave2(datas) {
     var readingfeb = data.val().readingfeb;
     var averagefeb = data.val().averagefeb;
     var myKh = data.val().myKh;
+    var hFeb = data.val().hFeb;
 
+    if (writingfeb == undefined) {
+      writingfeb = 0;
+    }
+    if (listeningfeb == undefined) {
+      listeningfeb = 0;
+    }
+    if (readingfeb == undefined) {
+      readingfeb = 0;
+    }
+    if (averagefeb == undefined) {
+      averagefeb = 0;
+    }
+    if (speakingfeb == undefined) {
+      speakingfeb = 0;
+    }
+    if (hFeb == undefined) {
+      hFeb = 0;
+    }
 
     students.push({
       name,
@@ -190,6 +250,7 @@ function GetDataSave2(datas) {
       listeningfeb,
       readingfeb,
       averagefeb,
+      hFeb,
     });
   });
 
@@ -339,6 +400,7 @@ function GetDataSave2(datas) {
             <td>${student.writingfeb}</td>
             <td>${student.listeningfeb}</td>
             <td>${student.readingfeb}</td>
+            <td>${student.hFeb}</td>
             <td>${student.averagefeb}</td>
     `;
     tbody.innerHTML += tr;

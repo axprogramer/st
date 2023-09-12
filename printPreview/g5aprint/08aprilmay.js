@@ -48,7 +48,26 @@ function GetData2(datas) {
     var readingma = data.val().readingma;
     var averagema = data.val().averagema;
     var myKh = data.val().myKh;
+    var hApr = data.val().hApr;
 
+    if (writingma == undefined) {
+      writingma = 0;
+    }
+    if (listeningma == undefined) {
+      listeningma = 0;
+    }
+    if (readingma == undefined) {
+      readingma = 0;
+    }
+    if (averagema == undefined) {
+      averagema = 0;
+    }
+    if (speakingma == undefined) {
+      speakingma = 0;
+    }
+    if (hApr == undefined) {
+      hApr = 0;
+    }
 
     students.push({
       name,
@@ -59,6 +78,7 @@ function GetData2(datas) {
       readingma,
       averagema,
       myKh,
+      hApr,
     });
   });
 
@@ -85,6 +105,7 @@ function GetData2(datas) {
             <td>${student.writingma}</td>
             <td>${student.listeningma}</td>
             <td>${student.readingma}</td>
+            <td>${student.hApr}</td>
             <td>${student.averagema}</td>
             <td>${student.Rank}</td>
     `;
@@ -105,6 +126,25 @@ function GetDataView(datas) {
     var readingma = data.val().readingma;
     var averagema = data.val().averagema;
     var myKh = data.val().myKh;
+    var hApr = data.val().hApr;
+    if (writingma == undefined) {
+      writingma = 0;
+    }
+    if (listeningma == undefined) {
+      listeningma = 0;
+    }
+    if (readingma == undefined) {
+      readingma = 0;
+    }
+    if (averagema == undefined) {
+      averagema = 0;
+    }
+    if (speakingma == undefined) {
+      speakingma = 0;
+    }
+    if (hApr == undefined) {
+      hApr = 0;
+    }
 
 
     students.push({
@@ -116,6 +156,7 @@ function GetDataView(datas) {
       readingma,
       averagema,
       myKh,
+      hApr,
     });
   });
 
@@ -158,6 +199,7 @@ function GetDataView(datas) {
             <td>${student.writingma}</td>
             <td>${student.listeningma}</td>
             <td>${student.readingma}</td>
+            <td>${student.hApr}</td>
             <td>${student.averagema}</td>
             <td>${student.Rank}</td>
             <td style="display: none;">${mention}${student.sex}</td> 
@@ -179,6 +221,25 @@ function GetDataSave2(datas) {
     var readingma = data.val().readingma;
     var averagema = data.val().averagema;
     var myKh = data.val().myKh;
+    var hApr = data.val().hApr;
+    if (writingma == undefined) {
+      writingma = 0;
+    }
+    if (listeningma == undefined) {
+      listeningma = 0;
+    }
+    if (readingma == undefined) {
+      readingma = 0;
+    }
+    if (averagema == undefined) {
+      averagema = 0;
+    }
+    if (speakingma == undefined) {
+      speakingma = 0;
+    }
+    if (hApr == undefined) {
+      hApr = 0;
+    }
 
 
     students.push({
@@ -190,6 +251,7 @@ function GetDataSave2(datas) {
       listeningma,
       readingma,
       averagema,
+      hApr,
     });
   });
 
@@ -339,6 +401,7 @@ function GetDataSave2(datas) {
             <td>${student.writingma}</td>
             <td>${student.listeningma}</td>
             <td>${student.readingma}</td>
+            <td>${student.hApr}</td>
             <td>${student.averagema}</td>
     `;
     tbody.innerHTML += tr;

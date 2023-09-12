@@ -48,7 +48,26 @@ function GetData2(datas) {
     var readingNov = data.val().readingNov;
     var averageNov = data.val().averageNov;
     var myKh = data.val().myKh;
+    var hNov = data.val().hNov;
 
+    if (writingNov == undefined) {
+      writingNov = 0;
+    }
+    if (listeningNov == undefined) {
+      listeningNov = 0;
+    }
+    if (readingNov == undefined) {
+      readingNov = 0;
+    }
+    if (averageNov == undefined) {
+      averageNov = 0;
+    }
+    if (speakingNov == undefined) {
+      speakingNov = 0;
+    }
+    if (hNov == undefined) {
+      hNov = 0;
+    }
 
     students.push({
       name,
@@ -59,6 +78,7 @@ function GetData2(datas) {
       readingNov,
       averageNov,
       myKh,
+      hNov,
     });
   });
 
@@ -85,6 +105,7 @@ function GetData2(datas) {
             <td>${student.writingNov}</td>
             <td>${student.listeningNov}</td>
             <td>${student.readingNov}</td>
+            <td>${student.hNov}</td>
             <td>${student.averageNov}</td>
             <td>${student.Rank}</td>
     `;
@@ -105,6 +126,25 @@ function GetDataView(datas) {
     var readingNov = data.val().readingNov;
     var averageNov = data.val().averageNov;
     var myKh = data.val().myKh;
+    var hNov = data.val().hNov;
+    if (writingNov == undefined) {
+      writingNov = 0;
+    }
+    if (listeningNov == undefined) {
+      listeningNov = 0;
+    }
+    if (readingNov == undefined) {
+      readingNov = 0;
+    }
+    if (averageNov == undefined) {
+      averageNov = 0;
+    }
+    if (speakingNov == undefined) {
+      speakingNov = 0;
+    }
+    if (hNov == undefined) {
+      hNov = 0;
+    }
 
 
     students.push({
@@ -116,6 +156,7 @@ function GetDataView(datas) {
       readingNov,
       averageNov,
       myKh,
+      hNov,
     });
   });
 
@@ -158,6 +199,7 @@ function GetDataView(datas) {
             <td>${student.writingNov}</td>
             <td>${student.listeningNov}</td>
             <td>${student.readingNov}</td>
+            <td>${student.hNov}</td>
             <td>${student.averageNov}</td>
             <td>${student.Rank}</td>
             <td style="display: none;">${mention}${student.sex}</td> 
@@ -179,7 +221,26 @@ function GetDataSave2(datas) {
     var readingNov = data.val().readingNov;
     var averageNov = data.val().averageNov;
     var myKh = data.val().myKh;
+    var hNov = data.val().hNov;
 
+    if (writingNov == undefined) {
+      writingNov = 0;
+    }
+    if (listeningNov == undefined) {
+      listeningNov = 0;
+    }
+    if (readingNov == undefined) {
+      readingNov = 0;
+    }
+    if (averageNov == undefined) {
+      averageNov = 0;
+    }
+    if (speakingNov == undefined) {
+      speakingNov = 0;
+    }
+    if (hNov == undefined) {
+      hNov = 0;
+    }
 
     students.push({
       name,
@@ -190,6 +251,7 @@ function GetDataSave2(datas) {
       listeningNov,
       readingNov,
       averageNov,
+      hNov,
     });
   });
 
@@ -338,6 +400,7 @@ function GetDataSave2(datas) {
             <td>${student.writingNov}</td>
             <td>${student.listeningNov}</td>
             <td>${student.readingNov}</td>
+            <td>${student.hNov}</td>
             <td>${student.averageNov}</td>
     `;
     tbody.innerHTML += tr;

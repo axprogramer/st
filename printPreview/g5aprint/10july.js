@@ -48,8 +48,26 @@ function GetData2(datas) {
     var readingjuly = data.val().readingjuly;
     var averagejuly = data.val().averagejuly;
     var myKh = data.val().myKh;
+    var hJul = data.val().hJul;
 
-
+    if(writingjuly == undefined){
+      writingjuly = 0;
+    }
+    if(listeningjuly == undefined){
+      listeningjuly = 0;
+    }
+    if(readingjuly == undefined){
+      readingjuly = 0;
+    }
+    if(averagejuly == undefined){
+      averagejuly = 0;
+    }
+    if(speakingjuly == undefined){
+      speakingjuly = 0;
+    }
+    if(hJul == undefined){
+      hJul = 0;
+    }
     students.push({
       name,
       sex,
@@ -59,6 +77,7 @@ function GetData2(datas) {
       readingjuly,
       averagejuly,
       myKh,
+      hJul,
     });
   });
 
@@ -85,6 +104,7 @@ function GetData2(datas) {
             <td>${student.writingjuly}</td>
             <td>${student.listeningjuly}</td>
             <td>${student.readingjuly}</td>
+            <td>${student.hJul}</td>
             <td>${student.averagejuly}</td>
             <td>${student.Rank}</td>
     `;
@@ -105,7 +125,26 @@ function GetDataView(datas) {
     var readingjuly = data.val().readingjuly;
     var averagejuly = data.val().averagejuly;
     var myKh = data.val().myKh;
+    var hJul = data.val().hJul;
 
+    if (writingjuly == undefined) {
+      writingjuly = 0;
+    }
+    if (listeningjuly == undefined) {
+      listeningjuly = 0;
+    }
+    if (readingjuly == undefined) {
+      readingjuly = 0;
+    }
+    if (averagejuly == undefined) {
+      averagejuly = 0;
+    }
+    if (speakingjuly == undefined) {
+      speakingjuly = 0;
+    }
+    if (hJul == undefined) {
+      hJul = 0;
+    }
 
     students.push({
       name,
@@ -116,6 +155,7 @@ function GetDataView(datas) {
       readingjuly,
       averagejuly,
       myKh,
+      hJul,
     });
   });
 
@@ -158,6 +198,7 @@ function GetDataView(datas) {
             <td>${student.writingjuly}</td>
             <td>${student.listeningjuly}</td>
             <td>${student.readingjuly}</td>
+            <td>${student.hJul}</td>
             <td>${student.averagejuly}</td>
             <td>${student.Rank}</td>
             <td style="display: none;">${mention}${student.sex}</td> 
@@ -179,6 +220,25 @@ function GetDataSave2(datas) {
     var readingjuly = data.val().readingjuly;
     var averagejuly = data.val().averagejuly;
     var myKh = data.val().myKh;
+    var hJul = data.val().hJul;
+    if (writingjuly == undefined) {
+      writingjuly = 0;
+    }
+    if (listeningjuly == undefined) {
+      listeningjuly = 0;
+    }
+    if (readingjuly == undefined) {
+      readingjuly = 0;
+    }
+    if (averagejuly == undefined) {
+      averagejuly = 0;
+    }
+    if (speakingjuly == undefined) {
+      speakingjuly = 0;
+    }
+    if (hJul == undefined) {
+      hJul = 0;
+    }
 
 
     students.push({
@@ -190,6 +250,7 @@ function GetDataSave2(datas) {
       listeningjuly,
       readingjuly,
       averagejuly,
+      hJul,
     });
   });
 
@@ -340,6 +401,7 @@ function GetDataSave2(datas) {
             <td>${student.writingjuly}</td>
             <td>${student.listeningjuly}</td>
             <td>${student.readingjuly}</td>
+            <td>${student.hJul}</td>
             <td>${student.averagejuly}</td>
     `;
     tbody.innerHTML += tr;
