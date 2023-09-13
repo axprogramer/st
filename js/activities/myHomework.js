@@ -286,6 +286,133 @@ function addItemsToTable(
     if(h25 == undefined){
         h25 = 0;
     }
+    //Color highlight
+    if(h1 == 0){
+        td2.style.backgroundColor = 'red';
+    }else{
+        td2.style.backgroundColor = 'yellow';
+    }
+    if(h2 == 0){
+        td3.style.backgroundColor = 'red';
+    }else{
+        td3.style.backgroundColor = 'yellow';
+    }
+    if(h3 == 0){
+        td4.style.backgroundColor = 'red';
+    }else{
+        td4.style.backgroundColor = 'yellow';
+    }
+    if(h4 == 0){
+        td5.style.backgroundColor = 'red';
+    }else{
+        td5.style.backgroundColor = 'yellow';
+    }
+    if(h5 == 0){
+        td6.style.backgroundColor = 'red';
+    }else{
+        td6.style.backgroundColor = 'yellow';
+    }
+    if(h6 == 0){
+        td7.style.backgroundColor = 'red';
+    }else{
+        td7.style.backgroundColor = 'yellow';
+    }
+    if(h7 == 0){
+        td8.style.backgroundColor = 'red';
+    }else{
+        td8.style.backgroundColor = 'yellow';
+    }
+    if(h8 == 0){
+        td9.style.backgroundColor = 'red';
+    }else{
+        td9.style.backgroundColor = 'yellow';
+    }
+    if(h9 == 0){
+        td10.style.backgroundColor = 'red';
+    }else{
+        td10.style.backgroundColor = 'yellow';
+    }
+    if(h10 == 0){
+        td11.style.backgroundColor = 'red';
+    }else{
+        td11.style.backgroundColor = 'yellow';
+    }
+    if(h11 == 0){
+        td12.style.backgroundColor = 'red';
+    }else{
+        td12.style.backgroundColor = 'yellow';
+    }
+    if(h12 == 0){
+        td13.style.backgroundColor = 'red';
+    }else{
+        td13.style.backgroundColor = 'yellow';
+    }
+    if(h13 == 0){
+        td14.style.backgroundColor = 'red';
+    }else{
+        td14.style.backgroundColor = 'yellow';
+    }
+    if(h14 == 0){
+        td15.style.backgroundColor = 'red';
+    }else{
+        td15.style.backgroundColor = 'yellow';
+    }
+    if(h15 == 0){
+        td16.style.backgroundColor = 'red';
+    }else{
+        td16.style.backgroundColor = 'yellow';
+    }
+    if(h16 == 0){
+        td17.style.backgroundColor = 'red';
+    }else{
+        td17.style.backgroundColor = 'yellow';
+    }
+    if(h17 == 0){
+        td18.style.backgroundColor = 'red';
+    }else{
+        td18.style.backgroundColor = 'yellow';
+    }
+    if(h18 == 0){
+        td19.style.backgroundColor = 'red';
+    }else{
+        td19.style.backgroundColor = 'yellow';
+    }
+    if(h19 == 0){
+        td20.style.backgroundColor = 'red';
+    }else{
+        td20.style.backgroundColor = 'yellow';
+    }
+    if(h20 == 0){
+        td21.style.backgroundColor = 'red';
+    }else{
+        td21.style.backgroundColor = 'yellow';
+    }
+    if(h21 == 0){
+        td22.style.backgroundColor = 'red';
+    }else{
+        td22.style.backgroundColor = 'yellow';
+    }
+    if(h22 == 0){
+        td23.style.backgroundColor = 'red';
+    }else{
+        td23.style.backgroundColor = 'yellow';
+    }
+    if(h23 == 0){
+        td24.style.backgroundColor = 'red';
+    }else{
+        td24.style.backgroundColor = 'yellow';
+    }
+    if(h24 == 0){
+        td25.style.backgroundColor = 'red';
+    }else{
+        td25.style.backgroundColor = 'yellow';
+    }
+    if(h25 == 0){
+        td26.style.backgroundColor = 'red';
+    }else{
+        td26.style.backgroundColor = 'yellow';
+    }
+
     chk1.type = 'checkbox';
     chk1.id = 'chkdata';
     chk1.checked = true;

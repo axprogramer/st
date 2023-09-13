@@ -163,6 +163,7 @@ function addItemsToTable(name, id, sex, grade, year, myKh) {
   var ch = document.createElement('input');
   ch.type = "checkbox";
   ch.name = "mCheck";
+  ch.checked = true;
   ch.setAttribute('class', 'chk');
   td2.setAttribute('class', 'Enname');
   td3.setAttribute('class', 'Khname');
