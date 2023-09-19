@@ -211,205 +211,205 @@ function addItemsToTable(
     td25.contentEditable = true;
     td26.contentEditable = true;
 
-    if(h1 == undefined){
+    if (h1 == undefined) {
         h1 = 0;
     }
-    if(h2 == undefined){
+    if (h2 == undefined) {
         h2 = 0;
     }
-    if(h3 == undefined){
+    if (h3 == undefined) {
         h3 = 0;
     }
-    if(h4 == undefined){
+    if (h4 == undefined) {
         h4 = 0;
     }
-    if(h5 == undefined){
+    if (h5 == undefined) {
         h5 = 0;
     }
-    if(h6 == undefined){
+    if (h6 == undefined) {
         h6 = 0;
     }
-    if(h7 == undefined){
+    if (h7 == undefined) {
         h7 = 0;
     }
-    if(h8 == undefined){
+    if (h8 == undefined) {
         h8 = 0;
     }
-    if(h9 == undefined){
+    if (h9 == undefined) {
         h9 = 0;
     }
-    if(h10 == undefined){
+    if (h10 == undefined) {
         h10 = 0;
     }
-    if(h11 == undefined){
+    if (h11 == undefined) {
         h11 = 0;
     }
-    if(h12 == undefined){
+    if (h12 == undefined) {
         h12 = 0;
     }
-    if(h13 == undefined){
+    if (h13 == undefined) {
         h13 = 0;
     }
-    if(h14 == undefined){
+    if (h14 == undefined) {
         h14 = 0;
     }
-    if(h15 == undefined){
+    if (h15 == undefined) {
         h15 = 0;
     }
-    if(h16 == undefined){
+    if (h16 == undefined) {
         h16 = 0;
     }
-    if(h17 == undefined){
+    if (h17 == undefined) {
         h17 = 0;
     }
-    if(h18 == undefined){
+    if (h18 == undefined) {
         h18 = 0;
     }
-    if(h19 == undefined){
+    if (h19 == undefined) {
         h19 = 0;
     }
-    if(h20 == undefined){
+    if (h20 == undefined) {
         h20 = 0;
     }
-    if(h21 == undefined){
+    if (h21 == undefined) {
         h21 = 0;
     }
-    if(h22 == undefined){
+    if (h22 == undefined) {
         h22 = 0;
     }
-    if(h23 == undefined){
+    if (h23 == undefined) {
         h23 = 0;
     }
-    if(h24 == undefined){
+    if (h24 == undefined) {
         h24 = 0;
     }
-    if(h25 == undefined){
+    if (h25 == undefined) {
         h25 = 0;
     }
     //Color highlight
-    if(h1 == 0){
+    if (h1 == 0) {
         td2.style.backgroundColor = 'red';
-    }else{
+    } else {
         td2.style.backgroundColor = 'yellow';
     }
-    if(h2 == 0){
+    if (h2 == 0) {
         td3.style.backgroundColor = 'red';
-    }else{
+    } else {
         td3.style.backgroundColor = 'yellow';
     }
-    if(h3 == 0){
+    if (h3 == 0) {
         td4.style.backgroundColor = 'red';
-    }else{
+    } else {
         td4.style.backgroundColor = 'yellow';
     }
-    if(h4 == 0){
+    if (h4 == 0) {
         td5.style.backgroundColor = 'red';
-    }else{
+    } else {
         td5.style.backgroundColor = 'yellow';
     }
-    if(h5 == 0){
+    if (h5 == 0) {
         td6.style.backgroundColor = 'red';
-    }else{
+    } else {
         td6.style.backgroundColor = 'yellow';
     }
-    if(h6 == 0){
+    if (h6 == 0) {
         td7.style.backgroundColor = 'red';
-    }else{
+    } else {
         td7.style.backgroundColor = 'yellow';
     }
-    if(h7 == 0){
+    if (h7 == 0) {
         td8.style.backgroundColor = 'red';
-    }else{
+    } else {
         td8.style.backgroundColor = 'yellow';
     }
-    if(h8 == 0){
+    if (h8 == 0) {
         td9.style.backgroundColor = 'red';
-    }else{
+    } else {
         td9.style.backgroundColor = 'yellow';
     }
-    if(h9 == 0){
+    if (h9 == 0) {
         td10.style.backgroundColor = 'red';
-    }else{
+    } else {
         td10.style.backgroundColor = 'yellow';
     }
-    if(h10 == 0){
+    if (h10 == 0) {
         td11.style.backgroundColor = 'red';
-    }else{
+    } else {
         td11.style.backgroundColor = 'yellow';
     }
-    if(h11 == 0){
+    if (h11 == 0) {
         td12.style.backgroundColor = 'red';
-    }else{
+    } else {
         td12.style.backgroundColor = 'yellow';
     }
-    if(h12 == 0){
+    if (h12 == 0) {
         td13.style.backgroundColor = 'red';
-    }else{
+    } else {
         td13.style.backgroundColor = 'yellow';
     }
-    if(h13 == 0){
+    if (h13 == 0) {
         td14.style.backgroundColor = 'red';
-    }else{
+    } else {
         td14.style.backgroundColor = 'yellow';
     }
-    if(h14 == 0){
+    if (h14 == 0) {
         td15.style.backgroundColor = 'red';
-    }else{
+    } else {
         td15.style.backgroundColor = 'yellow';
     }
-    if(h15 == 0){
+    if (h15 == 0) {
         td16.style.backgroundColor = 'red';
-    }else{
+    } else {
         td16.style.backgroundColor = 'yellow';
     }
-    if(h16 == 0){
+    if (h16 == 0) {
         td17.style.backgroundColor = 'red';
-    }else{
+    } else {
         td17.style.backgroundColor = 'yellow';
     }
-    if(h17 == 0){
+    if (h17 == 0) {
         td18.style.backgroundColor = 'red';
-    }else{
+    } else {
         td18.style.backgroundColor = 'yellow';
     }
-    if(h18 == 0){
+    if (h18 == 0) {
         td19.style.backgroundColor = 'red';
-    }else{
+    } else {
         td19.style.backgroundColor = 'yellow';
     }
-    if(h19 == 0){
+    if (h19 == 0) {
         td20.style.backgroundColor = 'red';
-    }else{
+    } else {
         td20.style.backgroundColor = 'yellow';
     }
-    if(h20 == 0){
+    if (h20 == 0) {
         td21.style.backgroundColor = 'red';
-    }else{
+    } else {
         td21.style.backgroundColor = 'yellow';
     }
-    if(h21 == 0){
+    if (h21 == 0) {
         td22.style.backgroundColor = 'red';
-    }else{
+    } else {
         td22.style.backgroundColor = 'yellow';
     }
-    if(h22 == 0){
+    if (h22 == 0) {
         td23.style.backgroundColor = 'red';
-    }else{
+    } else {
         td23.style.backgroundColor = 'yellow';
     }
-    if(h23 == 0){
+    if (h23 == 0) {
         td24.style.backgroundColor = 'red';
-    }else{
+    } else {
         td24.style.backgroundColor = 'yellow';
     }
-    if(h24 == 0){
+    if (h24 == 0) {
         td25.style.backgroundColor = 'red';
-    }else{
+    } else {
         td25.style.backgroundColor = 'yellow';
     }
-    if(h25 == 0){
+    if (h25 == 0) {
         td26.style.backgroundColor = 'red';
-    }else{
+    } else {
         td26.style.backgroundColor = 'yellow';
     }
 
@@ -433,65 +433,65 @@ function addItemsToTable(
     getSum.toFixed(2);
     td27.innerHTML = getSum;
 
-    document.getElementById('uploadScore').addEventListener('click',function(){
+    document.getElementById('uploadScore').addEventListener('click', function () {
         let data = getSum;
-        if(dbmonthAct == 'October'){
+        if (dbmonthAct == 'October') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
                 {
                     hNov: data,
                 },
             )
         }
-        if(dbmonthAct == 'November'){
+        if (dbmonthAct == 'November') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
                 {
                     hDec: data,
                 },
             )
         }
-        if(dbmonthAct == 'December'){
+        if (dbmonthAct == 'December') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
                 {
                     hJan: data,
                 },
             )
         }
-        if(dbmonthAct == 'January'){
+        if (dbmonthAct == 'January') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
                 {
                     hFeb: data,
                 },
             )
         }
-        if(dbmonthAct == 'February'){
+        if (dbmonthAct == 'February') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
                 {
                     hMar: data,
                 },
             )
         }
-        if(dbmonthAct == 'March'){
+        if (dbmonthAct == 'March') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
                 {
                     hApr: data,
                 },
             )
         }
-        if(dbmonthAct == 'April-May'){
+        if (dbmonthAct == 'April-May') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
                 {
                     hJun: data,
                 },
             )
         }
-        if(dbmonthAct == 'June'){
+        if (dbmonthAct == 'June') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
                 {
                     hJul: data,
                 },
             )
         }
-        if(dbmonthAct == 'July'){
+        if (dbmonthAct == 'July') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
                 {
                     hAug: data,
@@ -1252,4 +1252,24 @@ function addItemsToTable(
 
     tbody.appendChild(trow);
 
+}
+
+function printHomework() {
+    // var date = document.getElementById("inDate").value;
+    // document.getElementById("showDate").innerText = date;
+    var newstr = document.getElementById("myPrintHomework").innerHTML;
+    var oldstr = document.body.innerHTML;
+    document.body.innerHTML = newstr;
+    window.print();
+    document.body.innerHTML = oldstr;
+    // window.location.reload();
+    return false;
+}
+
+function saveHomework(type, fn, dl) {
+    var elt = document.getElementById("myPrintHomework");
+    var wb = XLSX.utils.table_to_book(elt, { sheet: dbgradeAct + dbmonthAct });
+    return dl
+        ? XLSX.write(wb, { bookType: type, bookSST: true, type: "base64" })
+        : XLSX.writeFile(wb, fn || `${dbgradeAct}/ ` + `${dbmonthAct}/.` + (type || "xlsx"));
 }
