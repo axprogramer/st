@@ -144,3 +144,19 @@ document.getElementById('goPrint').addEventListener('click', function () {
     window.location.reload();
     return true;
 })
+
+
+var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
+
+$('#cmd').click(function () {
+    doc.fromHTML($('#viewCard').html(), 15, 15, {
+        'width': 170,
+            'elementHandlers': specialElementHandlers
+    });
+    doc.save('sample-file.pdf');
+});
