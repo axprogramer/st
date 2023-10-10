@@ -416,6 +416,7 @@ function addItemsToTable(
     chk1.type = 'checkbox';
     chk1.id = 'chkdata';
     chk1.checked = true;
+    //Sum up the score
     let sumall = parseFloat(h1) +
         parseFloat(h2) + parseFloat(h3)
         + parseFloat(h4) + parseFloat(h5)
@@ -430,7 +431,8 @@ function addItemsToTable(
         + parseFloat(h22) + parseFloat(h23)
         + parseFloat(h24) + parseFloat(h25);
     let getSum = sumall / `${dbdiviAct}`;
-    getSum.toFixed(2);
+    // getSum.toFixed(2);
+    getSum = getSum.toFixed(2).replace(/[.,]00$/, "");
     td27.innerHTML = getSum;
 
     document.getElementById('uploadScore').addEventListener('click', function () {
