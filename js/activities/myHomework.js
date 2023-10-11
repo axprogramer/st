@@ -1275,3 +1275,13 @@ function saveHomework(type, fn, dl) {
         ? XLSX.write(wb, { bookType: type, bookSST: true, type: "base64" })
         : XLSX.writeFile(wb, fn || `${dbgradeAct}/ ` + `${dbmonthAct}/.` + (type || "xlsx"));
 }
+
+document.getElementById('homeworkPrint').addEventListener('click', function () {
+    var newstr = document.getElementById("myPrintHomework").innerHTML;
+    var oldstr = document.body.innerHTML;
+    document.body.innerHTML = newstr;
+    window.print();
+    document.body.innerHTML = oldstr;
+    window.location.reload();
+    return false;
+})
