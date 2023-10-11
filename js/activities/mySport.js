@@ -2964,3 +2964,13 @@ document.getElementById("showAlert").style.display = "none";
 //         console.log(name);
 //     }
 // }
+
+document.getElementById('sportPrint').addEventListener('click', function () {
+    var newstr = document.getElementById("mySportPrint").innerHTML;
+    var oldstr = document.body.innerHTML;
+    document.body.innerHTML = newstr;
+    window.print();
+    document.body.innerHTML = oldstr;
+    window.location.reload();
+    return false;
+})
