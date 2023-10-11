@@ -578,7 +578,7 @@ function addItemsToTable(
     trow.appendChild(td0);
     trow.appendChild(thead);
     thead.appendChild(td1);
-    
+
     // trow.appendChild(td1);
     trow.appendChild(td2);
     trow.appendChild(td3);
@@ -2340,108 +2340,108 @@ function getTotalVal() {
         var nametol5 = `${noSpc}to5`;
         var nametolAll = `${noSpc}totalAll`;
         // setInterval(function () {
-            //Week 1
-            var sp1 = 0;
-            var su1 = 0;
-            var ssh1 = 0;
-            //Week 2
-            var sp2 = 0;
-            var su2 = 0;
-            var ssh2 = 0;
-            //Week 3
-            var sp3 = 0;
-            var su3 = 0;
-            var ssh3 = 0;
-            //Week 4
-            var sp4 = 0;
-            var su4 = 0;
-            var ssh4 = 0;
-            //Week 5
-            var sp5 = 0;
-            var su5 = 0;
-            var ssh5 = 0;
-            var allTotal = 0;
-            //Week 1
-            $(`.${namep1}`).each(function () {
-                sp1 += parseFloat($(this).text()); // 
-            });
-            $(`.${nameu1}`).each(function () {
-                su1 += parseFloat($(this).text()); // 
-            });
-            $(`.${nameah1}`).each(function () {
-                ssh1 += parseFloat($(this).text()); // 
-            });
-            //Week 2
-            $(`.${namep2}`).each(function () {
-                sp2 += parseFloat($(this).text()); // 
-            });
-            $(`.${nameu2}`).each(function () {
-                su2 += parseFloat($(this).text()); // 
-            });
-            $(`.${nameah2}`).each(function () {
-                ssh2 += parseFloat($(this).text()); // 
-            });
-            //Week 3
-            $(`.${namep3}`).each(function () {
-                sp3 += parseFloat($(this).text()); // 
-            });
-            $(`.${nameu3}`).each(function () {
-                su3 += parseFloat($(this).text()); // 
-            });
-            $(`.${nameah3}`).each(function () {
-                ssh3 += parseFloat($(this).text()); // 
-            });
-            //Week 4
-            $(`.${namep4}`).each(function () {
-                sp4 += parseFloat($(this).text()); // 
-            });
-            $(`.${nameu4}`).each(function () {
-                su4 += parseFloat($(this).text()); // 
-            });
-            $(`.${nameah4}`).each(function () {
-                ssh4 += parseFloat($(this).text()); // 
-            });
-            //Week 5
-            $(`.${namep5}`).each(function () {
-                sp5 += parseFloat($(this).text()); // 
-            });
-            $(`.${nameu5}`).each(function () {
-                su5 += parseFloat($(this).text()); // 
-            });
-            $(`.${nameah5}`).each(function () {
-                ssh5 += parseFloat($(this).text()); // 
-            });
-            var getSum1 = parseFloat(sp1) + parseFloat(su1) + parseFloat(ssh1);
-            var getSum2 = parseFloat(sp2) + parseFloat(su2) + parseFloat(ssh2);
-            var getSum3 = parseFloat(sp3) + parseFloat(su3) + parseFloat(ssh3);
-            var getSum4 = parseFloat(sp4) + parseFloat(su4) + parseFloat(ssh4);
-            var getSum5 = parseFloat(sp5) + parseFloat(su5) + parseFloat(ssh5);
-            document.getElementById(`${nametol1}`).innerText = parseFloat(getSum1);
-            document.getElementById(`${nametol2}`).innerText = parseFloat(getSum2);
-            document.getElementById(`${nametol3}`).innerText = parseFloat(getSum3);
-            document.getElementById(`${nametol4}`).innerText = parseFloat(getSum4);
-            document.getElementById(`${nametol5}`).innerText = parseFloat(getSum5);
-            var allGetTotal = parseFloat(getSum1) + parseFloat(getSum2) + parseFloat(getSum3) + parseFloat(getSum4) + parseFloat(getSum5);
-            var totalDivid = parseFloat(allGetTotal) / `${dbgetDivide}`;
-            totalDivid = parseFloat(totalDivid).toFixed(2);
-            document.getElementById(`${nametolAll}`).innerText = parseFloat(totalDivid);
-            var data = document.getElementById(`${nametolAll}`);
-            // var data1 = document.getElementById(`${nametol1}`);
-            // var data2 = document.getElementById(`${nametol2}`);
-            // var data3 = document.getElementById(`${nametol3}`);
-            // var data4 = document.getElementById(`${nametol4}`);
-            // var data5 = document.getElementById(`${nametol5}`);
-            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + name).update(
+        //Week 1
+        var sp1 = 0;
+        var su1 = 0;
+        var ssh1 = 0;
+        //Week 2
+        var sp2 = 0;
+        var su2 = 0;
+        var ssh2 = 0;
+        //Week 3
+        var sp3 = 0;
+        var su3 = 0;
+        var ssh3 = 0;
+        //Week 4
+        var sp4 = 0;
+        var su4 = 0;
+        var ssh4 = 0;
+        //Week 5
+        var sp5 = 0;
+        var su5 = 0;
+        var ssh5 = 0;
+        var allTotal = 0;
+        //Week 1
+        $(`.${namep1}`).each(function () {
+            sp1 += parseFloat($(this).text()); // 
+        });
+        $(`.${nameu1}`).each(function () {
+            su1 += parseFloat($(this).text()); // 
+        });
+        $(`.${nameah1}`).each(function () {
+            ssh1 += parseFloat($(this).text()); // 
+        });
+        //Week 2
+        $(`.${namep2}`).each(function () {
+            sp2 += parseFloat($(this).text()); // 
+        });
+        $(`.${nameu2}`).each(function () {
+            su2 += parseFloat($(this).text()); // 
+        });
+        $(`.${nameah2}`).each(function () {
+            ssh2 += parseFloat($(this).text()); // 
+        });
+        //Week 3
+        $(`.${namep3}`).each(function () {
+            sp3 += parseFloat($(this).text()); // 
+        });
+        $(`.${nameu3}`).each(function () {
+            su3 += parseFloat($(this).text()); // 
+        });
+        $(`.${nameah3}`).each(function () {
+            ssh3 += parseFloat($(this).text()); // 
+        });
+        //Week 4
+        $(`.${namep4}`).each(function () {
+            sp4 += parseFloat($(this).text()); // 
+        });
+        $(`.${nameu4}`).each(function () {
+            su4 += parseFloat($(this).text()); // 
+        });
+        $(`.${nameah4}`).each(function () {
+            ssh4 += parseFloat($(this).text()); // 
+        });
+        //Week 5
+        $(`.${namep5}`).each(function () {
+            sp5 += parseFloat($(this).text()); // 
+        });
+        $(`.${nameu5}`).each(function () {
+            su5 += parseFloat($(this).text()); // 
+        });
+        $(`.${nameah5}`).each(function () {
+            ssh5 += parseFloat($(this).text()); // 
+        });
+        var getSum1 = parseFloat(sp1) + parseFloat(su1) + parseFloat(ssh1);
+        var getSum2 = parseFloat(sp2) + parseFloat(su2) + parseFloat(ssh2);
+        var getSum3 = parseFloat(sp3) + parseFloat(su3) + parseFloat(ssh3);
+        var getSum4 = parseFloat(sp4) + parseFloat(su4) + parseFloat(ssh4);
+        var getSum5 = parseFloat(sp5) + parseFloat(su5) + parseFloat(ssh5);
+        document.getElementById(`${nametol1}`).innerText = parseFloat(getSum1);
+        document.getElementById(`${nametol2}`).innerText = parseFloat(getSum2);
+        document.getElementById(`${nametol3}`).innerText = parseFloat(getSum3);
+        document.getElementById(`${nametol4}`).innerText = parseFloat(getSum4);
+        document.getElementById(`${nametol5}`).innerText = parseFloat(getSum5);
+        var allGetTotal = parseFloat(getSum1) + parseFloat(getSum2) + parseFloat(getSum3) + parseFloat(getSum4) + parseFloat(getSum5);
+        var totalDivid = parseFloat(allGetTotal) / `${dbgetDivide}`;
+        totalDivid = parseFloat(totalDivid).toFixed(2);
+        document.getElementById(`${nametolAll}`).innerText = parseFloat(totalDivid);
+        var data = document.getElementById(`${nametolAll}`);
+        // var data1 = document.getElementById(`${nametol1}`);
+        // var data2 = document.getElementById(`${nametol2}`);
+        // var data3 = document.getElementById(`${nametol3}`);
+        // var data4 = document.getElementById(`${nametol4}`);
+        // var data5 = document.getElementById(`${nametol5}`);
+        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + name).update(
 
-                {
-                    // total1: data1.innerText,
-                    // total2: data2.innerText,
-                    // total3: data3.innerText,
-                    // total4: data4.innerText,
-                    // total5: data5.innerText,
-                    subTotal: data.innerText,
-                },
-            )
+            {
+                // total1: data1.innerText,
+                // total2: data2.innerText,
+                // total3: data3.innerText,
+                // total4: data4.innerText,
+                // total5: data5.innerText,
+                subTotal: data.innerText,
+            },
+        )
 
         // }, 100);
     }
@@ -2965,12 +2965,18 @@ document.getElementById("showAlert").style.display = "none";
 //     }
 // }
 
-document.getElementById('sportPrint').addEventListener('click', function () {
-    var newstr = document.getElementById("mySportPrint").innerHTML;
-    var oldstr = document.body.innerHTML;
-    document.body.innerHTML = newstr;
-    window.print();
-    document.body.innerHTML = oldstr;
-    window.location.reload();
-    return false;
-})
+// document.getElementById('sportSave').addEventListener('click', function (type, fn, dl) {
+//     var elt = document.getElementById("mySportRecord");
+//     var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+//     return dl
+//         ? XLSX.write(wb, { bookType: type, bookSST: true, type: "base64" })
+//         : XLSX.writeFile(wb, fn || `${dbgradeAct}/ ` + `${dbmonthAct}/.` + (type || "xlsx"));
+// })
+
+function saveSport(type, fn, dl) {
+    var elt = document.getElementById("mySportRecord");
+    var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+    return dl
+        ? XLSX.write(wb, { bookType: type, bookSST: true, type: "base64" })
+        : XLSX.writeFile(wb, fn || `${dbgradeAct}/ ` + `${dbmonthAct}/Sport.` + (type || "xlsx"));
+}
