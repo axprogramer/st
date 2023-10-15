@@ -574,6 +574,42 @@ function addItemsToTable(
     span18.contentEditable = true;
     span19.contentEditable = true;
 
+    span1.style.padding = '5px';
+    span2.style.padding = '5px';
+    span3.style.padding = '5px';
+    span4.style.padding = '5px';
+    span5.style.padding = '5px';
+    span6.style.padding = '5px';
+    span7.style.padding = '5px';
+    span8.style.padding = '5px';
+    span9.style.padding = '5px';
+    span10.style.padding = '5px';
+    span11.style.padding = '5px';
+    span12.style.padding = '5px';
+    span13.style.padding = '5px';
+    span14.style.padding = '5px';
+    span15.style.padding = '5px';
+    span16.style.padding = '5px';
+    span17.style.padding = '5px';
+    span18.style.padding = '5px';
+    span19.style.padding = '5px';
+
+
+    //Total a week
+    let totalw1 = parseFloat(prac1) + parseFloat(uniform1) + parseFloat(shoe1);
+    span4.innerHTML = totalw1;
+    let totalw2 = parseFloat(prac2) + parseFloat(uniform2) + parseFloat(shoe2);
+    span8.innerHTML = totalw2;
+    let totalw3 = parseFloat(prac3) + parseFloat(uniform3) + parseFloat(shoe3);
+    span12.innerHTML = totalw3;
+    let totalw4 = parseFloat(prac4) + parseFloat(uniform4) + parseFloat(shoe4);
+    span16.innerHTML = totalw4;
+    let totalw5 = parseFloat(prac5) + parseFloat(uniform5) + parseFloat(shoe5);
+    span20.innerHTML = totalw5;
+
+
+
+
 
     trow.appendChild(td0);
     trow.appendChild(thead);

@@ -143,7 +143,8 @@ function addItemsToTable(name, id, sex,
     chkGet.setAttribute('name', 'myGet');
     chkGet.setAttribute('class', 'chk');
     chkGet.checked = true;
-
+    spanBook.style.padding = '5px';
+    spanPT.style.padding = '5px';
     stdList.push([name, id, sex,
         book, pt, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13,
         s14, s15, s16, s17, s18, s19, s20]);
@@ -152,6 +153,7 @@ function addItemsToTable(name, id, sex,
     tdsex.innerHTML = sex;
     if (book == undefined) {
         spanBook.innerHTML = 0;
+        spanBook.style.backgroundColor = '#f0f8ff';
 
     } else {
         spanBook.innerText = book;
@@ -159,6 +161,7 @@ function addItemsToTable(name, id, sex,
     }
     if (pt == undefined) {
         spanPT.innerText = 0;
+        spanPT.style.backgroundColor = '#f0f8ff';
 
     } else {
         spanPT.innerHTML = pt;
@@ -166,6 +169,8 @@ function addItemsToTable(name, id, sex,
     }
     if (s1 == undefined) {
         tdS1.innerHTML = 0;
+        tdS1.style.backgroundColor = '#f0f8ff';
+
     } else {
         tdS1.innerHTML = s1;
         tdS1.style.backgroundColor = '#FFF366';
@@ -286,11 +291,12 @@ function addItemsToTable(name, id, sex,
         tdS20.innerHTML = s20;
         tdS20.style.backgroundColor = '#FFF366';
     }
-
-    tdS21.innerHTML = 0;
+    let sumTotal = parseFloat(book) + parseFloat(pt)
+    sumTotal = sumTotal.toFixed(2).replace(/[.,]00$/, "");
+    tdS21.innerHTML = sumTotal;
     spanBook.addEventListener('input', function () {
         var nnn = this.innerText;
-        firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+        firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + id).update(
             {
                 book: nnn,
             },
@@ -298,37 +304,104 @@ function addItemsToTable(name, id, sex,
     })
     spanPT.addEventListener('input', function () {
         var nnn = this.innerText;
-        firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+        firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + id).update(
             {
-                book: nnn,
+                pt: nnn,
             },
         )
     })
+
+    if (dbmonthAct == 'October') {
+        firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+            {
+                speakingNov: sumTotal,
+            },
+        )
+    }
+    if (dbmonthAct == 'November') {
+        firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+            {
+                speakingDec: sumTotal,
+            },
+        )
+    }
+    if (dbmonthAct == 'December') {
+        firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+            {
+                speakingJan: sumTotal,
+            },
+        )
+    }
+    if (dbmonthAct == 'January') {
+        firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+            {
+                speakingfeb: sumTotal,
+            },
+        )
+    }
+    if (dbmonthAct == 'February') {
+        firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+            {
+                speakingmar: sumTotal,
+            },
+        )
+    }
+    if (dbmonthAct == 'March') {
+        firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+            {
+                speakingma: sumTotal,
+            },
+        )
+    }
+    if (dbmonthAct == 'April-May') {
+        firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+            {
+                speakingjun: sumTotal,
+            },
+        )
+    }
+    if (dbmonthAct == 'June') {
+        firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+            {
+                speakingjuly: sumTotal,
+            },
+        )
+    }
+    if (dbmonthAct == 'July') {
+        firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+            {
+                speakingfinal: sumTotal,
+            },
+        )
+    }
+
+
+
     trow.appendChild(td0);
     trow.appendChild(td1);
     trow.appendChild(tdsex);
     trow.appendChild(tdbook);
     trow.appendChild(tdPT);
-    trow.appendChild(tdS1);
-    trow.appendChild(tdS2);
-    trow.appendChild(tdS3);
-    trow.appendChild(tdS4);
-    trow.appendChild(tdS5);
-    trow.appendChild(tdS6);
-    trow.appendChild(tdS7);
-    trow.appendChild(tdS8);
-    trow.appendChild(tdS9);
-    trow.appendChild(tdS10);
-    trow.appendChild(tdS11);
-    trow.appendChild(tdS12);
-    trow.appendChild(tdS13);
-    trow.appendChild(tdS14);
-    trow.appendChild(tdS15);
-    trow.appendChild(tdS16);
-    trow.appendChild(tdS17);
-    trow.appendChild(tdS18);
-    trow.appendChild(tdS19);
-    trow.appendChild(tdS20);
+    // trow.appendChild(tdS1);
+    // trow.appendChild(tdS2);
+    // trow.appendChild(tdS3);
+    // trow.appendChild(tdS4);
+    // trow.appendChild(tdS5);
+    // trow.appendChild(tdS6);
+    // trow.appendChild(tdS7);
+    // trow.appendChild(tdS8);
+    // trow.appendChild(tdS9);
+    // trow.appendChild(tdS10);
+    // trow.appendChild(tdS11);
+    // trow.appendChild(tdS12);
+    // trow.appendChild(tdS13);
+    // trow.appendChild(tdS14);
+    // trow.appendChild(tdS15);
+    // trow.appendChild(tdS16);
+    // trow.appendChild(tdS17);
+    // trow.appendChild(tdS18);
+    // trow.appendChild(tdS19);
+    // trow.appendChild(tdS20);
     trow.appendChild(tdS21);
     trow.appendChild(tdS22);
     tdS22.appendChild(chkGet);
@@ -350,6 +423,7 @@ function dataS() {
     for (i = 0; i < stdList.length; i++) {
         //Sum for All score
         var idM = stdList[i][1];
+        // console.log(idM);
         var getName = stdList[i][0]; // for s
         var noSp = getName.replace(/\s+/g, '');
         var getTotal = `${noSp}s21`;
@@ -487,7 +561,7 @@ function dataS() {
             parseFloat(gs19) +
             parseFloat(gs20);
         var di = actSum / `${dbdiviAct}` / 2;
-        var sumAll = bookPt + di;
+        var sumAll = bookPt;
         sumAll = parseFloat(sumAll).toFixed(2);
         document.getElementById(`${getTotal}`).innerHTML = sumAll;
 
@@ -575,8 +649,8 @@ function toggleBook(source) {
         var checkboxBook = document.getElementById(`${getNameput}`);
         if (checkboxBook.checked == true) {
             checkboxBook.checked = true;
-            document.getElementById(`${getNameTd}`).innerText = 2.5;
-            var data = 2.5;
+            document.getElementById(`${getNameTd}`).innerText = 5;
+            var data = 5;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
                 {
                     book: data,
@@ -609,7 +683,7 @@ function clickBook() {
 
         var checkboxBook = document.getElementById(`${getNameput}`);
         var SpaVal = document.getElementById(`${getNameTd}`).innerText;
-        if (SpaVal == 2.5) {
+        if (SpaVal == 5) {
             checkboxBook.checked = true;
         } else {
             checkboxBook.checked = false;
@@ -618,8 +692,8 @@ function clickBook() {
         checkboxBook.addEventListener('click', function () {
             if (checkboxBook.checked == true) {
                 checkboxBook.checked = true;
-                document.getElementById(`${getNameTd}`).innerText = 2.5;
-                var data = 2.5;
+                document.getElementById(`${getNameTd}`).innerText = 5;
+                var data = 5;
                 firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
                     {
                         book: data,

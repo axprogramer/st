@@ -250,6 +250,7 @@ function sportAct() {
     var khname = aData3[i].mykhname;
     var idM = aData3[i].id;
     var sex = aData3[i].mySex;
+    let data = 0;
     // var date1 = '';
     // var date2 = '';
     // var date3 = '';
@@ -297,21 +298,21 @@ function sportAct() {
         // topic3: topic3,
         // topic4: topic4,
         // topic5: topic5,
-        // prac1: prac1,
-        // prac2: prac2,
-        // prac3: prac3,
-        // prac4: prac4,
-        // prac5: prac5,
-        // uniform1: uniform1,
-        // uniform2: uniform2,
-        // uniform3: uniform3,
-        // uniform4: uniform4,
-        // uniform5: uniform5,
-        // shoe1: shoe1,
-        // shoe2: shoe2,
-        // shoe3: shoe3,
-        // shoe4: shoe4,
-        // shoe5: shoe5,
+        prac1: data,
+        prac2: data,
+        prac3: data,
+        prac4: data,
+        prac5: data,
+        uniform1: data,
+        uniform2: data,
+        uniform3: data,
+        uniform4: data,
+        uniform5: data,
+        shoe1: data,
+        shoe2: data,
+        shoe3: data,
+        shoe4: data,
+        shoe5: data,
         // total1: total1,
         // total2: total2,
         // total3: total3,
