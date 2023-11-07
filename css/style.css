@@ -375,7 +375,7 @@
 
 }
 
-#tbody3 td:nth-child(9) {
+#tbody3 td:nth-child(10) {
     color: red;
 }
 
@@ -383,11 +383,11 @@
     font-size: 1.6vw;
 }
 
-#tbody4 td:nth-child(7) {
+#tbody4 td:nth-child(8) {
     color: red;
 }
 
-#tbody4 td:nth-child(8) {
+#tbody4 td:nth-child(9) {
     color: red;
 }
 
@@ -396,11 +396,11 @@
     padding-left: 1em;
 }
 
-#tbody5 td:nth-child(8) {
+#tbody5 td:nth-child(9) {
     color: red;
 }
 
-#tbody5 td:nth-child(9) {
+#tbody5 td:nth-child(10) {
     color: red;
 }
 
@@ -422,7 +422,7 @@
     padding-left: 1em;
 }
 
-#tbodyView td:nth-child(9) {
+#tbodyView td:nth-child(10) {
     color: red;
 }
 
