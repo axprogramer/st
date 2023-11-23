@@ -65,17 +65,20 @@ function addItemsToTable(name, id, sex, speakingma, writingma, listeningma,
   var td8 = document.createElement('td');
   var td9 = document.createElement('td');
 
-  td3.contentEditable = true;
   td3.id = `${id}score`;
   let ssid = `${id}score`;
   let spid = `${id}sp`;
   let wrid = `${id}wr`;
   let lisid = `${id}lis`;
   let reid = `${id}re`;
+  let hm = `${id}hm`; //homework
+
   td4.id = spid;
   td5.id = wrid;
   td6.id = lisid;
   td7.id = reid;
+  td8.id = hm;
+
 
 
   stdList.push([name, id, sex, speakingma, writingma, listeningma,
@@ -136,6 +139,8 @@ function addItemsToTable(name, id, sex, speakingma, writingma, listeningma,
       return setTimeout(resolve, milliseconds);
     });
     let ss = document.getElementById(`${ssid}`);
+    let shm = document.getElementById(`${hm}`);
+    let spK = document.getElementById(`${spid}`);
 
     ss.addEventListener('click', () => {
       if (td3.innerHTML == 0) {
@@ -144,12 +149,57 @@ function addItemsToTable(name, id, sex, speakingma, writingma, listeningma,
 
       }
     })
+    shm.addEventListener('click', () => {
+      if (td8.innerHTML == 0) {
+        td8.innerHTML = '';
+      } else {
+
+      }
+    })
+    spK.addEventListener('click', () => {
+      if (td4.innerHTML == 0) {
+        td4.innerHTML = '';
+      } else {
+
+      }
+    })
+
     var ll = "simple";
     var lll = "unsimple";
+    if (db4 == ll) {
+      td3.contentEditable = true;
+      td4.contentEditable = true;
+      td8.contentEditable = true;
+
+    }
+    if (db4 == lll) {
+      td3.contentEditable = true;
+      td4.contentEditable = true;
+      td8.contentEditable = true;
+
+    }
+
     var check = document.getElementById("myCheck");
     if (db4 == ll) {
 
       check.checked = true;
+      shm.addEventListener('input', () => {
+        let data = shm.innerHTML;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            hApr: data,
+          },
+        )
+      })
+      spK.addEventListener('input', () => {
+        let data = spK.innerHTML;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingma: data,
+          },
+        )
+      })
+
       ss.addEventListener('input', () => {
         let data = ss.innerHTML;
         let di = td3.innerHTML / 4;
@@ -175,6 +225,23 @@ function addItemsToTable(name, id, sex, speakingma, writingma, listeningma,
       })
     } else if (db4 == lll) {
       check.checked = false;
+      shm.addEventListener('input', () => {
+        let data = shm.innerHTML;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            hApr: data,
+          },
+        )
+      })
+      spK.addEventListener('input', () => {
+        let data = spK.innerHTML;
+        firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+          {
+            speakingma: data,
+          },
+        )
+      })
+
       ss.addEventListener('input', () => {
         let data = ss.innerHTML;
         let di = td3.innerHTML / 3;
@@ -510,3 +577,11 @@ var table1 = document.getElementById("my1stsemetable");
 var table2 = document.getElementById("myTable2");
 table1.style.display = "none";
 table2.style.display = "none";
+
+function saveScore(type, fn, dl) {
+  var elt = document.getElementById("myShowData");
+  var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+  return dl
+    ? XLSX.write(wb, { bookType: type, bookSST: true, type: "base64" })
+    : XLSX.writeFile(wb, fn || `${db}/ ` + `${db2}/.` + (type || "xlsx"));
+}
