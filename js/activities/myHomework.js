@@ -430,13 +430,254 @@ function addItemsToTable(
         + parseFloat(h20) + parseFloat(h21)
         + parseFloat(h22) + parseFloat(h23)
         + parseFloat(h24) + parseFloat(h25);
-    let getSum = sumall / `${dbdiviAct}`;
+    let getSumT = sumall / `${dbdiviAct}`;
     // getSum.toFixed(2);
-    getSum = getSum.toFixed(2).replace(/[.,]00$/, "");
-    td27.innerHTML = getSum;
+    getSumT = getSumT.toFixed(2).replace(/[.,]00$/, "");
+    // if (getSumT >= 0.25) {
+    //     getSum = '0.25';
+    // }
+    // if (getSumT >= 0.50) {
+    //     getSum = '0.50';
+    // }
+    // if (getSumT >= 0.75) {
+    //     getSum = '0.75';
+    // }
+    // if (getSumT >= 1) {
+    //     getSum = '1';
+    // }
+    // if (getSumT >= 1.25) {
+    //     getSum = '1.25';
+    // }
+    // if (getSumT >= 1.50) {
+    //     getSum = '1.50';
+    // }
+    // if (getSumT >= 1.75) {
+    //     getSum = '1.75';
+    // }
+    // if (getSumT >= 2) {
+    //     getSum = '2';
+    // }
+    // if (getSumT >= 2.25) {
+    //     getSum = '2.25';
+    // }
+    // if (getSumT >= 2.50) {
+    //     getSum = '2.50';
+    // }
+    // if (getSumT >= 2.75) {
+    //     getSum = '2.75';
+    // }
+    // if (getSumT >= 3) {
+    //     getSum = '3';
+    // }
+    // if (getSumT >= 3.25) {
+    //     getSum = '3.25';
+    // }
+    // if (getSumT >= 3.50) {
+    //     getSum = '3.50';
+    // }
+    // if (getSumT >= 3.75) {
+    //     getSum = '3.75';
+    // }
+    // if (getSumT >= 4) {
+    //     getSum = '4';
+    // }
+    // if (getSumT >= 4.25) {
+    //     getSum = '4.25';
+    // }
+    // if (getSumT >= 4.50) {
+    //     getSum = '4.50';
+    // }
+    // if (getSumT >= 4.75) {
+    //     getSum = '4.75';
+    // }
+    // if (getSumT >= 5) {
+    //     getSum = '5';
+    // }
+    // if (getSumT >= 5.25) {
+    //     getSum = '5.25';
+    // }
+    // if (getSumT >= 5.50) {
+    //     getSum = '5.50';
+    // }
+    // if (getSumT >= 5.75) {
+    //     getSum = '5.75';
+    // }
+    // if (getSumT >= 6) {
+    //     getSum = '6';
+    // }
+    // if (getSumT >= 6.25) {
+    //     getSum = '6.25';
+    // }
+    // if (getSumT >= 6.50) {
+    //     getSum = '6.50';
+    // }
+    // if (getSumT >= 6.75) {
+    //     getSum = '6.75';
+    // }
+    // if (getSumT >= 7) {
+    //     getSum = '7';
+    // }
+    // if (getSumT >= 7.25) {
+    //     getSum = '7.25';
+    // }
+    // if (getSumT >= 7.50) {
+    //     getSum = '7.50';
+    // }
+    // if (getSumT >= 7.75) {
+    //     getSum = '7.75';
+    // }
+    // if (getSumT >= 8) {
+    //     getSum = '8';
+    // }
+    // if (getSumT >= 8.25) {
+    //     getSum = '8.25';
+    // }
+    // if (getSumT >= 8.50) {
+    //     getSum = '8.50';
+    // }
+    // if (getSumT >= 8.75) {
+    //     getSum = '8.75';
+    // }
+    // if (getSumT >= 9) {
+    //     getSum = '9';
+    // }
+    // if (getSumT >= 9.25) {
+    //     getSum = '9.25';
+    // }
+    // if (getSumT >= 9.50) {
+    //     getSum = '9.50';
+    // }
+    // if (getSumT >= 9.75) {
+    //     getSum = '9.75';
+    // }
+    // if (getSumT >= 10) {
+    //     getSum = '10';
+    // }
 
+    td27.innerHTML = getSumT;
     document.getElementById('uploadScore').addEventListener('click', function () {
-        let data = getSum;
+        let data = getSumT;
+        if (getSumT >= 0.25) {
+            data = '0.25';
+        }
+        if (getSumT >= 0.50) {
+            data = '0.50';
+        }
+        if (getSumT >= 0.75) {
+            data = '0.75';
+        }
+        if (getSumT >= 1) {
+            data = '1';
+        }
+        if (getSumT >= 1.25) {
+            data = '1.25';
+        }
+        if (getSumT >= 1.50) {
+            data = '1.50';
+        }
+        if (getSumT >= 1.75) {
+            data = '1.75';
+        }
+        if (getSumT >= 2) {
+            data = '2';
+        }
+        if (getSumT >= 2.25) {
+            data = '2.25';
+        }
+        if (getSumT >= 2.50) {
+            data = '2.50';
+        }
+        if (getSumT >= 2.75) {
+            data = '2.75';
+        }
+        if (getSumT >= 3) {
+            data = '3';
+        }
+        if (getSumT >= 3.25) {
+            data = '3.25';
+        }
+        if (getSumT >= 3.50) {
+            data = '3.50';
+        }
+        if (getSumT >= 3.75) {
+            data = '3.75';
+        }
+        if (getSumT >= 4) {
+            data = '4';
+        }
+        if (getSumT >= 4.25) {
+            data = '4.25';
+        }
+        if (getSumT >= 4.50) {
+            data = '4.50';
+        }
+        if (getSumT >= 4.75) {
+            data = '4.75';
+        }
+        if (getSumT >= 5) {
+            data = '5';
+        }
+        if (getSumT >= 5.25) {
+            data = '5.25';
+        }
+        if (getSumT >= 5.50) {
+            data = '5.50';
+        }
+        if (getSumT >= 5.75) {
+            data = '5.75';
+        }
+        if (getSumT >= 6) {
+            data = '6';
+        }
+        if (getSumT >= 6.25) {
+            data = '6.25';
+        }
+        if (getSumT >= 6.50) {
+            data = '6.50';
+        }
+        if (getSumT >= 6.75) {
+            data = '6.75';
+        }
+        if (getSumT >= 7) {
+            data = '7';
+        }
+        if (getSumT >= 7.25) {
+            data = '7.25';
+        }
+        if (getSumT >= 7.50) {
+            data = '7.50';
+        }
+        if (getSumT >= 7.75) {
+            data = '7.75';
+        }
+        if (getSumT >= 8) {
+            data = '8';
+        }
+        if (getSumT >= 8.25) {
+            data = '8.25';
+        }
+        if (getSumT >= 8.50) {
+            data = '8.50';
+        }
+        if (getSumT >= 8.75) {
+            data = '8.75';
+        }
+        if (getSumT >= 9) {
+            data = '9';
+        }
+        if (getSumT >= 9.25) {
+            data = '9.25';
+        }
+        if (getSumT >= 9.50) {
+            data = '9.50';
+        }
+        if (getSumT >= 9.75) {
+            data = '9.75';
+        }
+        if (getSumT >= 10) {
+            data = '10';
+        }
+        console.log(data);
         if (dbmonthAct == 'October') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
                 {

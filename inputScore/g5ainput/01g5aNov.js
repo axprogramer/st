@@ -211,9 +211,23 @@ function addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
       td8.contentEditable = true;
 
     }
-
+    //Sum all score
+    let to1 = parseFloat(speakingNov)
+      + parseFloat(writingNov)
+      + parseFloat(listeningNov)
+      + parseFloat(readingNov)
+      + parseFloat(hNov);
+      let sub = to1 / 5;
+      sub = sub.toFixed(2).replace(/[.,]00$/, "");
+    td9.innerHTML = sub;
+    firebase.database().ref(`${db}/` + `${db3}/` + id).update(
+      {
+        averageNov: sub,
+      },
+    )
     var check = document.getElementById("myCheck");
     if (db4 == ll) {
+
 
       check.checked = true;
       shm.addEventListener('input', () => {
@@ -234,23 +248,141 @@ function addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
       })
       ss.addEventListener('input', () => {
         let data = ss.innerHTML;
-        let di = td3.innerHTML / 4;
-        di = di.toFixed(2).replace(/[.,]00$/, "");
+        let dis = td3.innerHTML / 4;
+        dis = dis.toFixed(2).replace(/[.,]00$/, "");
+        if (dis >= 0.25) {
+          di = '0.25';
+        }
+        if (dis >= 0.50) {
+          di = '0.50';
+        }
+        if (dis >= 0.75) {
+          di = '0.75';
+        }
+        if (dis >= 1) {
+          di = '1';
+        }
+        if (dis >= 1.25) {
+          di = '1.25';
+        }
+        if (dis >= 1.50) {
+          di = '1.50';
+        }
+        if (dis >= 1.75) {
+          di = '1.75';
+        }
+        if (dis >= 2) {
+          di = '2';
+        }
+        if (dis >= 2.25) {
+          di = '2.25';
+        }
+        if (dis >= 2.50) {
+          di = '2.50';
+        }
+        if (dis >= 2.75) {
+          di = '2.75';
+        }
+        if (dis >= 3) {
+          di = '3';
+        }
+        if (dis >= 3.25) {
+          di = '3.25';
+        }
+        if (dis >= 3.50) {
+          di = '3.50';
+        }
+        if (dis >= 3.75) {
+          di = '3.75';
+        }
+        if (dis >= 4) {
+          di = '4';
+        }
+        if (dis >= 4.25) {
+          di = '4.25';
+        }
+        if (dis >= 4.50) {
+          di = '4.50';
+        }
+        if (dis >= 4.75) {
+          di = '4.75';
+        }
+        if (dis >= 5) {
+          di = '5';
+        }
+        if (dis >= 5.25) {
+          di = '5.25';
+        }
+        if (dis >= 5.50) {
+          di = '5.50';
+        }
+        if (dis >= 5.75) {
+          di = '5.75';
+        }
+        if (dis >= 6) {
+          di = '6';
+        }
+        if (dis >= 6.25) {
+          di = '6.25';
+        }
+        if (dis >= 6.50) {
+          di = '6.50';
+        }
+        if (dis >= 6.75) {
+          di = '6.75';
+        }
+        if (dis >= 7) {
+          di = '7';
+        }
+        if (dis >= 7.25) {
+          di = '7.25';
+        }
+        if (dis >= 7.50) {
+          di = '7.50';
+        }
+        if (dis >= 7.75) {
+          di = '7.75';
+        }
+        if (dis >= 8) {
+          di = '8';
+        }
+        if (dis >= 8.25) {
+          di = '8.25';
+        }
+        if (dis >= 8.50) {
+          di = '8.50';
+        }
+        if (dis >= 8.75) {
+          di = '8.75';
+        }
+        if (dis >= 9) {
+          di = '9';
+        }
+        if (dis >= 9.25) {
+          di = '9.25';
+        }
+        if (dis >= 9.50) {
+          di = '9.50';
+        }
+        if (dis >= 9.75) {
+          di = '9.75';
+        }
+        if (dis >= 10) {
+          di = '10';
+        }
+
         td4.innerHTML = di;
         td5.innerHTML = di;
         td6.innerHTML = di;
         td7.innerHTML = di;
-        let to1 = parseFloat(data) + parseFloat(hNov);
-        let sum = to1 / 5;
-        sum = sum.toFixed(2).replace(/[.,]00$/, "");
-        td9.innerHTML = sum;
+        
         firebase.database().ref(`${db}/` + `${db3}/` + id).update(
           {
             speakingNov: di,
             writingNov: di,
             listeningNov: di,
             readingNov: di,
-            averageNov: sum,
+            averageNov: sub,
             scoreNov: data,
           },
         )
@@ -276,8 +408,129 @@ function addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
 
       ss.addEventListener('input', () => {
         let data = ss.innerHTML;
-        let di = td3.innerHTML / 3;
-        di = di.toFixed(2).replace(/[.,]00$/, "");
+        let dis = td3.innerHTML / 3;
+        dis = dis.toFixed(2).replace(/[.,]00$/, "");
+        if (dis >= 0.25) {
+          di = '0.25';
+        }
+        if (dis >= 0.50) {
+          di = '0.50';
+        }
+        if (dis >= 0.75) {
+          di = '0.75';
+        }
+        if (dis >= 1) {
+          di = '1';
+        }
+        if (dis >= 1.25) {
+          di = '1.25';
+        }
+        if (dis >= 1.50) {
+          di = '1.50';
+        }
+        if (dis >= 1.75) {
+          di = '1.75';
+        }
+        if (dis >= 2) {
+          di = '2';
+        }
+        if (dis >= 2.25) {
+          di = '2.25';
+        }
+        if (dis >= 2.50) {
+          di = '2.50';
+        }
+        if (dis >= 2.75) {
+          di = '2.75';
+        }
+        if (dis >= 3) {
+          di = '3';
+        }
+        if (dis >= 3.25) {
+          di = '3.25';
+        }
+        if (dis >= 3.50) {
+          di = '3.50';
+        }
+        if (dis >= 3.75) {
+          di = '3.75';
+        }
+        if (dis >= 4) {
+          di = '4';
+        }
+        if (dis >= 4.25) {
+          di = '4.25';
+        }
+        if (dis >= 4.50) {
+          di = '4.50';
+        }
+        if (dis >= 4.75) {
+          di = '4.75';
+        }
+        if (dis >= 5) {
+          di = '5';
+        }
+        if (dis >= 5.25) {
+          di = '5.25';
+        }
+        if (dis >= 5.50) {
+          di = '5.50';
+        }
+        if (dis >= 5.75) {
+          di = '5.75';
+        }
+        if (dis >= 6) {
+          di = '6';
+        }
+        if (dis >= 6.25) {
+          di = '6.25';
+        }
+        if (dis >= 6.50) {
+          di = '6.50';
+        }
+        if (dis >= 6.75) {
+          di = '6.75';
+        }
+        if (dis >= 7) {
+          di = '7';
+        }
+        if (dis >= 7.25) {
+          di = '7.25';
+        }
+        if (dis >= 7.50) {
+          di = '7.50';
+        }
+        if (dis >= 7.75) {
+          di = '7.75';
+        }
+        if (dis >= 8) {
+          di = '8';
+        }
+        if (dis >= 8.25) {
+          di = '8.25';
+        }
+        if (dis >= 8.50) {
+          di = '8.50';
+        }
+        if (dis >= 8.75) {
+          di = '8.75';
+        }
+        if (dis >= 9) {
+          di = '9';
+        }
+        if (dis >= 9.25) {
+          di = '9.25';
+        }
+        if (dis >= 9.50) {
+          di = '9.50';
+        }
+        if (dis >= 9.75) {
+          di = '9.75';
+        }
+        if (dis >= 10) {
+          di = '10';
+        }
+
         td5.innerHTML = di;
         td6.innerHTML = di;
         td7.innerHTML = di;
@@ -285,6 +538,7 @@ function addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
         let toto = parseFloat(data) + parseFloat(speak) + parseFloat(hNov);
         let sub = parseFloat(toto) / 5;
         sub = sub.toFixed(2).replace(/[.,]00$/, "");
+
         td9.innerHTML = sub;
         firebase.database().ref(`${db}/` + `${db3}/` + id).update(
           {
