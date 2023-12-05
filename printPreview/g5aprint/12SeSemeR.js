@@ -61,6 +61,30 @@ function GetData2(datas) {
     var alltotal2m = parseFloat(total2m) / 2;
     var last2m = parseFloat(alltotal2m).toFixed(2);
     // console.log(last2m);
+    if (my2Se == undefined) {
+      my2Se = 0;
+    }
+    if (my2Sa == undefined) {
+      my2Sa = 0;
+    }
+    if (my2SR == undefined) {
+      my2SR = 0;
+    }
+    if (my2SM == undefined) {
+      my2SM = 0;
+    }
+    if (averagejuly == undefined) {
+      averagejuly = 0;
+    }
+    if (averagemar == undefined) {
+      averagemar = 0;
+    }
+    if (averagema == undefined) {
+      averagema = 0;
+    }
+    if (averagejun == undefined) {
+      averagejun = 0;
+    }
 
 
     students.push({
@@ -110,15 +134,21 @@ function GetData2(datas) {
     } else if (my <= 10) {
       mention = "Excellent";
     }
+    let speak1 = parseFloat(student.my2Sa);
+    speak1 = speak1.toFixed(2);
+    let speak2 = parseFloat(student.showTotal);
+    speak2 = speak2.toFixed(2);
+    let speak3 = parseFloat(student.last2m);
+    speak3 = speak3.toFixed(2);
 
     let tr = `
             <td>${No}</td>
             <td>${student.name}</td>
             <td>${student.sex}</td>
             <td>${student.grade}</td>
-            <td>${student.my2Sa}</td>
-            <td>${student.showTotal}</td>
-            <td>${student.last2m}</td>
+            <td>${speak1}</td>
+            <td>${speak2}</td>
+            <td>${speak3}</td>
             <td>${student.Rank}</td>
             <td>${mention}</td>
     `;
@@ -200,15 +230,21 @@ function GetDataView(datas) {
     } else if (my <= 10) {
       mention = "Excellent";
     }
+    let speak1 = parseFloat(student.my2Sa);
+    speak1 = speak1.toFixed(2);
+    let speak2 = parseFloat(student.showTotal);
+    speak2 = speak2.toFixed(2);
+    let speak3 = parseFloat(student.last2m);
+    speak3 = speak3.toFixed(2);
 
     let tr = `
             <td>${No}</td>
             <td>${student.name}</td>
             <td>${student.sex}</td>
             <td>${student.grade}</td>
-            <td>${student.my2Sa}</td>
-            <td>${student.showTotal}</td>
-            <td>${student.last2m}</td>
+            <td>${speak1}</td>
+            <td>${speak2}</td>
+            <td>${speak3}</td>
             <td>${student.Rank}</td>
             <td>${mention}</td>
             <td style="display: none;">${mention}${student.sex}</td> 

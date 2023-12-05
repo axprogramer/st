@@ -48,6 +48,18 @@ function GetData2(datas) {
     var my2SR = data.val().my2SR;
     var my2SM = data.val().my2SM;
     var myKh = data.val().myKh;
+    if (my2Se == undefined) {
+      my2Se = 0;
+    }
+    if (my2Sa == undefined) {
+      my2Sa = 0;
+    }
+    if (my2SR == undefined) {
+      my2SR = 0;
+    }
+    if (my2SM == undefined) {
+      my2SM = 0;
+    }
 
 
     students.push({
@@ -91,14 +103,18 @@ function GetData2(datas) {
     } else if (my <= 10) {
       mention = "Excellent";
     }
+    let speak1 = parseFloat(student.my2Se);
+    speak1 = speak1.toFixed(2);
+    let speak2 = parseFloat(student.my2Sa);
+    speak2 = speak2.toFixed(2);
 
     let tr = `
             <td>${No}</td>
             <td>${student.name}</td>
             <td>${student.sex}</td>
             <td>${student.grade}</td>
-            <td>${student.my2Se}</td>
-            <td>${student.my2Sa}</td>
+            <td>${speak1}</td>
+            <td>${speak2}</td>
             <td>${student.Rank}</td>
             <td>${mention}</td>
     `;
@@ -119,6 +135,18 @@ function GetDataView(datas) {
     var my2SR = data.val().my2SR;
     var my2SM = data.val().my2SM;
     var myKh = data.val().myKh;
+    if (my2Se == undefined) {
+      my2Se = 0;
+    }
+    if (my2Sa == undefined) {
+      my2Sa = 0;
+    }
+    if (my2SR == undefined) {
+      my2SR = 0;
+    }
+    if (my2SM == undefined) {
+      my2SM = 0;
+    }
 
 
     students.push({
@@ -163,14 +191,18 @@ function GetDataView(datas) {
     } else if (my <= 10) {
       mention = "Excellent";
     }
+    let speak1 = parseFloat(student.my2Se);
+    speak1 = speak1.toFixed(2);
+    let speak2 = parseFloat(student.my2Sa);
+    speak2 = speak2.toFixed(2);
 
     let tr = `
             <td>${No}</td>
             <td>${student.name}</td>
             <td>${student.sex}</td>
               <td>${student.grade}</td>
-              <td>${student.my2Se}</td>
-              <td>${student.my2Sa}</td>
+            <td>${speak1}</td>
+            <td>${speak2}</td>
               <td>${student.Rank}</td>
               <td>${mention}</td>
             <td style="display: none;">${mention}${student.sex}</td> 

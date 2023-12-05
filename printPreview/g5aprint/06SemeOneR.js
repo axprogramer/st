@@ -109,15 +109,21 @@ function GetData2(datas) {
     } else if (my <= 10) {
       mention = "Excellent";
     }
+    let speak1 = parseFloat(student.my1Sa);
+    speak1 = speak1.toFixed(2);
+    let speak2 = parseFloat(student.showTotal);
+    speak2 = speak2.toFixed(2);
+    let speak3 = parseFloat(student.last2m);
+    speak3 = speak3.toFixed(2);
 
     let tr = `
             <td>${No}</td>
             <td>${student.name}</td>
             <td>${student.sex}</td>
             <td>${student.grade}</td>
-            <td>${student.my1Sa}</td>
-            <td>${student.showTotal}</td>
-            <td>${student.last2m}</td>
+            <td>${speak1}</td>
+            <td>${speak2}</td>
+            <td>${speak3}</td>
             <td>${student.Rank}</td>
             <td>${mention}</td>
     `;
@@ -198,15 +204,21 @@ function GetDataView(datas) {
     } else if (my <= 10) {
       mention = "Excellent";
     }
+    let speak1 = parseFloat(student.my1Sa);
+    speak1 = speak1.toFixed(2);
+    let speak2 = parseFloat(student.showTotal);
+    speak2 = speak2.toFixed(2);
+    let speak3 = parseFloat(student.last2m);
+    speak3 = speak3.toFixed(2);
 
     let tr = `
             <td>${No}</td>
             <td>${student.name}</td>
             <td>${student.sex}</td>
             <td>${student.grade}</td>
-            <td>${student.my1Sa}</td>
-            <td>${student.showTotal}</td>
-            <td>${student.last2m}</td>
+            <td>${speak1}</td>
+            <td>${speak2}</td>
+            <td>${speak3}</td>
             <td>${student.Rank}</td>
             <td>${mention}</td>
             <td style="display: none;">${mention}${student.sex}</td> 

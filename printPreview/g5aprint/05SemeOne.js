@@ -48,6 +48,18 @@ function GetData2(datas) {
     var my1SR = data.val().my1SR;
     var my1SM = data.val().my1SM;
     var myKh = data.val().myKh;
+    if (my1Se == undefined) {
+      my1Se = 0;
+    }
+    if (my1Sa == undefined) {
+      my1Sa = 0;
+    }
+    if (my1SR == undefined) {
+      my1SR = 0;
+    }
+    if (my1SM == undefined) {
+      my1SM = 0;
+    }
 
 
     students.push({
@@ -92,14 +104,18 @@ function GetData2(datas) {
     } else if (my <= 10) {
       mention = "Excellent";
     }
+    let speak1 = parseFloat(student.my1Se);
+    speak1 = speak1.toFixed(2);
+    let speak2 = parseFloat(student.my1Sa);
+    speak2 = speak2.toFixed(2);
 
     let tr = `
             <td>${No}</td>
             <td>${student.name}</td>
             <td>${student.sex}</td>
             <td>${student.grade}</td>
-              <td>${student.my1Se}</td>
-              <td>${student.my1Sa}</td>
+              <td>${speak1}</td>
+              <td>${speak2}</td>
               <td>${student.Rank}</td>
               <td>${mention}</td>
     `;
@@ -120,6 +136,13 @@ function GetDataView(datas) {
     var my1SR = data.val().my1SR;
     var my1SM = data.val().my1SM;
     var myKh = data.val().myKh;
+    if (my1Se == undefined) {
+      my1Se = 0;
+    }
+    if (my1Sa == undefined) {
+      my1Sa = 0;
+    }
+
 
 
     students.push({
@@ -133,7 +156,6 @@ function GetDataView(datas) {
       myKh,
     });
   });
-
   students.sort(function (a, b) { return b.my1Sa - a.my1Sa });
 
   for (let i = 0; i < students.length; i++) {
@@ -164,14 +186,19 @@ function GetDataView(datas) {
     } else if (my <= 10) {
       mention = "Excellent";
     }
+    let speak1 = parseFloat(student.my1Se);
+    speak1 = speak1.toFixed(2);
+    let speak2 = parseFloat(student.my1Sa);
+    speak2 = speak2.toFixed(2);
+
 
     let tr = `
             <td>${No}</td>
             <td>${student.name}</td>
             <td>${student.sex}</td>
               <td>${student.grade}</td>
-              <td>${student.my1Se}</td>
-              <td>${student.my1Sa}</td>
+              <td>${speak1}</td>
+              <td>${speak2}</td>
               <td>${student.Rank}</td>
               <td>${mention}</td>
             <td style="display: none;">${mention}${student.sex}</td> 

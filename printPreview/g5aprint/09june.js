@@ -96,16 +96,29 @@ function GetData2(datas) {
 
   students.forEach((student) => {
     No++;
+    let speak1 = parseFloat(student.speakingjun);
+    speak1 = speak1.toFixed(2);
+    let speak2 = parseFloat(student.writingjun);
+    speak2 = speak2.toFixed(2);
+    let speak3 = parseFloat(student.listeningjun);
+    speak3 = speak3.toFixed(2);
+    let speak4 = parseFloat(student.readingjun);
+    speak4 = speak4.toFixed(2);
+    let speak5 = parseFloat(student.hJun);
+    speak5 = speak5.toFixed(2);
+    let speak6 = parseFloat(student.averagejun);
+    speak6 = speak6.toFixed(2);
+
     let tr = `
-            <td>${No}</td>
-            <td>${student.name}</td>
-            <td>${student.sex}</td>
-            <td>${student.speakingjun}</td>
-            <td>${student.writingjun}</td>
-            <td>${student.listeningjun}</td>
-            <td>${student.readingjun}</td>
-            <td>${student.hJun}</td>
-            <td>${student.averagejun}</td>
+        <td>${No}</td>
+        <td>${student.name}</td>
+        <td>${student.sex}</td>
+        <td>${speak1}</td>
+        <td>${speak2}</td>
+        <td>${speak3}</td>
+        <td>${speak4}</td>
+        <td>${speak5}</td>
+        <td>${speak6}</td>
             <td>${student.Rank}</td>
     `;
     tbody.innerHTML += tr;
@@ -189,17 +202,29 @@ function GetDataView(datas) {
     } else if (my <= 10) {
       mention = "Excellent";
     }
+    let speak1 = parseFloat(student.speakingjun);
+    speak1 = speak1.toFixed(2);
+    let speak2 = parseFloat(student.writingjun);
+    speak2 = speak2.toFixed(2);
+    let speak3 = parseFloat(student.listeningjun);
+    speak3 = speak3.toFixed(2);
+    let speak4 = parseFloat(student.readingjun);
+    speak4 = speak4.toFixed(2);
+    let speak5 = parseFloat(student.hJun);
+    speak5 = speak5.toFixed(2);
+    let speak6 = parseFloat(student.averagejun);
+    speak6 = speak6.toFixed(2);
 
     let tr = `
-            <td>${No}</td>
-            <td>${student.name}</td>
-            <td>${student.sex}</td>
-            <td>${student.speakingjun}</td>
-            <td>${student.writingjun}</td>
-            <td>${student.listeningjun}</td>
-            <td>${student.readingjun}</td>
-            <td>${student.hJun}</td>
-            <td>${student.averagejun}</td>
+        <td>${No}</td>
+        <td>${student.name}</td>
+        <td>${student.sex}</td>
+        <td>${speak1}</td>
+        <td>${speak2}</td>
+        <td>${speak3}</td>
+        <td>${speak4}</td>
+        <td>${speak5}</td>
+        <td>${speak6}</td>
             <td>${student.Rank}</td>
             <td style="display: none;">${mention}${student.sex}</td> 
     `;
