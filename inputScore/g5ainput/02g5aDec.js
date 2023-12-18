@@ -79,9 +79,6 @@ function addItemsToTable(name, id, sex, speakingDec, writingDec, listeningDec,
   td7.id = reid;
   td8.id = hm;
 
-
-
-
   stdList.push([name, id, sex, speakingDec, writingDec, listeningDec,
     readingDec, averageDec, myKh, score]);
   td0.innerHTML = ++studentN0;
@@ -341,10 +338,10 @@ function addItemsToTable(name, id, sex, speakingDec, writingDec, listeningDec,
         td6.innerHTML = di;
         td7.innerHTML = di;
         let to1 = parseFloat(data) + parseFloat(hDec);
-        let sub = to1 / 5;
-        sub = sub.toFixed(2).replace(/[.,]00$/, "");
-        td9.innerHTML = sub;
-
+        let sum = to1 / 5;
+        sum = sum.toFixed(2).replace(/[.,]00$/, "");
+        td9.innerHTML = sum;
+        console.log(sum);
         firebase.database().ref(`${db}/` + `${db3}/` + id).update(
           {
             speakingDec: di,
@@ -838,3 +835,4 @@ function saveScore(type, fn, dl) {
     ? XLSX.write(wb, { bookType: type, bookSST: true, type: "base64" })
     : XLSX.writeFile(wb, fn || `${db}/ ` + `${db2}/.` + (type || "xlsx"));
 }
+

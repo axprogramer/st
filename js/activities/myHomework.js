@@ -433,128 +433,128 @@ function addItemsToTable(
     let getSumT = sumall / `${dbdiviAct}`;
     // getSum.toFixed(2);
     getSumT = getSumT.toFixed(2).replace(/[.,]00$/, "");
-    // if (getSumT >= 0.25) {
-    //     getSum = '0.25';
-    // }
-    // if (getSumT >= 0.50) {
-    //     getSum = '0.50';
-    // }
-    // if (getSumT >= 0.75) {
-    //     getSum = '0.75';
-    // }
-    // if (getSumT >= 1) {
-    //     getSum = '1';
-    // }
-    // if (getSumT >= 1.25) {
-    //     getSum = '1.25';
-    // }
-    // if (getSumT >= 1.50) {
-    //     getSum = '1.50';
-    // }
-    // if (getSumT >= 1.75) {
-    //     getSum = '1.75';
-    // }
-    // if (getSumT >= 2) {
-    //     getSum = '2';
-    // }
-    // if (getSumT >= 2.25) {
-    //     getSum = '2.25';
-    // }
-    // if (getSumT >= 2.50) {
-    //     getSum = '2.50';
-    // }
-    // if (getSumT >= 2.75) {
-    //     getSum = '2.75';
-    // }
-    // if (getSumT >= 3) {
-    //     getSum = '3';
-    // }
-    // if (getSumT >= 3.25) {
-    //     getSum = '3.25';
-    // }
-    // if (getSumT >= 3.50) {
-    //     getSum = '3.50';
-    // }
-    // if (getSumT >= 3.75) {
-    //     getSum = '3.75';
-    // }
-    // if (getSumT >= 4) {
-    //     getSum = '4';
-    // }
-    // if (getSumT >= 4.25) {
-    //     getSum = '4.25';
-    // }
-    // if (getSumT >= 4.50) {
-    //     getSum = '4.50';
-    // }
-    // if (getSumT >= 4.75) {
-    //     getSum = '4.75';
-    // }
-    // if (getSumT >= 5) {
-    //     getSum = '5';
-    // }
-    // if (getSumT >= 5.25) {
-    //     getSum = '5.25';
-    // }
-    // if (getSumT >= 5.50) {
-    //     getSum = '5.50';
-    // }
-    // if (getSumT >= 5.75) {
-    //     getSum = '5.75';
-    // }
-    // if (getSumT >= 6) {
-    //     getSum = '6';
-    // }
-    // if (getSumT >= 6.25) {
-    //     getSum = '6.25';
-    // }
-    // if (getSumT >= 6.50) {
-    //     getSum = '6.50';
-    // }
-    // if (getSumT >= 6.75) {
-    //     getSum = '6.75';
-    // }
-    // if (getSumT >= 7) {
-    //     getSum = '7';
-    // }
-    // if (getSumT >= 7.25) {
-    //     getSum = '7.25';
-    // }
-    // if (getSumT >= 7.50) {
-    //     getSum = '7.50';
-    // }
-    // if (getSumT >= 7.75) {
-    //     getSum = '7.75';
-    // }
-    // if (getSumT >= 8) {
-    //     getSum = '8';
-    // }
-    // if (getSumT >= 8.25) {
-    //     getSum = '8.25';
-    // }
-    // if (getSumT >= 8.50) {
-    //     getSum = '8.50';
-    // }
-    // if (getSumT >= 8.75) {
-    //     getSum = '8.75';
-    // }
-    // if (getSumT >= 9) {
-    //     getSum = '9';
-    // }
-    // if (getSumT >= 9.25) {
-    //     getSum = '9.25';
-    // }
-    // if (getSumT >= 9.50) {
-    //     getSum = '9.50';
-    // }
-    // if (getSumT >= 9.75) {
-    //     getSum = '9.75';
-    // }
-    // if (getSumT >= 10) {
-    //     getSum = '10';
-    // }
+    if (getSumT >= 0.25) {
+        getSum = '0.25';
+    }
+    if (getSumT >= 0.50) {
+        getSum = '0.50';
+    }
+    if (getSumT >= 0.75) {
+        getSum = '0.75';
+    }
+    if (getSumT >= 1) {
+        getSum = '1';
+    }
+    if (getSumT >= 1.25) {
+        getSum = '1.25';
+    }
+    if (getSumT >= 1.50) {
+        getSum = '1.50';
+    }
+    if (getSumT >= 1.75) {
+        getSum = '1.75';
+    }
+    if (getSumT >= 2) {
+        getSum = '2';
+    }
+    if (getSumT >= 2.25) {
+        getSum = '2.25';
+    }
+    if (getSumT >= 2.50) {
+        getSum = '2.50';
+    }
+    if (getSumT >= 2.75) {
+        getSum = '2.75';
+    }
+    if (getSumT >= 3) {
+        getSum = '3';
+    }
+    if (getSumT >= 3.25) {
+        getSum = '3.25';
+    }
+    if (getSumT >= 3.50) {
+        getSum = '3.50';
+    }
+    if (getSumT >= 3.75) {
+        getSum = '3.75';
+    }
+    if (getSumT >= 4) {
+        getSum = '4';
+    }
+    if (getSumT >= 4.25) {
+        getSum = '4.25';
+    }
+    if (getSumT >= 4.50) {
+        getSum = '4.50';
+    }
+    if (getSumT >= 4.75) {
+        getSum = '4.75';
+    }
+    if (getSumT >= 5) {
+        getSum = '5';
+    }
+    if (getSumT >= 5.25) {
+        getSum = '5.25';
+    }
+    if (getSumT >= 5.50) {
+        getSum = '5.50';
+    }
+    if (getSumT >= 5.75) {
+        getSum = '5.75';
+    }
+    if (getSumT >= 6) {
+        getSum = '6';
+    }
+    if (getSumT >= 6.25) {
+        getSum = '6.25';
+    }
+    if (getSumT >= 6.50) {
+        getSum = '6.50';
+    }
+    if (getSumT >= 6.75) {
+        getSum = '6.75';
+    }
+    if (getSumT >= 7) {
+        getSum = '7';
+    }
+    if (getSumT >= 7.25) {
+        getSum = '7.25';
+    }
+    if (getSumT >= 7.50) {
+        getSum = '7.50';
+    }
+    if (getSumT >= 7.75) {
+        getSum = '7.75';
+    }
+    if (getSumT >= 8) {
+        getSum = '8';
+    }
+    if (getSumT >= 8.25) {
+        getSum = '8.25';
+    }
+    if (getSumT >= 8.50) {
+        getSum = '8.50';
+    }
+    if (getSumT >= 8.75) {
+        getSum = '8.75';
+    }
+    if (getSumT >= 9) {
+        getSum = '9';
+    }
+    if (getSumT >= 9.25) {
+        getSum = '9.25';
+    }
+    if (getSumT >= 9.50) {
+        getSum = '9.50';
+    }
+    if (getSumT >= 9.75) {
+        getSum = '9.75';
+    }
+    if (getSumT >= 10) {
+        getSum = '10';
+    }
 
-    td27.innerHTML = getSumT;
+    td27.innerHTML = getSum;
     document.getElementById('uploadScore').addEventListener('click', function () {
         let data = getSumT;
         if (getSumT >= 0.25) {
@@ -677,7 +677,6 @@ function addItemsToTable(
         if (getSumT >= 10) {
             data = '10';
         }
-        console.log(data);
         if (dbmonthAct == 'October') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
                 {

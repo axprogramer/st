@@ -220,15 +220,16 @@ function GetDataView(datas) {
         <td>${No}</td>
         <td>${student.name}</td>
         <td>${student.sex}</td>
-        <td>${speak1}</td>
-        <td>${speak2}</td>
-        <td>${speak3}</td>
-        <td>${speak4}</td>
-        <td>${speak5}</td>
-        <td>${speak6}</td>
+        <td tabindex="0">${speak1}</td>
+        <td tabindex="0">${speak2}</td>
+        <td tabindex="0">${speak3}</td>
+        <td tabindex="0">${speak4}</td>
+        <td tabindex="0">${speak5}</td>
+        <td tabindex="0">${speak6}</td>
             <td>${student.Rank}</td>
             <td style="display: none;">${mention}${student.sex}</td> 
     `;
+    
     tbody.innerHTML += tr;
   });
 }
@@ -416,7 +417,6 @@ function GetDataSave2(datas) {
     if (ddd >= 10) {
       student.averageDec = '10';
     }
-
     let tr = `
             <td>${No}</td>
             <td>${student.name}</td>
@@ -562,3 +562,5 @@ var sss1 = document.getElementById("view3");
 sss.style.display = "none";
 sss1.style.display = "none";
 document.getElementById("showMyTable").style.display = "block";
+
+
