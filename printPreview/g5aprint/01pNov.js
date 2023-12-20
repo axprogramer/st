@@ -140,6 +140,7 @@ function GetDataView(datas) {
     var averageNov = data.val().averageNov;
     var myKh = data.val().myKh;
     var hNov = data.val().hNov;
+    var spNov = data.val().sportNov;
     if (writingNov == undefined) {
       writingNov = 0;
     }
@@ -169,6 +170,7 @@ function GetDataView(datas) {
       averageNov,
       myKh,
       hNov,
+      spNov,
     });
   });
 
@@ -219,6 +221,7 @@ function GetDataView(datas) {
             <td>${No}</td>
             <td>${student.name}</td>
             <td>${student.sex}</td>
+            <td>${student.spNov}</td>
             <td>${speak1}</td>
             <td>${speak2}</td>
             <td>${speak3}</td>
@@ -246,6 +249,8 @@ function GetDataSave2(datas) {
     var averageNov = data.val().averageNov;
     var myKh = data.val().myKh;
     var hNov = data.val().hNov;
+    var spNov = data.val().sportNov;
+  
 
     if (writingNov == undefined) {
       writingNov = 0;
@@ -276,6 +281,7 @@ function GetDataSave2(datas) {
       readingNov,
       averageNov,
       hNov,
+      spNov,
     });
   });
 
@@ -417,15 +423,11 @@ function GetDataSave2(datas) {
     }
     let tr = `
             <td>${No}</td>
-            <td>${student.name}</td>
             <td>${student.myKh}</td>
             <td>${student.sex}</td>
-            <td>${student.speakingNov}</td>
-            <td>${student.writingNov}</td>
-            <td>${student.listeningNov}</td>
-            <td>${student.readingNov}</td>
             <td>${student.hNov}</td>
             <td>${student.averageNov}</td>
+            <td>${student.spNov}</td>
     `;
     tbody.innerHTML += tr;
   });

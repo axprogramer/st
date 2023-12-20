@@ -64,7 +64,6 @@ function selectAllData() {
                         shoe1, shoe2, shoe3, shoe4, shoe5, total1,
                         total2, total3, total4, total5, subTotal,
                     );
-
                 }
             );
         });
@@ -249,6 +248,73 @@ function addItemsToTable(
         shoe1, shoe2, shoe3, shoe4, shoe5, total1,
         total2, total3, total4, total5, subTotal,
     ]);
+    //Sport Upload Score
+    let dataSport = subTotal;
+    if(dbmonthAct == 'October'){
+        firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+    
+            {
+                sportNov: dataSport,
+            },
+        )
+    }
+    if(dbmonthAct == 'November'){
+        firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+    
+            {
+                sportDec: dataSport,
+            },
+        )
+    }
+    if(dbmonthAct == 'December'){
+        firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+    
+            {
+                sportJan: dataSport,
+            },
+        )
+    }
+    if(dbmonthAct == 'January'){
+        firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+    
+            {
+                sportFeb: dataSport,
+            },
+        )
+    }
+    if(dbmonthAct == 'February'){
+        firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+    
+            {
+                sportMar: dataSport,
+            },
+        )
+    }
+    if(dbmonthAct == 'March'){
+        firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+    
+            {
+                sportAp: dataSport,
+            },
+        )
+    }
+    if(dbmonthAct == 'April-May'){
+        firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+    
+            {
+                sportJun: dataSport,
+            },
+        )
+    }
+    if(dbmonthAct == 'June'){
+        firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + id).update(
+    
+            {
+                sportJul: dataSport,
+            },
+        )
+    }
+
     td0.innerHTML = ++studentN0;
     td1.innerHTML = id;
     td2.innerHTML = sex;
