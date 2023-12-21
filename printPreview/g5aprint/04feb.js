@@ -140,6 +140,7 @@ function GetDataView(datas) {
     var averagefeb = data.val().averagefeb;
     var myKh = data.val().myKh;
     var hFeb = data.val().hFeb;
+    var spFeb = data.val().sportFeb;
     if (writingfeb == undefined) {
       writingfeb = 0;
     }
@@ -169,6 +170,7 @@ function GetDataView(datas) {
       averagefeb,
       myKh,
       hFeb,
+      spFeb,
     });
   });
 
@@ -202,6 +204,10 @@ function GetDataView(datas) {
     } else if (my <= 10) {
       mention = "Excellent";
     }
+    //Define data to 0.00 value
+    if(student.spFeb == undefined){
+      student.spFeb = '0.00';
+    }
     let speak1 = parseFloat(student.speakingfeb);
     speak1 = speak1.toFixed(2);
     let speak2 = parseFloat(student.writingfeb);
@@ -219,6 +225,7 @@ function GetDataView(datas) {
         <td>${No}</td>
         <td>${student.name}</td>
         <td>${student.sex}</td>
+        <td>${student.spFeb}</td>
         <td>${speak1}</td>
         <td>${speak2}</td>
         <td>${speak3}</td>
@@ -246,6 +253,7 @@ function GetDataSave2(datas) {
     var averagefeb = data.val().averagefeb;
     var myKh = data.val().myKh;
     var hFeb = data.val().hFeb;
+    var spFeb = data.val().sportFeb;
 
     if (writingfeb == undefined) {
       writingfeb = 0;
@@ -276,6 +284,7 @@ function GetDataSave2(datas) {
       readingfeb,
       averagefeb,
       hFeb,
+      spFeb,
     });
   });
 
@@ -418,15 +427,11 @@ function GetDataSave2(datas) {
 
     let tr = `
             <td>${No}</td>
-            <td>${student.name}</td>
             <td>${student.myKh}</td>
             <td>${student.sex}</td>
-            <td>${student.speakingfeb}</td>
-            <td>${student.writingfeb}</td>
-            <td>${student.listeningfeb}</td>
-            <td>${student.readingfeb}</td>
             <td>${student.hFeb}</td>
             <td>${student.averagefeb}</td>
+            <td>${student.spFeb}</td>
     `;
     tbody.innerHTML += tr;
   });

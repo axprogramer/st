@@ -139,6 +139,7 @@ function GetDataView(datas) {
     var averagejuly = data.val().averagejuly;
     var myKh = data.val().myKh;
     var hJul = data.val().hJul;
+    var spJul = data.val().sportJul;
 
     if (writingjuly == undefined) {
       writingjuly = 0;
@@ -169,6 +170,7 @@ function GetDataView(datas) {
       averagejuly,
       myKh,
       hJul,
+      spJul,
     });
   });
 
@@ -202,6 +204,9 @@ function GetDataView(datas) {
     } else if (my <= 10) {
       mention = "Excellent";
     }
+    if(student.spJul == undefined){
+      student.spJul = '0.00';
+    }
     let speak1 = parseFloat(student.speakingjuly);
     speak1 = speak1.toFixed(2);
     let speak2 = parseFloat(student.writingjuly);
@@ -219,6 +224,7 @@ function GetDataView(datas) {
         <td>${No}</td>
         <td>${student.name}</td>
         <td>${student.sex}</td>
+        <td>${student.spJul}</td>
         <td>${speak1}</td>
         <td>${speak2}</td>
         <td>${speak3}</td>
@@ -246,6 +252,7 @@ function GetDataSave2(datas) {
     var averagejuly = data.val().averagejuly;
     var myKh = data.val().myKh;
     var hJul = data.val().hJul;
+    var spJul = data.val().sportJul;
     if (writingjuly == undefined) {
       writingjuly = 0;
     }
@@ -276,6 +283,7 @@ function GetDataSave2(datas) {
       readingjuly,
       averagejuly,
       hJul,
+      spJul,
     });
   });
 
@@ -415,19 +423,17 @@ function GetDataSave2(datas) {
     if (ddd >= 10) {
       student.averagejuly = '10';
     }
-    console.log(student.averagejuly);
+    if(student.spJul == undefined){
+      student.spJul = '0.00';
+    }
 
     let tr = `
             <td>${No}</td>
-            <td>${student.name}</td>
             <td>${student.myKh}</td>
             <td>${student.sex}</td>
-            <td>${student.speakingjuly}</td>
-            <td>${student.writingjuly}</td>
-            <td>${student.listeningjuly}</td>
-            <td>${student.readingjuly}</td>
             <td>${student.hJul}</td>
             <td>${student.averagejuly}</td>
+            <td>${student.spJul}</td>
     `;
     tbody.innerHTML += tr;
   });

@@ -139,6 +139,7 @@ function GetDataView(datas) {
     var averagejun = data.val().averagejun;
     var myKh = data.val().myKh;
     var hJun = data.val().hJun;
+    var spJun = data.val().sportJun;
     if (writingjun == undefined) {
       writingjun = 0;
     }
@@ -169,6 +170,7 @@ function GetDataView(datas) {
       averagejun,
       myKh,
       hJun,
+      spJun,
     });
   });
 
@@ -202,6 +204,9 @@ function GetDataView(datas) {
     } else if (my <= 10) {
       mention = "Excellent";
     }
+    if(student.spJun ==  undefined){
+      student.spJun = '0.00';
+    }
     let speak1 = parseFloat(student.speakingjun);
     speak1 = speak1.toFixed(2);
     let speak2 = parseFloat(student.writingjun);
@@ -219,6 +224,7 @@ function GetDataView(datas) {
         <td>${No}</td>
         <td>${student.name}</td>
         <td>${student.sex}</td>
+        <td>${student.spJun}</td>
         <td>${speak1}</td>
         <td>${speak2}</td>
         <td>${speak3}</td>
@@ -246,6 +252,7 @@ function GetDataSave2(datas) {
     var averagejun = data.val().averagejun;
     var myKh = data.val().myKh;
     var hJun = data.val().hJun;
+    var spJun = data.val().sportJun;
 
     if (writingjun == undefined) {
       writingjun = 0;
@@ -276,6 +283,7 @@ function GetDataSave2(datas) {
       readingjun,
       averagejun,
       hJun,
+      spJun,
     });
   });
 
@@ -415,19 +423,17 @@ function GetDataSave2(datas) {
     if (ddd >= 10) {
       student.averagejun = '10';
     }
-    console.log(student.averagejun);
+    if(student.spJun == undefined){
+      student.spJun = '0.00';
+    }
 
     let tr = `
             <td>${No}</td>
-            <td>${student.name}</td>
             <td>${student.myKh}</td>
             <td>${student.sex}</td>
-            <td>${student.speakingjun}</td>
-            <td>${student.writingjun}</td>
-            <td>${student.listeningjun}</td>
-            <td>${student.readingjun}</td>
             <td>${student.hJun}</td>
             <td>${student.averagejun}</td>
+            <td>${student.spJun}</td>
     `;
     tbody.innerHTML += tr;
   });

@@ -140,6 +140,7 @@ function GetDataView(datas) {
     var averagemar = data.val().averagemar;
     var myKh = data.val().myKh;
     var hMar = data.val().hMar;
+    var spMar = data.val().sportMar;
 
     if (writingmar == undefined) {
       writingmar = 0;
@@ -170,6 +171,7 @@ function GetDataView(datas) {
       averagemar,
       myKh,
       hMar,
+      spMar,
     });
   });
 
@@ -203,6 +205,9 @@ function GetDataView(datas) {
     } else if (my <= 10) {
       mention = "Excellent";
     }
+    if(student.spMar == undefined){
+      student.spMar = '0.00';
+    }
     let speak1 = parseFloat(student.speakingmar);
     speak1 = speak1.toFixed(2);
     let speak2 = parseFloat(student.writingmar);
@@ -220,6 +225,7 @@ function GetDataView(datas) {
         <td>${No}</td>
         <td>${student.name}</td>
         <td>${student.sex}</td>
+        <td>${student.spMar}</td>
         <td>${speak1}</td>
         <td>${speak2}</td>
         <td>${speak3}</td>
@@ -247,6 +253,7 @@ function GetDataSave2(datas) {
     var averagemar = data.val().averagemar;
     var myKh = data.val().myKh;
     var hMar = data.val().hMar;
+    var spMar = data.val().sportMar;
 
     if (writingmar == undefined) {
       writingmar = 0;
@@ -277,6 +284,7 @@ function GetDataSave2(datas) {
       readingmar,
       averagemar,
       hMar,
+      spMar,
     });
   });
 
@@ -416,17 +424,16 @@ function GetDataSave2(datas) {
     if (ddd >= 10) {
       student.averagemar = '10';
     }
+    if(student.spMar == undefined){
+      student.spMar = '0.00';
+    }
     let tr = `
             <td>${No}</td>
-            <td>${student.name}</td>
             <td>${student.myKh}</td>
             <td>${student.sex}</td>
-            <td>${student.speakingmar}</td>
-            <td>${student.writingmar}</td>
-            <td>${student.listeningmar}</td>
-            <td>${student.readingmar}</td>
             <td>${student.hMar}</td>
             <td>${student.averagemar}</td>
+            <td>${student.spMar}</td>
     `;
     tbody.innerHTML += tr;
   });

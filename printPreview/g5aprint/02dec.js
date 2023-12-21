@@ -205,6 +205,10 @@ function GetDataView(datas) {
     } else if (my <= 10) {
       mention = "Excellent";
     }
+    if (student.spDec == undefined) {
+      student.spDec = '0.00';
+    }
+
     let speak1 = parseFloat(student.speakingDec);
     speak1 = speak1.toFixed(2);
     let speak2 = parseFloat(student.writingDec);
@@ -422,6 +426,10 @@ function GetDataSave2(datas) {
     if (ddd >= 10) {
       student.averageDec = '10';
     }
+    if (student.spDec == undefined) {
+      student.spDec = '0.00';
+    }
+
     let tr = `
             <td>${No}</td>
             <td>${student.myKh}</td>

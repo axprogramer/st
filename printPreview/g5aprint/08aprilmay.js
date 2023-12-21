@@ -140,6 +140,7 @@ function GetDataView(datas) {
     var averagema = data.val().averagema;
     var myKh = data.val().myKh;
     var hApr = data.val().hApr;
+    var spAp = data.val().sportAp;
     if (writingma == undefined) {
       writingma = 0;
     }
@@ -170,6 +171,7 @@ function GetDataView(datas) {
       averagema,
       myKh,
       hApr,
+      spAp,
     });
   });
 
@@ -203,6 +205,9 @@ function GetDataView(datas) {
     } else if (my <= 10) {
       mention = "Excellent";
     }
+    if (student.spAp == undefined) {
+      student.spAp = '0.00';
+    }
     let speak1 = parseFloat(student.speakingma);
     speak1 = speak1.toFixed(2);
     let speak2 = parseFloat(student.writingma);
@@ -220,6 +225,7 @@ function GetDataView(datas) {
         <td>${No}</td>
         <td>${student.name}</td>
         <td>${student.sex}</td>
+        <td>${student.spAp}</td>
         <td>${speak1}</td>
         <td>${speak2}</td>
         <td>${speak3}</td>
@@ -248,6 +254,7 @@ function GetDataSave2(datas) {
     var averagema = data.val().averagema;
     var myKh = data.val().myKh;
     var hApr = data.val().hApr;
+    var spAp = data.val().sportAp;
     if (writingma == undefined) {
       writingma = 0;
     }
@@ -278,6 +285,7 @@ function GetDataSave2(datas) {
       readingma,
       averagema,
       hApr,
+      spAp,
     });
   });
 
@@ -417,18 +425,16 @@ function GetDataSave2(datas) {
     if (ddd >= 10) {
       student.averagema = '10';
     }
-
+    if (student.spAp == undefined) {
+      student.spAp = '0.00';
+    }
     let tr = `
             <td>${No}</td>
-            <td>${student.name}</td>
             <td>${student.myKh}</td>
             <td>${student.sex}</td>
-            <td>${student.speakingma}</td>
-            <td>${student.writingma}</td>
-            <td>${student.listeningma}</td>
-            <td>${student.readingma}</td>
             <td>${student.hApr}</td>
             <td>${student.averagema}</td>
+            <td>${student.spAs}</td>
     `;
     tbody.innerHTML += tr;
   });

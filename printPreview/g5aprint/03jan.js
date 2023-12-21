@@ -217,6 +217,9 @@ function GetDataView(datas) {
     speak5 = speak5.toFixed(2);
     let speak6 = parseFloat(student.averageJan);
     speak6 = speak6.toFixed(2);
+    if (student.spJan == undefined) {
+      student.spJan = '0.00';
+    }
 
     let tr = `
         <td>${No}</td>
@@ -420,6 +423,9 @@ function GetDataSave2(datas) {
     }
     if (ddd >= 10) {
       student.averageJan = '10';
+    }
+    if (student.spJan == undefined) {
+      student.spJan = '0.00';
     }
 
     let tr = `
