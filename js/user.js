@@ -1,4 +1,4 @@
-function user(){
+function user() {
     var user = "SalaMOM School";
     var title = "SM Sys All"
     var position = "Primary Class"
@@ -7,7 +7,7 @@ function user(){
     var name = "SalaMOM School"
     var year = "2022-2023"
     var db = "5cAllData"
-    var img = "https://jobboom.asia/media/imagemodule/8c07e28fab10abc458e373f3d20c75f9.png"
+    var img = "https://firebasestorage.googleapis.com/v0/b/useradmin-cd653.appspot.com/o/StdImages%2FSalaMOM%20Logo.png?alt=media&token=358b995c-7c97-43c8-8159-d1449063268b"
     document.getElementById("myUser").innerHTML = user;
     document.getElementById("myUser2").innerHTML = user;
     document.getElementById("myPosition").innerHTML = position;
@@ -18,6 +18,6 @@ function user(){
     // document.getElementById('year').innerHTML = year;
     // document.getElementById('mydataBase').innerHTML = db;
 
-    
+
 }
 user();
